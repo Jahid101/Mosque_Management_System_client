@@ -1,0 +1,8 @@
+.prayerTimeBg {
+    background-image: url('https://www.pewresearch.org/wp-content/uploads/sites/7/2013/07/lede_globalsurveymuslims-II.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 300px;
+    padding: 15px;
+}

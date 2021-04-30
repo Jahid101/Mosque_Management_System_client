@@ -1,0 +1,9 @@
+.pillarBg {
+    background-image: url('https://img.freepik.com/free-vector/abstract-green-geometric-background_52683-29226.jpg?size=626&ext=jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    height: 350px;
+    padding: 15px;
+}
