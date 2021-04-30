@@ -10,6 +10,7 @@ import PillarsOfIslam from '../PillarsOfIslam/PillarsOfIslam';
 import FastingTime from '../FastingTime/FastingTime';
 
 const Homepage = () => {
+    
     return (
         <div>
             <Header></Header>
