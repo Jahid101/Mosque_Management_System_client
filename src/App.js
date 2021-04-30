@@ -16,11 +16,11 @@ import Dashboardpage from './Components/Dashboard/Dashboardpage/Dashboardpage';
 import ServiceBooking from './Components/Dashboard/ServiceBooking/ServiceBooking';
 import ServiceList from './Components/Dashboard/ServiceList/ServiceList';
 import Feedback from './Components/Dashboard/Feedback/Feedback';
-import AddService from './Components/Dashboard/AddService/AddService';
 import AddAdmin from './Components/Dashboard/AddAdmin/AddAdmin';
 import OrderList from './Components/Dashboard/OrderList/OrderList';
 import ManageService from './Components/Dashboard/ManageService/ManageService';
 import SelectService from './Components/Dashboard/SelectService/SelectService';
+import AddEvent from './Components/Dashboard/AddEvent/AddEvent';
 
 
 
@@ -51,8 +51,8 @@ function App() {
           <PrivateRoute path="/feedback">
             <Feedback></Feedback>
           </PrivateRoute>
-          <PrivateRoute path="/addService">
-            <AddService></AddService>
+          <PrivateRoute path="/addEvent">
+            <AddEvent></AddEvent>
           </PrivateRoute>
           <PrivateRoute path="/addAdmin">
             <AddAdmin></AddAdmin>

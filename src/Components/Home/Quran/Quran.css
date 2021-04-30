@@ -1,0 +1,15 @@
+.quranCardInfo{
+    background-color: teal;
+    border-radius: 15px;
+    box-shadow: 1px 10px 40px 10px darkslategray;
+    opacity: 0.9;
+    height: 400px;
+}
+
+.quran{
+    background-image: url('https://studioarabiya.com/images/easyblog_articles/256/b2ap3_large_quran_peace.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 20px;
+}

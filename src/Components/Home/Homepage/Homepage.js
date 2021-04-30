@@ -8,6 +8,10 @@ import PrayerTime from '../PrayerTime/PrayerTime';
 import Testimonial from '../Testimonial/Testimonial';
 import PillarsOfIslam from '../PillarsOfIslam/PillarsOfIslam';
 import FastingTime from '../FastingTime/FastingTime';
+import Donation from '../Donation/Donation';
+import Quran from '../Quran/Quran';
+import Event from '../Event/Event';
+import Announcement from '../Announcement/Announcement';
 
 const Homepage = () => {
     
@@ -16,7 +20,11 @@ const Homepage = () => {
             <Header></Header>
             <PrayerTime></PrayerTime>
             <PillarsOfIslam></PillarsOfIslam>
+            <Donation></Donation>
             <FastingTime></FastingTime>
+            <Event></Event>
+            <Quran></Quran>
+            <Announcement></Announcement>
             <Services></Services>
             <Fixer></Fixer>
             <Product></Product>
