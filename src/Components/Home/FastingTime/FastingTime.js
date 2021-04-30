@@ -11,8 +11,8 @@ const FastingTime = () => {
                 <table class="table mt-3 text-dark">
                     <thead>
                         <tr className="text-center">
-                            <th scope="col">Sehr Time Today:</th>
-                            <th scope="col">Iftar Time Today:</th>
+                            <th scope="col"><h3>Sehr Time Today:</h3></th>
+                            <th scope="col"><h3>Iftar Time Today:</h3></th>
                         </tr>
                     </thead>
                     <tbody>

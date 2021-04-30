@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 
 const AddAdmin = () => {
@@ -35,7 +35,7 @@ const AddAdmin = () => {
             <div style={{ marginLeft: '300px' }}>
                 <h2 className="mb-4">Add a Admin</h2>
                 <br />
-                <form onSubmit ={handleAdminSubmit}>
+                <form onSubmit={handleAdminSubmit}>
                     <h5>Email</h5>
                     <input type="email" class="form-control w-50" placeholder="Email" name="email" aria-label="First name" required />
 
