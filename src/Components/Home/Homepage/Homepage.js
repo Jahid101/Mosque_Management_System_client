@@ -25,9 +25,9 @@ const Homepage = () => {
             <Event></Event>
             <Quran></Quran>
             <Announcement></Announcement>
-            <Services></Services>
+            {/* <Services></Services>
             <Fixer></Fixer>
-            <Product></Product>
+            <Product></Product> */}
             <Testimonial></Testimonial>
             <Footer></Footer>
         </div>

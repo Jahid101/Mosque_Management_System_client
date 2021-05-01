@@ -18,9 +18,11 @@ import ServiceList from './Components/Dashboard/ServiceList/ServiceList';
 import Feedback from './Components/Dashboard/Feedback/Feedback';
 import AddAdmin from './Components/Dashboard/AddAdmin/AddAdmin';
 import OrderList from './Components/Dashboard/OrderList/OrderList';
-import ManageService from './Components/Dashboard/ManageService/ManageService';
 import SelectService from './Components/Dashboard/SelectService/SelectService';
 import AddEvent from './Components/Dashboard/AddEvent/AddEvent';
+import AddAnnounce from './Components/Dashboard/AddAnnounce/AddAnnounce';
+import ManageEvent from './Components/Dashboard/ManageEvent/ManageEvent';
+import ManageAnnounce from './Components/Dashboard/ManageAnnounce/ManageAnnounce';
 
 
 
@@ -54,14 +56,20 @@ function App() {
           <PrivateRoute path="/addEvent">
             <AddEvent></AddEvent>
           </PrivateRoute>
+          <PrivateRoute path="/addAnnouncement">
+            <AddAnnounce></AddAnnounce>
+          </PrivateRoute>
           <PrivateRoute path="/addAdmin">
             <AddAdmin></AddAdmin>
           </PrivateRoute>
           <PrivateRoute path="/orderList">
             <OrderList></OrderList>
           </PrivateRoute>
-          <PrivateRoute path="/manageService">
-            <ManageService></ManageService>
+          <PrivateRoute path="/manageEvent">
+            <ManageEvent></ManageEvent>
+          </PrivateRoute>
+          <PrivateRoute path="/manageAnnouncement">
+            <ManageAnnounce></ManageAnnounce>
           </PrivateRoute>
           <PrivateRoute path="/serviceBooking/:id">
             <ServiceBooking></ServiceBooking>

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 
 const ServiceCard = (props) => {
 
-    const { name, eventDetails, imageURL, _id } = props.event;
+    const { name, imageURL, _id } = props.event;
 
     const history = useHistory();
 
@@ -16,8 +16,8 @@ const ServiceCard = (props) => {
             <div>
                 <img src={imageURL} alt="" />
                 <div>
-                    <h2 className="text-center mt-4">{name}</h2>
-                    <h5 className=" mt-4">{eventDetails}</h5>
+                    <h2 className="text-center mt-4 mb-4">{name}</h2>
+                    <button className="btn btn-info">See more</button>
                 </div>
             </div>
         </div>

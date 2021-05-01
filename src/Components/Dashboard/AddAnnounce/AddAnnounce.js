@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 
-const AddEvent = () => {
+const AddAnnounce = () => {
 
     const [imageURL, setImageURL] = useState(null);
     const [imageURLStatus, setImageURLStatus] = useState();
@@ -11,14 +11,13 @@ const AddEvent = () => {
 
     const handleServiceSubmit = e => {
         const eventInfo = {
-            name: e.target.name.value,
-            eventDetails: e.target.eventDetails.value,
-            eventBudget: e.target.eventBudget.value,
+            title: e.target.title.value,
+            announcementDetails: e.target.announcementDetails.value,
             imageURL: imageURL
         };
 
 
-        const url = `http://localhost:9999/addEvent`;
+        const url = `http://localhost:9999/addAnnouncement`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -31,7 +30,7 @@ const AddEvent = () => {
                 setDbStatus(data);
                 if (data) {
                     e.target.reset();
-                    alert('Event added successfully.')
+                    alert('Announcement added successfully.')
                 }
             })
 
@@ -61,22 +60,18 @@ const AddEvent = () => {
         <div>
             <Dashboardpage></Dashboardpage>
             <div style={{ marginLeft: '300px' }}>
-                <h2 className="mb-4">Add Event</h2>
+                <h2 className="mb-4">Add Announcement</h2>
                 <br />
                 <form onSubmit={handleServiceSubmit}>
-                    <h5>Event Name</h5>
-                    <input type="text" class="form-control w-50" placeholder="Event Name" name="name" aria-label="First name" required />
+                    <h5>Announcement Title</h5>
+                    <input type="text" class="form-control w-50" placeholder="Announcement Name" name="title" aria-label="First name" required />
                     <br />
 
-                    <h5>Event Details</h5>
-                    <textarea type="text" class="form-control w-50" placeholder="Event Details" name="eventDetails" aria-label="Last name" required />
+                    <h5>Announcement Details</h5>
+                    <textarea type="text" class="form-control w-50" placeholder="Announcement Details" name="announcementDetails" aria-label="Last name" required />
                     <br />
 
-                    <h5>Event Budget</h5>
-                    <input type="number" class="form-control w-50" placeholder="Event Budget" name="eventBudget" aria-label="Last name" required />
-                    <br />
-
-                    <h5>Event Image</h5>
+                    <h5>Announcement Image</h5>
                     <input type="file" onChange={handleImageUpload} class="mb-5" aria-label="Last name" required />
 
                     {
@@ -86,7 +81,7 @@ const AddEvent = () => {
                     <br />
                     <input className="btn btn-success mb-3" type="submit" value="Submit" />
                     {
-                        <span style={{ color: 'green' }}> {dbStatus ? "Event added successfully." : ""}</span>
+                        <span style={{ color: 'green' }}> {dbStatus ? "Announcement added successfully." : ""}</span>
                     }
                 </form>
             </div>
@@ -94,4 +89,4 @@ const AddEvent = () => {
     );
 };
 
-export default AddEvent;
+export default AddAnnounce;
