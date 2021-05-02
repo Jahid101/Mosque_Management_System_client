@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./PrayerTime.css";
 
 const PrayerTime = () => {
+
+    const [prayerTime, setPrayerTime] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/prayerTime')
+            .then(res => res.json())
+            .then(data => {
+                data.map(data => setPrayerTime(data))
+            })
+    }, [])
 
     return (
         <div class="mt-5 prayerTimeBg m-2" id="prayerTime">
@@ -21,12 +31,12 @@ const PrayerTime = () => {
                     <tbody>
 
                         <tr>
-                            <td>4.10 am<br />IQAMAH: 5:00 AM</td>
-                            <td>1.30 pm<br />IQAMAH: 5:00 AM</td>
-                            <td>4.50 pm<br />IQAMAH: 5:00 AM</td>
-                            <td>6.05 pm<br />IQAMAH: 5:00 AM</td>
-                            <td>8.30 pm<br />IQAMAH: 5:00 AM</td>
-                            <td>1.20 pm<br />IQAMAH: 5:00 AM</td>
+                            <td>{prayerTime.FAJR}</td>
+                            <td>{prayerTime.ZUHR}</td>
+                            <td>{prayerTime.ASR}</td>
+                            <td>{prayerTime.MAGRIB}</td>
+                            <td>{prayerTime.ISHA}</td>
+                            <td>{prayerTime.JUMAH}</td>
                         </tr>
 
                     </tbody>

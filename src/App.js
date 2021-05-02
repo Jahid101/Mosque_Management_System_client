@@ -23,6 +23,7 @@ import AddEvent from './Components/Dashboard/AddEvent/AddEvent';
 import AddAnnounce from './Components/Dashboard/AddAnnounce/AddAnnounce';
 import ManageEvent from './Components/Dashboard/ManageEvent/ManageEvent';
 import ManageAnnounce from './Components/Dashboard/ManageAnnounce/ManageAnnounce';
+import AddPrayerTime from './Components/Dashboard/AddPrayerTime/AddPrayerTime';
 
 
 
@@ -58,6 +59,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/addAnnouncement">
             <AddAnnounce></AddAnnounce>
+          </PrivateRoute>
+          <PrivateRoute path="/addPrayerTime">
+            <AddPrayerTime></AddPrayerTime>
           </PrivateRoute>
           <PrivateRoute path="/addAdmin">
             <AddAdmin></AddAdmin>
