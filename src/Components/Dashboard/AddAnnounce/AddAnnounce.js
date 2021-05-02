@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 
+
 const AddAnnounce = () => {
 
     const [imageURL, setImageURL] = useState(null);
@@ -59,6 +60,7 @@ const AddAnnounce = () => {
     return (
         <div>
             <Dashboardpage></Dashboardpage>
+
             <div style={{ marginLeft: '300px' }}>
                 <h2 className="mb-4">Add Announcement</h2>
                 <br />

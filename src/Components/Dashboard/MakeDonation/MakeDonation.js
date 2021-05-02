@@ -1,35 +1,32 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../App';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 import PaymentProcess from '../Payment/PaymentProcess';
 
-const ServiceBooking = () => {
+const MakeDonation = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [paymentPhone, setPaymentPhone] = useState(null);
-    const [paymentAddress, setPaymentAddress] = useState(null);
-    const [service, setService] = useState({});
+    const [paymentAmount, setPaymentAmount] = useState(null);
+    const [donationFor, setDonationFor] = useState(null);
     const [isInfoGiven, setIsInfoGiven] = useState(false);
 
-    const { id } = useParams();
+    
 
-    useEffect(() => {
-        fetch(`http://localhost:9999/serviceBooking/${id}`)
-            .then(res => res.json())
-            .then(data => setService(data))
-    }, [id])
+    const handleDonationFor = e => {
+        setDonationFor(e.target.value);
+    }
 
     const handlePaymentPhone = e => {
         setPaymentPhone(e.target.value);
     }
 
     const handlePaymentAddress = e => {
-        setPaymentAddress(e.target.value);
+        setPaymentAmount(e.target.value);
     }
 
     const handleClick = (e) => {
-        if (paymentPhone && paymentAddress) {
+        if (paymentPhone && paymentAmount) {
             setIsInfoGiven(true);
         }
         e.preventDefault();
@@ -37,28 +34,28 @@ const ServiceBooking = () => {
 
 
     const handlePayment = paymentId => {
-        const bookingDetails = {
+
+        const donationDetails = {
             name: loggedInUser.displayName,
             email: loggedInUser.email,
-            Address: paymentAddress,
+            DonationFor: donationFor,
+            Amount: paymentAmount,
             phone: paymentPhone,
-            service: service.name,
-            status: 'Pending',
             paymentId,
             orderTime: new Date()
         };
 
-        fetch('http://localhost:9999/addOrder', {
+        fetch('http://localhost:9999/makeDonation', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(bookingDetails)
+            body: JSON.stringify(donationDetails)
         })
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    alert('Donation successful')
+                    alert('Your Donation successfully received')
                 }
             })
     }
@@ -68,22 +65,22 @@ const ServiceBooking = () => {
             <Dashboardpage></Dashboardpage>
 
             <div style={{ marginLeft: '300px' }}>
-                <h2 className="mb-4">Service Booking</h2>
+                <h2 className="mb-4">Make Donation</h2>
                 <br />
                 <form>
-                    <h5>Name</h5>
-                    <input type="text" class="form-control w-50" name="name" value={loggedInUser.displayName} aria-label="First name" required />
+                    <h5>Your Name</h5>
+                    <input type="text" class="form-control w-50" name="name" defaultValue={loggedInUser.displayName} aria-label="First name" required />
                     <br />
 
                     <h5>Email</h5>
                     <input type="email" class="form-control w-50" placeholder="Your Email" name="email" value={loggedInUser.email} aria-label="Last name" required />
                     <br />
 
-                    <h5>Service Name</h5>
-                    <input type="text" class="form-control w-50" value={service.name} name="serviceName" aria-label="Last name" required />
+                    <h5>Donate For</h5>
+                    <input type="text" onBlur={handleDonationFor} class="form-control w-50" name="donationFor" aria-label="Last name" required />
                     <br />
 
-                    <h5>Your Address *</h5>
+                    <h5>Amount *</h5>
                     <input type="text" onBlur={handlePaymentAddress} class="form-control w-50" placeholder="Address" name="description" aria-label="Last name" required />
                     <br />
 
@@ -97,11 +94,10 @@ const ServiceBooking = () => {
                     <h3 className="mt-4 mb-4">Payment</h3>
                     <PaymentProcess handlePayment={handlePayment}></PaymentProcess>
                 </div>
-
                 }
             </div>
         </div>
     );
 };
 
-export default ServiceBooking;
+export default MakeDonation;

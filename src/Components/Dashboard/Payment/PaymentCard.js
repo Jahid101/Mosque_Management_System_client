@@ -42,7 +42,7 @@ const PaymentCard = ({ handlePayment }) => {
                 <br />
 
                 <button className="btn btn-success mb-3 mt-3 d-flex" type="submit" disabled={!stripe}>
-                    Pay
+                    Donate
                 </button>
             </form>
 

@@ -24,6 +24,8 @@ import AddAnnounce from './Components/Dashboard/AddAnnounce/AddAnnounce';
 import ManageEvent from './Components/Dashboard/ManageEvent/ManageEvent';
 import ManageAnnounce from './Components/Dashboard/ManageAnnounce/ManageAnnounce';
 import AddPrayerTime from './Components/Dashboard/AddPrayerTime/AddPrayerTime';
+import ShowEvent from './Components/ShowEvent/ShowEvent';
+import MakeDonation from './Components/Dashboard/MakeDonation/MakeDonation';
 
 
 
@@ -75,11 +77,17 @@ function App() {
           <PrivateRoute path="/manageAnnouncement">
             <ManageAnnounce></ManageAnnounce>
           </PrivateRoute>
+          <Route path="/showEvent/:id">
+            <ShowEvent></ShowEvent>
+          </Route>
+          <PrivateRoute path="/makeDonation">
+            <MakeDonation></MakeDonation>
+          </PrivateRoute>
           <PrivateRoute path="/serviceBooking/:id">
             <ServiceBooking></ServiceBooking>
           </PrivateRoute>
           <PrivateRoute path="/serviceBooking">
-            <SelectService></SelectService>
+          <ServiceBooking></ServiceBooking>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus, faCommentDots, faShoppingCart, faList, faPlus, faTasks, faListAlt, faUserAstronaut, faUserAlt, faUserTag, faUserFriends, faMoneyCheck, faFunnelDollar } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus, faCommentDots, faShoppingCart, faList, faPlus, faTasks, faListAlt, faUserAstronaut, faUserAlt, faUserTag, faUserFriends, faMoneyCheck, faFunnelDollar, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../../App';
 
 
@@ -24,35 +24,33 @@ const Sidebar = () => {
 
 
     return (
-        <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-4 px-4 m-2" style={{ height: "100vh" }}>
+        <div className="sidebar col-md-3 abcd col-lg-2 pt-3 pb-3 rounded d-md-block m-1 collapse" style={{ height: "100vh" }}>
             <ul className="list-unstyled">
 
-                <div>
-                    <li>
-                        <Link to="/serviceBooking" className="text-white">
-                            <FontAwesomeIcon icon={faShoppingCart} /> <span>
-                                Service Booking
+                <li>
+                    <Link to="/makeDonation" className="text-white">
+                        <FontAwesomeIcon icon={faMoneyBill} /> <span>
+                            Make Donation
                             </span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/serviceList" className="text-white">
-                            <FontAwesomeIcon icon={faList} /> <span>
-                                Service list
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/serviceList" className="text-white">
+                        <FontAwesomeIcon icon={faList} /> <span>
+                            Service list
                             </span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/feedback" className="text-white">
-                            <FontAwesomeIcon icon={faCommentDots} /> <span>Feedback</span>
-                        </Link>
-                    </li>
-                </div>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/feedback" className="text-white">
+                        <FontAwesomeIcon icon={faCommentDots} /> <span>Feedback</span>
+                    </Link>
+                </li>
 
                 {checkAdmin && <div>
                     <li>
                         <Link to="/orderList" className="text-white">
-                            <FontAwesomeIcon icon={faListAlt} /> <span>Order list</span>
+                            <FontAwesomeIcon icon={faListAlt} /> <span>Donation list</span>
                         </Link>
                     </li>
                     <li>

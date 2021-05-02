@@ -8,7 +8,7 @@ const ServiceCard = (props) => {
     const history = useHistory();
 
     const handleCardClick = () => {
-        history.push(`/eventShow/${_id}`);
+        history.push(`/showEvent/${_id}`);
     }
 
     return (

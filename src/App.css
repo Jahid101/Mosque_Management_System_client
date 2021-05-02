@@ -19,14 +19,14 @@
 body{
   overflow-x: hidden;
 }
-/* .cardDesign{
+.cardDesign{
   transition: 0.5s ;
 }
 .cardDesign:hover{
-  transform: scale(0.9);
+  transform: scale(1.1);
 }
 
-img {
+/* img {
   transition: 0.5s ;
 }
 img:hover {
