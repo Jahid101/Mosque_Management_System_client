@@ -18,7 +18,6 @@ import ServiceList from './Components/Dashboard/ServiceList/ServiceList';
 import Feedback from './Components/Dashboard/Feedback/Feedback';
 import AddAdmin from './Components/Dashboard/AddAdmin/AddAdmin';
 import OrderList from './Components/Dashboard/OrderList/OrderList';
-import SelectService from './Components/Dashboard/SelectService/SelectService';
 import AddEvent from './Components/Dashboard/AddEvent/AddEvent';
 import AddAnnounce from './Components/Dashboard/AddAnnounce/AddAnnounce';
 import ManageEvent from './Components/Dashboard/ManageEvent/ManageEvent';
@@ -26,6 +25,9 @@ import ManageAnnounce from './Components/Dashboard/ManageAnnounce/ManageAnnounce
 import AddPrayerTime from './Components/Dashboard/AddPrayerTime/AddPrayerTime';
 import ShowEvent from './Components/ShowEvent/ShowEvent';
 import MakeDonation from './Components/Dashboard/MakeDonation/MakeDonation';
+import DonationList from './Components/Dashboard/DonationList/DonationList';
+import DonationYouMade from './Components/Dashboard/DonationYouMade/DonationYouMade';
+import Fund from './Components/Dashboard/Fund/Fund';
 
 
 
@@ -68,6 +70,9 @@ function App() {
           <PrivateRoute path="/addAdmin">
             <AddAdmin></AddAdmin>
           </PrivateRoute>
+          <PrivateRoute path="/donationList">
+            <DonationList></DonationList>
+          </PrivateRoute>
           <PrivateRoute path="/orderList">
             <OrderList></OrderList>
           </PrivateRoute>
@@ -77,11 +82,17 @@ function App() {
           <PrivateRoute path="/manageAnnouncement">
             <ManageAnnounce></ManageAnnounce>
           </PrivateRoute>
+          <PrivateRoute path="/fund">
+            <Fund></Fund>
+          </PrivateRoute>
           <Route path="/showEvent/:id">
             <ShowEvent></ShowEvent>
           </Route>
           <PrivateRoute path="/makeDonation">
             <MakeDonation></MakeDonation>
+          </PrivateRoute>
+          <PrivateRoute path="/donationYouMade">
+            <DonationYouMade></DonationYouMade>
           </PrivateRoute>
           <PrivateRoute path="/serviceBooking/:id">
             <ServiceBooking></ServiceBooking>

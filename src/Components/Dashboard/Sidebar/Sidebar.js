@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus, faCommentDots, faShoppingCart, faList, faPlus, faTasks, faListAlt, faUserAstronaut, faUserAlt, faUserTag, faUserFriends, faMoneyCheck, faFunnelDollar, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus, faCommentDots, faShoppingCart, faList, faPlus, faTasks, faListAlt, faUserAstronaut, faUserAlt, faUserTag, faUserFriends, faMoneyCheck, faFunnelDollar, faMoneyBill, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../../App';
 
 
@@ -35,9 +35,9 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/serviceList" className="text-white">
+                    <Link to="/donationYouMade" className="text-white">
                         <FontAwesomeIcon icon={faList} /> <span>
-                            Service list
+                            Donations you made
                             </span>
                     </Link>
                 </li>
@@ -49,7 +49,7 @@ const Sidebar = () => {
 
                 {checkAdmin && <div>
                     <li>
-                        <Link to="/orderList" className="text-white">
+                        <Link to="/donationList" className="text-white">
                             <FontAwesomeIcon icon={faListAlt} /> <span>Donation list</span>
                         </Link>
                     </li>
@@ -60,7 +60,7 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Link to="/addPrayerTime" className="text-white" >
-                            <FontAwesomeIcon icon={faPlus} /> <span>Add Prayer Time</span>
+                            <FontAwesomeIcon icon={faUpload} /> <span>Update Prayer Time</span>
                         </Link>
                     </li>
                     <li>

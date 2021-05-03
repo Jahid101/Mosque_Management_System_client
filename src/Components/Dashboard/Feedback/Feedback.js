@@ -56,7 +56,7 @@ const Feedback = () => {
                     <br />
 
                     <h5>Feedback</h5>
-                    <input type="text" class="form-control w-50" placeholder="Description" name="description" aria-label="Last name" required />
+                    <textarea type="text" class="form-control w-50" placeholder="Description" name="description" aria-label="Last name" required />
 
                     <br />
                     <input className="btn btn-info mb-3" type="submit" value="Submit" />
