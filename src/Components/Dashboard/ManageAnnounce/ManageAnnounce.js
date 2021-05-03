@@ -19,18 +19,22 @@ const ManageAnnounce = () => {
     }
 
 
+    const handleUpdate = (id) => {
+
+    }
+    
     const handleDelete = (id) => {
 
         fetch(`http://localhost:9999/deleteAnnouncement/${id}`, {
-            method : "DELETE"
+            method: "DELETE"
         })
-        .then(res => res.json())
-        .then(data=>{
-            if(data){
-                alert('Announcement Deleted')
-                deleted();
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('Announcement Deleted')
+                    deleted();
+                }
+            })
     }
 
 
@@ -39,17 +43,35 @@ const ManageAnnounce = () => {
             <Dashboardpage></Dashboardpage>
 
             <div className="mt-3" style={{ marginLeft: '300px' }}>
-                <h3 className="ml-5 mb-5">Total Product : {announcement.length}</h3>
-                {
-                    announcement.map(announcement =>
-                        <div className="d-flex rounded shadow-lg mb-3 w-75">
-                            <h5 className="m-5">{announcement.title}</h5>
-                            <h5 className="m-3">{announcement.announcementDetails}</h5>
-                            <img  className="mb-3 mt-3" style={{ width: '100px', height:'100px' }} src={announcement.imageURL} alt="" />
-                            <button onClick={() => handleDelete(announcement._id)} className="btn btn-danger m-5">Delete</button>
-                        </div>
-                    )
-                }
+                <h3 className="ml-5 mb-5">Announcements: {announcement.length}</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Announcement Title</th>
+                            <th scope="col">Announcement Details</th>
+                            <th scope="col">Announcement Image</th>
+                            <th scope="col" className="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    {
+                        announcement.map(announcement =>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">{announcement.title}</th>
+                                    <td className="w-25">{announcement.announcementDetails}</td>
+                                    <td>
+                                        <img className="" style={{ width: '75px', height: '75px' }} src={announcement.imageURL} alt="" />
+                                    </td>
+                                    <td>
+                                        <button onClick={() => handleUpdate(announcement._id)} className="btn btn-success ms-5 mt-3">Update</button>
+
+                                        <button onClick={() => handleDelete(announcement._id)} className="btn btn-danger ms-5 mt-3">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        )
+                    }
+                </table>
             </div>
         </div>
     );

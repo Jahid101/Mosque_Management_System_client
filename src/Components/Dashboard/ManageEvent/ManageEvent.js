@@ -18,6 +18,9 @@ const ManageEvent = () => {
             .then(data => setEvent(data))
     }
 
+    const handleUpdate = () => {
+
+    }
 
     const handleDelete = (id) => {
 
@@ -33,23 +36,40 @@ const ManageEvent = () => {
         })
     }
 
-
     return (
         <div>
             <Dashboardpage></Dashboardpage>
 
             <div className="mt-3" style={{ marginLeft: '300px' }}>
-                <h3 className="ml-5 mb-5">Total Product : {event.length}</h3>
-                {
-                    event.map(event =>
-                        <div className="d-flex rounded shadow-lg mb-3 w-75">
-                            <h5 className="m-5">{event.name}</h5>
-                            <h5 className="m-3">{event.eventDetails}</h5>
-                            <img  className="mb-3 mt-3" style={{ width: '100px', height:'100px' }} src={event.imageURL} alt="" />
-                            <button onClick={() => handleDelete(event._id)} className="btn btn-danger m-5">Delete</button>
-                        </div>
-                    )
-                }
+                <h3 className="ml-5 mb-5">Events: {event.length}</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Event Title</th>
+                            <th scope="col">Event Details</th>
+                            <th scope="col">Event Image</th>
+                            <th scope="col" style={{paddingLeft: '135px'}}>Action</th>
+                        </tr>
+                    </thead>
+                    {
+                        event.map(event =>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">{event.name}</th>
+                                    <td className="w-25">{event.eventDetails}</td>
+                                    <td>
+                                        <img className="" style={{ width: '75px', height: '75px' }} src={event.imageURL} alt="" />
+                                    </td>
+                                    <td>
+                                        <button onClick={() => handleUpdate(event._id)} className="btn btn-success ms-5 mt-3">Update</button>
+
+                                        <button onClick={() => handleDelete(event._id)} className="btn btn-danger ms-5 mt-3">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        )
+                    }
+                </table>
             </div>
         </div>
     );
