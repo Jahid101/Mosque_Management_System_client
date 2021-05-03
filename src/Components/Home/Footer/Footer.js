@@ -1,42 +1,45 @@
 import React from 'react';
 import './Footer.css';
-import FooterCol from '../FooterCol/FooterCol';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram, faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
+import {  faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
+import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-    const ourAddress = [
-        {name: "Akdom Tola, Bakdompur - 1200"},
-        {name: "Akdom-Bakdom"},
-       
-    ]
-    const services = [
-        {name: "Online Courses" },
-        {name: "Audio listening" },
-        {name: "Latest Blogs"}
-    ]
+    
     return (
-        <footer className="footer-area clear-both">
-            <div className="container pt-5">
-                <div className="row py-5">
-                    <FooterCol key={2} menuTitle="Services" menuItems={services}/>
-                    <FooterCol key={4} menuTitle="Our Address" menuItems={ourAddress}> 
-                        <ul className="social-media list-inline">
-                            <li className="list-inline-item"><a href="//facebook.com"><FontAwesomeIcon className="icon active-icon" icon={faFacebookF} /></a></li>
-                            <li className="list-inline-item"><a href="//google.com"><FontAwesomeIcon className="icon" icon={faGooglePlusG} /></a></li>
-                            <li className="list-inline-item"><a href="//instagram.com"><FontAwesomeIcon className="icon" icon={faInstagram} /></a></li>
-                        </ul>
-                        <div className="mt-5">
-                            <h6>Call now</h6>
-                            <button className="btn btn-info">+1111111111</button>
-                        </div>
-                    </FooterCol>
-                </div>
-                <div className="copyRight text-center">
-                    <p>Copyright {(new Date()).getFullYear()} All Rights Reserved</p>
+        <>
+            <div style={{backgroundColor: '#00022e'}} className="text-center p-5 text-light mt-5 mb-4 m-2 rounded">
+                <h1>Address</h1>
+
+                <strong>
+                    <div className="mt-5 mb-5">
+                        <p>Akdom Tola, BakdomPur</p>
+                        <p>Dhaka 1206, Bangladesh</p>
+                        <p>phone: <button className="btn btn-info ms-3">+88012345678910</button></p>
+                    </div>
+                </strong>
+                <div>
+                    <>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                            <span className="btn">
+                                <button className="btn btn-primary"><FontAwesomeIcon icon={faFacebookSquare} /><span className="ms-2">Facebook</span></button>
+                            </span>
+                        </a>
+
+                        <Link to="/email">
+                            <span className="btn">
+                                <button className="btn btn-success"><FontAwesomeIcon icon={faMailBulk} /><span className="ms-2">Email us</span></button>
+                            </span>
+                        </Link>
+                    </>
                 </div>
             </div>
-        </footer>
+
+            <footer className="text-center mb-3">
+                <strong>© Md Jahid Hasan Anik {(new Date()).getFullYear()}</strong>
+            </footer>
+        </>
         
     );
 };

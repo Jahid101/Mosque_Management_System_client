@@ -42,6 +42,9 @@ const Navbar = () => {
                         <li class="nav-item mr-3">
                             <Link class="nav-link active text-light" aria-current="page" to="/dashboard">Dashboard</Link>
                         </li>
+                        <li class="nav-item mr-3">
+                            <Link class="nav-link active text-light" aria-current="page" to="/contact">Contact</Link>
+                        </li>
                         <li class="nav-item">
                             <Link class="nav-link active text-light" to="/register">
                                 <button class="btn btn-info mr-3">

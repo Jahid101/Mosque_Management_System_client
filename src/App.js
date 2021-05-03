@@ -28,6 +28,9 @@ import MakeDonation from './Components/Dashboard/MakeDonation/MakeDonation';
 import DonationList from './Components/Dashboard/DonationList/DonationList';
 import DonationYouMade from './Components/Dashboard/DonationYouMade/DonationYouMade';
 import Fund from './Components/Dashboard/Fund/Fund';
+import ShowAnnouncement from './Components/ShowAnnouncement/ShowAnnouncement';
+import Email from './Components/Email/Email';
+import Contact from './Components/Contact/Contact';
 
 
 
@@ -48,6 +51,12 @@ function App() {
           </Route>
           <Route path="/home">
             <Homepage></Homepage>
+          </Route>
+          <Route path="/contact">
+            <Contact></Contact>
+          </Route>
+          <Route path="/email">
+            <Email></Email>
           </Route>
           <PrivateRoute path="/dashboard">
             <Dashboardpage></Dashboardpage>
@@ -87,6 +96,9 @@ function App() {
           </PrivateRoute>
           <Route path="/showEvent/:id">
             <ShowEvent></ShowEvent>
+          </Route>
+          <Route path="/showAnnouncement/:id">
+            <ShowAnnouncement></ShowAnnouncement>
           </Route>
           <PrivateRoute path="/makeDonation">
             <MakeDonation></MakeDonation>

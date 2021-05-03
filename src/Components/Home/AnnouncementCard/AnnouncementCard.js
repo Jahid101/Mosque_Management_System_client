@@ -8,7 +8,7 @@ const AnnouncementCard = (props) => {
     const history = useHistory();
 
     const handleCardClick = () => {
-        history.push(`/announcementShow/${_id}`);
+        history.push(`/showAnnouncement/${_id}`);
     }
 
     return (
