@@ -12,7 +12,6 @@ import { createContext, useState } from 'react';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Homepage from './Components/Home/Homepage/Homepage';
 import Navbar from './Components/Home/Navbar/Navbar';
-import Dashboardpage from './Components/Dashboard/Dashboardpage/Dashboardpage';
 import ServiceBooking from './Components/Dashboard/ServiceBooking/ServiceBooking';
 import ServiceList from './Components/Dashboard/ServiceList/ServiceList';
 import Feedback from './Components/Dashboard/Feedback/Feedback';
@@ -31,6 +30,7 @@ import Fund from './Components/Dashboard/Fund/Fund';
 import ShowAnnouncement from './Components/ShowAnnouncement/ShowAnnouncement';
 import Email from './Components/Email/Email';
 import Contact from './Components/Contact/Contact';
+import Welcome from './Components/Dashboard/Welcome/Welcome';
 
 
 
@@ -59,7 +59,7 @@ function App() {
             <Email></Email>
           </Route>
           <PrivateRoute path="/dashboard">
-            <Dashboardpage></Dashboardpage>
+            <Welcome></Welcome>
           </PrivateRoute>
           <PrivateRoute path="/serviceList">
             <ServiceList></ServiceList>

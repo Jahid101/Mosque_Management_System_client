@@ -43,7 +43,7 @@ const Feedback = () => {
         <div>
             <Dashboardpage></Dashboardpage>
 
-            <div style={{ marginLeft: '300px' }}>
+            <div style={{ marginLeft: '250px' }} className="bg-info p-5 w-75">
                 <h2 className="mb-4">Your Feedback</h2>
                 <br />
                 <form onSubmit={handleFeedbackSubmit}>
@@ -59,7 +59,7 @@ const Feedback = () => {
                     <textarea type="text" class="form-control w-50" placeholder="Description" name="description" aria-label="Last name" required />
 
                     <br />
-                    <input className="btn btn-info mb-3" type="submit" value="Submit" />
+                    <input className="btn btn-primary mb-3" type="submit" value="Submit" />
                 </form>
             </div>
         </div>
