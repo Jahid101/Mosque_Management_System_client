@@ -12,7 +12,7 @@ const AnnouncementCard = (props) => {
     }
 
     return (
-        <div onClick={handleCardClick} class="col-md-3 row container productCardInfo cardDesign mt-5 p-3 btn">
+        <div onClick={handleCardClick} class="col-md-3 row container announcementCardInfo cardDesign mt-5 p-3 btn">
             <div>
                 <img src={imageURL} alt="" />
                 <div>

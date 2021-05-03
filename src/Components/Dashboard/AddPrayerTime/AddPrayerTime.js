@@ -6,8 +6,6 @@ const AddPrayerTime = () => {
 
     const [prayerTime, setPrayerTime] = useState([]);
 
-    console.log(prayerTime._id)
-
     const [FAJR, setFAJR] = useState('');
     const [ZUHR, setZUHR] = useState('');
     const [ASR, setASR] = useState('');
@@ -61,6 +59,13 @@ const AddPrayerTime = () => {
 
     const handlePrayerTime = (id) => {
 
+        // setFAJR(e.target.FAJR.value)
+        // setZUHR(e.target.ZUHR.value)
+        // setASR(e.target.ASR.value)
+        // setMAGRIB(e.target.MAGRIB.value)
+        // setISHA(e.target.ISHA.value)
+        // setJUMAH(e.target.JUMAH.value)
+
         const updatedPrayerTime = { id, FAJR, ZUHR, ASR, MAGRIB, ISHA, JUMAH };
 
         console.log(updatedPrayerTime)
@@ -80,6 +85,7 @@ const AddPrayerTime = () => {
                     newPrayerTime();
                 }
             })
+            // e.preventDefault();
     }
 
 
@@ -116,7 +122,7 @@ const AddPrayerTime = () => {
                     <br />
 
                     <br />
-                    <button onClick={() => handlePrayerTime(prayerTime._id)} className="btn btn-success mb-3">submit</button>
+                    <button onClick={() => handlePrayerTime(prayerTime._id)}  className="btn btn-success mb-3">Update</button>
                     {/* </form> */}
                 </div>
             </div>

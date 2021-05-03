@@ -1,9 +1,6 @@
 import React from 'react';
-import Fixer from '../Fixer/Fixer';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import Product from '../Product/Product';
-import Services from '../Services/Services'; 
 import PrayerTime from '../PrayerTime/PrayerTime'; 
 import Testimonial from '../Testimonial/Testimonial';
 import PillarsOfIslam from '../PillarsOfIslam/PillarsOfIslam';
@@ -20,14 +17,11 @@ const Homepage = () => {
             <Header></Header>
             <PrayerTime></PrayerTime>
             <PillarsOfIslam></PillarsOfIslam>
-            <Donation></Donation>
-            <FastingTime></FastingTime>
             <Event></Event>
-            <Quran></Quran>
+            <Donation></Donation>
             <Announcement></Announcement>
-            {/* <Services></Services>
-            <Fixer></Fixer>
-            <Product></Product> */}
+            <FastingTime></FastingTime>
+            <Quran></Quran>
             <Testimonial></Testimonial>
             <Footer></Footer>
         </div>
