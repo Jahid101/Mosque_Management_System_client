@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import { Link } from 'react-router-dom';
 
 const ManageEvent = () => {
 
-    const [ event, setEvent] = useState([]);
+    const [event, setEvent] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:9999/event')
@@ -25,15 +26,15 @@ const ManageEvent = () => {
     const handleDelete = (id) => {
 
         fetch(`http://localhost:9999/deleteEvent/${id}`, {
-            method : "DELETE"
+            method: "DELETE"
         })
-        .then(res => res.json())
-        .then(data=>{
-            if(data){
-                alert('Event Deleted')
-                deleted();
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('Event Deleted')
+                    deleted();
+                }
+            })
     }
 
     return (
@@ -48,7 +49,7 @@ const ManageEvent = () => {
                             <th scope="col">Event Title</th>
                             <th scope="col">Event Details</th>
                             <th scope="col">Event Image</th>
-                            <th scope="col" style={{paddingLeft: '135px'}}>Action</th>
+                            <th scope="col" style={{ paddingLeft: '135px' }}>Action</th>
                         </tr>
                     </thead>
                     {
@@ -61,8 +62,9 @@ const ManageEvent = () => {
                                         <img className="" style={{ width: '75px', height: '75px' }} src={event.imageURL} alt="" />
                                     </td>
                                     <td>
-                                        <button onClick={() => handleUpdate(event._id)} className="btn btn-success ms-5 mt-3">Update</button>
-
+                                        <Link to="/updateEvent">
+                                            <button onClick={() => handleUpdate(event._id)} className="btn btn-success ms-5 mt-3">Update</button>
+                                        </Link>
                                         <button onClick={() => handleDelete(event._id)} className="btn btn-danger ms-5 mt-3">Delete</button>
                                     </td>
                                 </tr>

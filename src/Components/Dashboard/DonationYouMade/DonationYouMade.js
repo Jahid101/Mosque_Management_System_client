@@ -28,8 +28,8 @@ const DonationYouMade = () => {
                             <th scope="col">Email</th>
                             <th scope="col">Amount</th>
                             <th scope="col">Donation For</th>
-                            <th scope="col">Donation Time</th>
-                            <th scope="col">Donation Date</th>
+                            <th scope="col">Donation Time and & Date</th>
+                            <th scope="col">Status</th>
                         </tr>
                     </thead>
                     {
@@ -40,8 +40,17 @@ const DonationYouMade = () => {
                                     <td>{donation.email}</td>
                                     <td><strong>{donation.Amount} Tk</strong></td>
                                     <td>{donation.DonationFor || 'General'}</td>
-                                    <td>{new Date(donation.donationTime).toLocaleTimeString()}</td>
-                                    <td>{new Date(donation.donationTime).toLocaleDateString()}</td>
+                                    <td>
+                                        {new Date(donation.donationTime).toLocaleTimeString()}
+                                        <br />
+
+                                        {new Date(donation.donationTime).toLocaleDateString()}
+                                    </td>
+                                    <td>
+                                        <button className="btn btn-primary">
+                                        {donation.status || 'Pending'}
+                                        </button>
+                                    </td>
                                 </tr>
                             </tbody>
                         )

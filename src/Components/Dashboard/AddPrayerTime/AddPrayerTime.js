@@ -15,15 +15,16 @@ const AddPrayerTime = () => {
 
     useEffect(() => {
         fetch('http://localhost:9999/prayerTime')
-            .then(res => res.json())
-            .then(data => {
-                data.map(data => setPrayerTime(data))
-            })
+        .then(res => res.json())
+        .then(data => {
+            data.map(data => setPrayerTime(data))
+        })
     }, [])
 
     
     const handleFajrBlur = (e) => {
         setFAJR(e.target.value)
+       
     }
 
     const handleZuhrBlur = (e) => {

@@ -26,6 +26,7 @@ import ShowEvent from './Components/ShowEvent/ShowEvent';
 import MakeDonation from './Components/Dashboard/MakeDonation/MakeDonation';
 import DonationList from './Components/Dashboard/DonationList/DonationList';
 import DonationYouMade from './Components/Dashboard/DonationYouMade/DonationYouMade';
+import UpdateEvent from './Components/Dashboard/UpdateEvent/UpdateEvent';
 import Fund from './Components/Dashboard/Fund/Fund';
 import ShowAnnouncement from './Components/ShowAnnouncement/ShowAnnouncement';
 import Email from './Components/Email/Email';
@@ -102,6 +103,9 @@ function App() {
           </Route>
           <PrivateRoute path="/makeDonation">
             <MakeDonation></MakeDonation>
+          </PrivateRoute>
+          <PrivateRoute path="/updateEvent">
+            <UpdateEvent></UpdateEvent>
           </PrivateRoute>
           <PrivateRoute path="/donationYouMade">
             <DonationYouMade></DonationYouMade>

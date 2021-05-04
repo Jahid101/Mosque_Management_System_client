@@ -42,6 +42,7 @@ const MakeDonation = () => {
             Amount: paymentAmount,
             phone: paymentPhone,
             paymentId,
+            status : 'Pending',
             donationTime: new Date()
         };
 
