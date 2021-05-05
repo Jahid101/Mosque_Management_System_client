@@ -50,6 +50,9 @@ const AddAnnounce = () => {
                 console.log(response.data.data.display_url);
                 setImageURL(response.data.data.display_url);
                 setImageURLStatus(true);
+                if(response){
+                    alert('Image Updated Successfully')
+                }
             })
             .catch(function (error) {
                 console.log(error);

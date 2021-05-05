@@ -32,6 +32,8 @@ import ShowAnnouncement from './Components/ShowAnnouncement/ShowAnnouncement';
 import Email from './Components/Email/Email';
 import Contact from './Components/Contact/Contact';
 import Welcome from './Components/Dashboard/Welcome/Welcome';
+import UpdateAnnounce from './Components/Dashboard/UpdateAnnounce/UpdateAnnounce';
+import OtherAddition from './Components/Dashboard/OtherAddition/OtherAddition';
 
 
 
@@ -83,6 +85,9 @@ function App() {
           <PrivateRoute path="/donationList">
             <DonationList></DonationList>
           </PrivateRoute>
+          <PrivateRoute path="/otherAddition">
+            <OtherAddition></OtherAddition>
+          </PrivateRoute>
           <PrivateRoute path="/orderList">
             <OrderList></OrderList>
           </PrivateRoute>
@@ -106,6 +111,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/updateEvent">
             <UpdateEvent></UpdateEvent>
+          </PrivateRoute>
+          <PrivateRoute path="/updateAnnounce">
+            <UpdateAnnounce></UpdateAnnounce>
           </PrivateRoute>
           <PrivateRoute path="/donationYouMade">
             <DonationYouMade></DonationYouMade>

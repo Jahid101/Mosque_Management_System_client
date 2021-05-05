@@ -99,7 +99,7 @@ const AddPrayerTime = () => {
                     <br />
                     {/* <form> */}
                     <h5>FAJR</h5>
-                    <input type="text" onBlur={handleFajrBlur} class="form-control w-50" name="FAJR" aria-label="First name" defaultValue={prayerTime.FAJR} required />
+                    <input type="text" onBlur={handleFajrBlur} class="form-control w-50" name="FAJR" aria-label="First name" autoFocus defaultValue={prayerTime.FAJR} required />
                     <br />
 
                     <h5>ZUHR</h5>

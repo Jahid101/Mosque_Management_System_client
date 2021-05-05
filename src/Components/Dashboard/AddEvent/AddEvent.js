@@ -50,6 +50,9 @@ const AddEvent = () => {
                 console.log(response.data.data.display_url);
                 setImageURL(response.data.data.display_url);
                 setImageURLStatus(true);
+                if(response){
+                    alert('Image Updated Successfully')
+                }
             })
             .catch(function (error) {
                 console.log(error);
@@ -60,6 +63,7 @@ const AddEvent = () => {
     return (
         <div>
             <Dashboardpage></Dashboardpage>
+
             <div style={{ marginLeft: '300px' }}>
                 <h2 className="mb-4">Add Event</h2>
                 <br />

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus, faCommentDots, faShoppingCart, faList, faPlus, faTasks, faListAlt, faUserAstronaut, faUserAlt, faUserTag, faUserFriends, faMoneyCheck, faFunnelDollar, faMoneyBill, faUpload } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus, faCommentDots, faList, faPlus, faTasks, faListAlt, faFunnelDollar, faMoneyBill, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../../App';
 
 
@@ -51,6 +51,11 @@ const Sidebar = () => {
                     <li>
                         <Link to="/donationList" className="text-white">
                             <FontAwesomeIcon icon={faListAlt} /> <span>Donation list</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/otherAddition" className="text-white">
+                            <FontAwesomeIcon icon={faPlus} /> <span>Other Addition</span>
                         </Link>
                     </li>
                     <li>

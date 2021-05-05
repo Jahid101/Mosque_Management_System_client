@@ -46,7 +46,7 @@ const ManageEvent = () => {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Event Title</th>
+                            <th scope="col">Event Name</th>
                             <th scope="col">Event Details</th>
                             <th scope="col">Event Image</th>
                             <th scope="col" style={{ paddingLeft: '135px' }}>Action</th>

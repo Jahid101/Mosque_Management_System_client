@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 
 const ManageAnnounce = () => {
@@ -22,7 +23,7 @@ const ManageAnnounce = () => {
     const handleUpdate = (id) => {
 
     }
-    
+
     const handleDelete = (id) => {
 
         fetch(`http://localhost:9999/deleteAnnouncement/${id}`, {
@@ -63,8 +64,9 @@ const ManageAnnounce = () => {
                                         <img className="" style={{ width: '75px', height: '75px' }} src={announcement.imageURL} alt="" />
                                     </td>
                                     <td>
-                                        <button onClick={() => handleUpdate(announcement._id)} className="btn btn-success ms-5 mt-3">Update</button>
-
+                                        <Link to="/updateAnnounce">
+                                            <button onClick={() => handleUpdate(announcement._id)} className="btn btn-success ms-5 mt-3">Update</button>
+                                        </Link>
                                         <button onClick={() => handleDelete(announcement._id)} className="btn btn-danger ms-5 mt-3">Delete</button>
                                     </td>
                                 </tr>

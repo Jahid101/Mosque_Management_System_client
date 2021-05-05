@@ -9,6 +9,10 @@ const UpdateEvent = () => {
     const [dbStatus, setDbStatus] = useState(false);
     const [event, setEvent] = useState([]);
 
+    const [name, setName] = useState('');
+    const [eventDetails, setEventDetails] = useState('');
+    const [eventBudget, setEventBudget]  = useState('');
+    const [eventImage, setEventImage] = useState('');
 
     useEffect(() => {
         fetch('http://localhost:9999/event')
@@ -18,33 +22,49 @@ const UpdateEvent = () => {
             })
     }, [])
 
-    // const handleServiceSubmit = (id, e) => {
-    //     const name = e.target.name.value;
-    //     const eventDetails = e.target.eventDetails.value;
-    //     const eventBudget = e.target.eventBudget.value;
-    //     const image = imageURL;
 
-    //     const updatedEvent = { id, name, eventDetails, eventBudget, image };
+    const handleEventName = e => {
+        setName(e.target.value);
+    }
 
-    //     console.log(updatedEvent)
+    const handleEventDetails = e => {
+        setEventDetails(e.target.value);
+    }
 
-    //     const url = `http://localhost:9999/updateEvent/${id}`;
-    //     fetch(url, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(updatedEvent)
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data) {
-    //                 setDbStatus(data);
-    //                 alert('Event Updated');
-    //             }
-    //         })
-    //     e.preventDefault();
-    // }
+    const handleEventBudget = e => {
+        setEventBudget(e.target.value);
+    }
+
+    const handleEventImage = () => {
+        setEventImage(imageURL || event.imageURL);
+    }
+
+    console.log(name, eventDetails, eventBudget, eventImage);
+
+
+    const handleEventUpdate = (id) => {
+
+        const updatedEvent = { id, name, eventDetails, eventBudget, eventImage };
+
+        console.log(updatedEvent)
+
+        const url = `http://localhost:9999/updateEvent/${id}`;
+        fetch(url, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedEvent)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    setDbStatus(data);
+                    alert('Event Updated');
+                }
+            })
+        // e.preventDefault();
+    }
 
 
     const handleImageUpload = (event) => {
@@ -58,6 +78,9 @@ const UpdateEvent = () => {
                 console.log(response.data.data.display_url);
                 setImageURL(response.data.data.display_url);
                 setImageURLStatus(true);
+                if(response){
+                    alert('Image Updated Successfully')
+                }
             })
             .catch(function (error) {
                 console.log(error);
@@ -68,34 +91,35 @@ const UpdateEvent = () => {
     return (
         <div>
             <Dashboardpage></Dashboardpage>
+
             <div style={{ marginLeft: '300px' }}>
-                <h2 className="mb-4">Add Event</h2>
+                <h2 className="mb-4">Update Event</h2>
                 <br />
                 {/* <form onSubmit={() => handleServiceSubmit(event._id)}> */}
-                    <h5>Event Name</h5>
-                    <input type="text" class="form-control w-50" placeholder="Event Name" name="name" defaultValue={event.name} aria-label="First name"  />
-                    <br />
+                <h5>Event Name</h5>
+                <input type="text" onBlur={handleEventName} class="form-control w-50" autoFocus name="name" defaultValue={event.name} aria-label="First name" />
+                <br />
 
-                    <h5>Event Details</h5>
-                    <textarea type="text" class="form-control w-50" placeholder="Event Details" defaultValue={event.eventDetails} name="eventDetails" aria-label="Last name"  />
-                    <br />
+                <h5>Event Details</h5>
+                <textarea type="text" onBlur={handleEventDetails} class="form-control w-50" defaultValue={event.eventDetails} name="eventDetails" aria-label="Last name" />
+                <br />
 
-                    <h5>Event Budget</h5>
-                    <input type="number" class="form-control w-50" placeholder="Event Budget" defaultValue={event.eventBudget} name="eventBudget" aria-label="Last name"  />
-                    <br />
+                <h5>Event Budget</h5>
+                <input type="number" onBlur={handleEventBudget} class="form-control w-50" defaultValue={event.eventBudget} name="eventBudget" aria-label="Last name" />
+                <br />
 
-                    <h5>Event Image</h5>
-                    <input type="file" defaultValue={event.imageURL} onChange={handleImageUpload} class="mb-5" aria-label="Last name" />
+                <h5>Event Image</h5>
+                <input type="file" onBlur={handleEventImage} defaultValue={event.imageURL} onChange={handleImageUpload} class="mb-5" aria-label="Last name" />
 
-                    {
-                        <p style={{ color: 'red' }}> {imageURLStatus ? "Image uploaded successfully, Click Submit to send your data to Database." : "After choosing a file, Wait until image get uploaded."}</p>
-                    }
+                {
+                    <p style={{ color: 'red' }}> {imageURLStatus ? "Image uploaded successfully, Click Submit to send your data to Database." : "After choosing a file, Wait until image get uploaded."}</p>
+                }
 
-                    <br />
-                    <input className="btn btn-success mb-3" type="submit" value="Submit" />
-                    {
-                        <span style={{ color: 'green' }}> {dbStatus ? "Event updated successfully." : ""}</span>
-                    }
+                <br />
+                <button onClick={() => handleEventUpdate(event._id)} className="btn btn-success mb-3">Submit</button>
+                {
+                    <span style={{ color: 'green' }}> {dbStatus ? "Event updated successfully." : ""}</span>
+                }
                 {/* </form> */}
             </div>
         </div>
