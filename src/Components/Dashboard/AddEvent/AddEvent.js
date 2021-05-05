@@ -30,8 +30,8 @@ const AddEvent = () => {
             .then(data => {
                 setDbStatus(data);
                 if (data) {
-                    e.target.reset();
                     alert('Event added successfully.')
+                    e.target.reset();
                 }
             })
 
@@ -69,7 +69,7 @@ const AddEvent = () => {
                 <br />
                 <form onSubmit={handleServiceSubmit}>
                     <h5>Event Name</h5>
-                    <input type="text" class="form-control w-50" placeholder="Event Name" name="name" aria-label="First name" required />
+                    <input type="text" class="form-control w-50" autoFocus placeholder="Event Name" name="name" aria-label="First name" required />
                     <br />
 
                     <h5>Event Details</h5>

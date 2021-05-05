@@ -69,7 +69,7 @@ const AddAnnounce = () => {
                 <br />
                 <form onSubmit={handleServiceSubmit}>
                     <h5>Announcement Title</h5>
-                    <input type="text" class="form-control w-50" placeholder="Announcement Name" name="title" aria-label="First name" required />
+                    <input type="text" autoFocus class="form-control w-50" placeholder="Announcement Name" name="title" aria-label="First name" required />
                     <br />
 
                     <h5>Announcement Details</h5>
