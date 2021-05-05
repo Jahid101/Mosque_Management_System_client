@@ -59,6 +59,11 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li>
+                        <Link to="/otherAdditionList" className="text-white">
+                            <FontAwesomeIcon icon={faList} /> <span>Other Addition List</span>
+                        </Link>
+                    </li>
+                    <li>
                         <Link to="/addEvent" className="text-white" >
                             <FontAwesomeIcon icon={faPlus} /> <span>Add Event</span>
                         </Link>
