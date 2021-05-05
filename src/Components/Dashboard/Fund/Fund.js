@@ -41,7 +41,7 @@ const Fund = () => {
     }
 
 
-    //Others Addition
+    //Event spending
     const [eventSpend, setEventSpend] = useState([]);
 
     useEffect(() => {
@@ -57,6 +57,24 @@ const Fund = () => {
     }
 
     console.log(totalEventSpending)
+
+
+    //deleted Event budget
+    const [deletedEvent, setDeletedEvent] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/deletedEvent')
+            .then(res => res.json())
+            .then(data => setDeletedEvent(data))
+    }, [])
+
+    let totalDeletedEventBudget = 0;
+    for (let i = 0; i < deletedEvent.length; i++) {
+        const e = parseFloat(deletedEvent[i].eventBudget);
+        totalDeletedEventBudget = totalDeletedEventBudget + e;
+    }
+
+    console.log(totalDeletedEventBudget)
 
 
     return (
@@ -80,7 +98,7 @@ const Fund = () => {
                             <div class="card bg-info text-white shadow" style={{ width: '15rem', height: '10rem' }}>
                                 <div class="card-body text-center">
                                     <h5> <small>Total Fund Amount</small> </h5>
-                                    <h1>{totalDonation + totalOtherDonation} Tk</h1>
+                                    <h1>{(totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget)} Tk</h1>
                                 </div>
                             </div>
                         </div>

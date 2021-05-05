@@ -20,11 +20,38 @@ const ManageEvent = () => {
     }
 
 
-    const history = useHistory();
 
+    const handleRemove = (id, budget) => {
+
+        const deletedEventInfo = {
+            eventBudget: budget
+        };
+
+        console.log(deletedEventInfo)
+
+        fetch('http://localhost:9999/deletedEvent', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(deletedEventInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    handleDelete(id);
+                }
+            })
+    }
+
+
+
+    const history = useHistory();
     const handleUpdate = (id) => {
         history.push(`/updateEvent/${id}`);
     }
+
+
 
     const handleDelete = (id) => {
 
@@ -34,7 +61,7 @@ const ManageEvent = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    alert('Event Deleted')
+                    alert('Event Deleted successfully');
                     deleted();
                 }
             })
@@ -45,13 +72,18 @@ const ManageEvent = () => {
             <Dashboardpage></Dashboardpage>
 
             <div className="mt-3" style={{ marginLeft: '300px' }}>
-                <h3 className="ml-5 mb-5">Events: {event.length}</h3>
+                <h3 className="ml-5 mb-2">Total Events: {event.length}</h3>
+                <Link to="/event">
+                    <button style={{ marginLeft: '80%' }} className="btn btn-primary mb-3">View all Events</button>
+                </Link>
+
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">Event Name</th>
                             <th scope="col">Event Details</th>
                             <th scope="col">Event Image</th>
+                            <th scope="col">Event Budget</th>
                             <th scope="col" style={{ paddingLeft: '135px' }}>Action</th>
                         </tr>
                     </thead>
@@ -64,10 +96,13 @@ const ManageEvent = () => {
                                     <td>
                                         <img className="" style={{ width: '75px', height: '75px' }} src={event.imageURL} alt="" />
                                     </td>
+                                    <th scope="row">{event.eventBudget} Tk</th>
                                     <td>
-                                        <button onClick={() => handleUpdate(event._id)} className="btn btn-success ms-5 mt-3">Update</button>
+                                        <button onClick={() => handleUpdate(event._id)} className="btn btn-success mt-3">Update</button>
 
-                                        <button onClick={() => handleDelete(event._id)} className="btn btn-danger ms-5 mt-3">Delete</button>
+                                        <button onClick={() => handleDelete(event._id)} className="btn btn-primary ms-3 mt-3">Refund and Remove</button>
+
+                                        <button onClick={() => handleRemove(event._id,event.eventBudget)} className="btn btn-danger ms-3 mt-3">Delete</button>
                                     </td>
                                 </tr>
                             </tbody>

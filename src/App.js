@@ -35,6 +35,8 @@ import Welcome from './Components/Dashboard/Welcome/Welcome';
 import UpdateAnnounce from './Components/Dashboard/UpdateAnnounce/UpdateAnnounce';
 import OtherAddition from './Components/Dashboard/OtherAddition/OtherAddition';
 import OtherAdditionList from './Components/Dashboard/OtherAdditionList/OtherAdditionList';
+import Event from './Components/Home/Event/Event';
+import Announcement from './Components/Home/Announcement/Announcement';
 
 
 
@@ -92,6 +94,12 @@ function App() {
           <PrivateRoute path="/otherAdditionList">
             <OtherAdditionList></OtherAdditionList>
           </PrivateRoute>
+          <Route path="/event">
+            <Event></Event>
+          </Route>
+          <Route path="/announcements">
+            <Announcement></Announcement>
+          </Route>
           <PrivateRoute path="/orderList">
             <OrderList></OrderList>
           </PrivateRoute>
