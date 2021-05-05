@@ -79,7 +79,7 @@ const MakeDonation = () => {
                     <br />
 
                     <h5>Addition type</h5>
-                    <input type="text" onBlur={handleDonationFor} class="form-control w-50" name="additionType" placeholder="Addition type" aria-label="Last name" required/>
+                    <input type="text" onBlur={handleDonationFor} class="form-control w-50" name="additionType" placeholder="Addition type" aria-label="Last name" required />
                     <br />
 
                     <h5>Amount</h5>
