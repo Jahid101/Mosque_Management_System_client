@@ -39,7 +39,24 @@ const Fund = () => {
         const elmnt = parseFloat(otherAddition[i].amount);
         totalOtherDonation = totalOtherDonation + elmnt;
     }
-    console.log(totalOtherDonation);
+
+
+    //Others Addition
+    const [eventSpend, setEventSpend] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/event')
+            .then(res => res.json())
+            .then(data => setEventSpend(data))
+    }, [])
+
+    let totalEventSpending = 0;
+    for (let i = 0; i < eventSpend.length; i++) {
+        const e = parseFloat(eventSpend[i].eventBudget);
+        totalEventSpending = totalEventSpending + e;
+    }
+
+    console.log(totalEventSpending)
 
 
     return (

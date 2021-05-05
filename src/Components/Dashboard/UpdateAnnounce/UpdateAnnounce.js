@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 
 const UpdateAnnounce = () => {
@@ -13,14 +14,13 @@ const UpdateAnnounce = () => {
     const [announcementDetails, setAnnouncementDetails] = useState('');
     const [announcementImage, setAnnouncementImage] = useState('');
 
+    const { id } = useParams();
 
     useEffect(() => {
-        fetch('http://localhost:9999/announcement')
+        fetch(`http://localhost:9999/updateAnnouncement/${id}`)
             .then(res => res.json())
-            .then(data => {
-                data.map(data => setAnnouncement(data))
-            })
-    }, [])
+            .then(data =>  setAnnouncement(data))
+    }, [id])
 
 
     const handleAnnouncementName = e => {

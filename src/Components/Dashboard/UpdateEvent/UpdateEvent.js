@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 
 const UpdateEvent = () => {
@@ -14,13 +15,13 @@ const UpdateEvent = () => {
     const [eventBudget, setEventBudget]  = useState('');
     const [eventImage, setEventImage] = useState('');
 
+    const { id } = useParams();
+
     useEffect(() => {
-        fetch('http://localhost:9999/event')
+        fetch(`http://localhost:9999/updateEvent/${id}`)
             .then(res => res.json())
-            .then(data => {
-                data.map(data => setEvent(data))
-            })
-    }, [])
+            .then(data => setEvent(data))
+    }, [id])
 
 
     const handleEventName = e => {

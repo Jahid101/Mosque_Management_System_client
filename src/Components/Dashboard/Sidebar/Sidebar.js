@@ -24,7 +24,7 @@ const Sidebar = () => {
 
 
     return (
-        <div className="sidebar col-md-3 abcd col-lg-2 pt-3 pb-3 rounded d-md-block m-1 collapse" style={{ height: "100vh" }}>
+        <div className="sidebar col-md-3 abcd col-lg-2 pt-3 pb-3 rounded d-md-block m-1 collapse" style={{ height: "700px" }}>
             <ul className="list-unstyled">
 
                 <li>

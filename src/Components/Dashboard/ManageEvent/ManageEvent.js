@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const ManageEvent = () => {
 
@@ -19,8 +19,11 @@ const ManageEvent = () => {
             .then(data => setEvent(data))
     }
 
-    const handleUpdate = () => {
 
+    const history = useHistory();
+
+    const handleUpdate = (id) => {
+        history.push(`/updateEvent/${id}`);
     }
 
     const handleDelete = (id) => {
@@ -62,9 +65,8 @@ const ManageEvent = () => {
                                         <img className="" style={{ width: '75px', height: '75px' }} src={event.imageURL} alt="" />
                                     </td>
                                     <td>
-                                        <Link to="/updateEvent">
-                                            <button onClick={() => handleUpdate(event._id)} className="btn btn-success ms-5 mt-3">Update</button>
-                                        </Link>
+                                        <button onClick={() => handleUpdate(event._id)} className="btn btn-success ms-5 mt-3">Update</button>
+
                                         <button onClick={() => handleDelete(event._id)} className="btn btn-danger ms-5 mt-3">Delete</button>
                                     </td>
                                 </tr>

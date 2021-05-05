@@ -113,10 +113,10 @@ function App() {
           <PrivateRoute path="/makeDonation">
             <MakeDonation></MakeDonation>
           </PrivateRoute>
-          <PrivateRoute path="/updateEvent">
+          <PrivateRoute path="/updateEvent/:id">
             <UpdateEvent></UpdateEvent>
           </PrivateRoute>
-          <PrivateRoute path="/updateAnnounce">
+          <PrivateRoute path="/updateAnnouncement/:id">
             <UpdateAnnounce></UpdateAnnounce>
           </PrivateRoute>
           <PrivateRoute path="/donationYouMade">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 
 const ManageAnnounce = () => {
@@ -19,9 +19,10 @@ const ManageAnnounce = () => {
             .then(data => setAnnouncement(data))
     }
 
+    const history = useHistory();
 
     const handleUpdate = (id) => {
-
+        history.push(`/updateAnnouncement/${id}`);
     }
 
     const handleDelete = (id) => {
@@ -64,9 +65,8 @@ const ManageAnnounce = () => {
                                         <img className="" style={{ width: '75px', height: '75px' }} src={announcement.imageURL} alt="" />
                                     </td>
                                     <td>
-                                        <Link to="/updateAnnounce">
-                                            <button onClick={() => handleUpdate(announcement._id)} className="btn btn-success ms-5 mt-3">Update</button>
-                                        </Link>
+                                        <button onClick={() => handleUpdate(announcement._id)} className="btn btn-success ms-5 mt-3">Update</button>
+
                                         <button onClick={() => handleDelete(announcement._id)} className="btn btn-danger ms-5 mt-3">Delete</button>
                                     </td>
                                 </tr>
