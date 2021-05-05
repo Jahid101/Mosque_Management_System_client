@@ -24,7 +24,7 @@ const Sidebar = () => {
 
 
     return (
-        <div className="sidebar col-md-3 abcd col-lg-2 pt-3 pb-3 rounded d-md-block m-1 collapse" style={{ height: "700px" }}>
+        <div className="sidebar col-md-3 abcd col-lg-2 pt-3 pb-3 rounded d-md-block m-1 collapse" style={{ height: "750px" }}>
             <ul className="list-unstyled">
 
                 <li>
@@ -81,6 +81,11 @@ const Sidebar = () => {
                     <li>
                         <Link to="/fund" className="text-white" >
                             <FontAwesomeIcon icon={faFunnelDollar} /> <span>Fund</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/addCM" className="text-white" >
+                            <FontAwesomeIcon icon={faTasks} /> <span>Committee Members</span>
                         </Link>
                     </li>
                     <li>

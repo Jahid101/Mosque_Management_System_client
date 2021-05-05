@@ -43,6 +43,15 @@ const Navbar = () => {
                             <Link class="nav-link active text-light" aria-current="page" to="/dashboard">Dashboard</Link>
                         </li>
                         <li class="nav-item mr-3">
+                            <Link class="nav-link active text-light" aria-current="page" to="/event">Events</Link>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <Link class="nav-link active text-light" aria-current="page" to="/announcement">Announcements</Link>
+                        </li>
+                        <li class="nav-item mr-3">
+                            <Link class="nav-link active text-light" aria-current="page" to="/committeeMember">Committee Members</Link>
+                        </li>
+                        <li class="nav-item mr-3">
                             <Link class="nav-link active text-light" aria-current="page" to="/contact">Contact</Link>
                         </li>
                         <li class="nav-item">

@@ -31,6 +31,7 @@ import Fund from './Components/Dashboard/Fund/Fund';
 import ShowAnnouncement from './Components/ShowAnnouncement/ShowAnnouncement';
 import Email from './Components/Email/Email';
 import Contact from './Components/Contact/Contact';
+import CommitteeMember from './Components/CommitteeMember/CommitteeMember';
 import Welcome from './Components/Dashboard/Welcome/Welcome';
 import UpdateAnnounce from './Components/Dashboard/UpdateAnnounce/UpdateAnnounce';
 import OtherAddition from './Components/Dashboard/OtherAddition/OtherAddition';
@@ -97,8 +98,11 @@ function App() {
           <Route path="/event">
             <Event></Event>
           </Route>
-          <Route path="/announcements">
+          <Route path="/announcement">
             <Announcement></Announcement>
+          </Route>
+          <Route path="/committeeMember">
+            <CommitteeMember></CommitteeMember>
           </Route>
           <PrivateRoute path="/orderList">
             <OrderList></OrderList>

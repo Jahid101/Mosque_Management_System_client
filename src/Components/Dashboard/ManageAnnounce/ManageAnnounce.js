@@ -46,7 +46,7 @@ const ManageAnnounce = () => {
 
             <div className="mt-3" style={{ marginLeft: '300px' }}>
                 <h3 className="ml-5 mb-5">Total Announcements: {announcement.length}</h3>
-                <Link to="/announcements">
+                <Link to="/announcement">
                     <button style={{ marginLeft: '75%'}}className="btn btn-primary mb-3">View all Announcements</button>
                 </Link>
                 <table class="table">
