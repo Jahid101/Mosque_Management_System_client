@@ -38,6 +38,8 @@ import OtherAddition from './Components/Dashboard/OtherAddition/OtherAddition';
 import OtherAdditionList from './Components/Dashboard/OtherAdditionList/OtherAdditionList';
 import Event from './Components/Home/Event/Event';
 import Announcement from './Components/Home/Announcement/Announcement';
+import ManageCM from './Components/Dashboard/ManageCM/ManageCM';
+import AddCM from './Components/Dashboard/AddCM/AddCM';
 
 
 
@@ -106,6 +108,12 @@ function App() {
           </Route>
           <PrivateRoute path="/orderList">
             <OrderList></OrderList>
+          </PrivateRoute>
+          <PrivateRoute path="/addCM">
+            <AddCM></AddCM>
+          </PrivateRoute>
+          <PrivateRoute path="/manageCM">
+            <ManageCM></ManageCM>
           </PrivateRoute>
           <PrivateRoute path="/manageEvent">
             <ManageEvent></ManageEvent>

@@ -84,13 +84,13 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/addCM" className="text-white" >
-                            <FontAwesomeIcon icon={faTasks} /> <span>Committee Members</span>
+                        <Link to="/addAdmin" className="text-white" >
+                            <FontAwesomeIcon icon={faUserPlus} /> <span>Add Admin</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to="/addAdmin" className="text-white" >
-                            <FontAwesomeIcon icon={faUserPlus} /> <span>Add Admin</span>
+                        <Link to="/manageCM" className="text-white" >
+                            <FontAwesomeIcon icon={faTasks} /> <span>Committee Members</span>
                         </Link>
                     </li>
                     <li>
