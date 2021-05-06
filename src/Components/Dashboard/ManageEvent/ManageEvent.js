@@ -73,8 +73,12 @@ const ManageEvent = () => {
 
             <div className="mt-3" style={{ marginLeft: '300px' }}>
                 <h3 className="ml-5 mb-2">Total Events: {event.length}</h3>
+                <Link to="/addEvent">
+                    <button style={{ marginLeft: '' }} className="btn btn-info mb-3 mt-3">Add Event</button>
+                </Link>
+
                 <Link to="/event">
-                    <button style={{ marginLeft: '80%' }} className="btn btn-primary mb-3">View all Events</button>
+                    <button style={{ marginRight: '3%', float: 'right' }} className="btn btn-primary mb-3 mt-3">View all Events</button>
                 </Link>
 
                 <table class="table">

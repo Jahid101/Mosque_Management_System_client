@@ -63,21 +63,21 @@ const Sidebar = () => {
                             <FontAwesomeIcon icon={faList} /> <span>Other Addition List</span>
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link to="/addEvent" className="text-white" >
                             <FontAwesomeIcon icon={faPlus} /> <span>Add Event</span>
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link to="/addPrayerTime" className="text-white" >
                             <FontAwesomeIcon icon={faUpload} /> <span>Update Prayer Time</span>
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link to="/addAnnouncement" className="text-white" >
                             <FontAwesomeIcon icon={faPlus} /> <span>Add Announcement</span>
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link to="/fund" className="text-white" >
                             <FontAwesomeIcon icon={faFunnelDollar} /> <span>Fund</span>
