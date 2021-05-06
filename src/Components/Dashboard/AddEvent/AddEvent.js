@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 
 const AddEvent = () => {
@@ -49,13 +49,90 @@ const AddEvent = () => {
                 console.log(response.data.data.display_url);
                 setImageURL(response.data.data.display_url);
                 setImageURLStatus(true);
-                if(response){
+                if (response) {
                     alert('Image Updated Successfully')
                 }
             })
             .catch(function (error) {
                 console.log(error);
             });
+    }
+
+
+    // Checking Fund Value with event budget
+    const [receivedDonation, setReceivedDonation] = useState([]);
+
+    const received = 'Received';
+
+
+    //Total Donation Amount
+    useEffect(() => {
+        fetch('http://localhost:9999/receivedDonation?status=' + received)
+            .then(res => res.json())
+            .then(data => setReceivedDonation(data))
+    }, [received])
+
+    let totalDonation = 0;
+    for (let i = 0; i < receivedDonation.length; i++) {
+        const element = parseFloat(receivedDonation[i].Amount);
+        totalDonation = totalDonation + element;
+    }
+
+
+    //Others Addition
+    const [otherAddition, setOtherAddition] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/otherAdditionList')
+            .then(res => res.json())
+            .then(data => setOtherAddition(data))
+    }, [])
+
+    let totalOtherDonation = 0;
+    for (let i = 0; i < otherAddition.length; i++) {
+        const elmnt = parseFloat(otherAddition[i].amount);
+        totalOtherDonation = totalOtherDonation + elmnt;
+    }
+
+
+    //Event spending
+    const [eventSpend, setEventSpend] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/event')
+            .then(res => res.json())
+            .then(data => setEventSpend(data))
+    }, [])
+
+    let totalEventSpending = 0;
+    for (let i = 0; i < eventSpend.length; i++) {
+        const e = parseFloat(eventSpend[i].eventBudget);
+        totalEventSpending = totalEventSpending + e;
+    }
+
+
+
+    //deleted Event budget
+    const [deletedEvent, setDeletedEvent] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/deletedEvent')
+            .then(res => res.json())
+            .then(data => setDeletedEvent(data))
+    }, [])
+
+    let totalDeletedEventBudget = 0;
+    for (let i = 0; i < deletedEvent.length; i++) {
+        const e = parseFloat(deletedEvent[i].eventBudget);
+        totalDeletedEventBudget = totalDeletedEventBudget + e;
+    }
+
+    var totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget))
+
+    console.log(totalFund)
+
+    const handleBudgetCheck = (e) => {
+        
     }
 
 
@@ -76,7 +153,7 @@ const AddEvent = () => {
                     <br />
 
                     <h5>Event Budget</h5>
-                    <input type="number" min="0" class="form-control w-50" placeholder="Event Budget" name="eventBudget" aria-label="Last name" required />
+                    <input type="number" min="1" max={totalFund} onBlur={handleBudgetCheck} class="form-control w-50" placeholder="Event Budget" name="eventBudget" aria-label="Last name" required />
                     <br />
 
                     <h5>Event Image</h5>
@@ -87,7 +164,9 @@ const AddEvent = () => {
                     }
 
                     <br />
+                    {/* {imageURLStatus ? */}
                     <input className="btn btn-success mb-3" type="submit" value="Submit" />
+                    {/* :''} */}
                     {
                         <span style={{ color: 'green' }}> {dbStatus ? "Event added successfully." : ""}</span>
                     }

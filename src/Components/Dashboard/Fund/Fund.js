@@ -76,31 +76,31 @@ const Fund = () => {
 
 
     //Total Fund
-    const [fund, setFund] = useState(0);
+    // const [fund, setFund] = useState(0);
 
+        const totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget))
 
-    const totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget))
-    // setFund(totalFund);
+        // setFund(totalFund);
+        // console.log(fund)
 
-    useEffect(() => {
+// useEffect(() => {
+//         const totalFunding = {
+//             fundAmount: totalFund
+//         }
 
-        const totalFunding = {
-            fundAmount: totalFund
-        }
-        const url = `http://localhost:9999/fund`;
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(totalFunding)
-        })
-            .then(res => res.json())
-            .then(data => {
-                
-            })
-    }, [])
-    console.log(fund);
+//         const url = `http://localhost:9999/fund`;
+//         fetch(url, {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify(totalFunding)
+//         })
+//             .then(res => res.json())
+//             .then(data => {
+
+//             })
+//     }, [])
 
 
     return (
