@@ -40,6 +40,7 @@ import Event from './Components/Home/Event/Event';
 import Announcement from './Components/Home/Announcement/Announcement';
 import ManageCM from './Components/Dashboard/ManageCM/ManageCM';
 import AddCM from './Components/Dashboard/AddCM/AddCM';
+import ShowCM from './Components/ShowCM/ShowCM';
 
 
 
@@ -129,6 +130,9 @@ function App() {
           </Route>
           <Route path="/showAnnouncement/:id">
             <ShowAnnouncement></ShowAnnouncement>
+          </Route>
+          <Route path="/showCM/:id">
+            <ShowCM></ShowCM>
           </Route>
           <PrivateRoute path="/makeDonation">
             <MakeDonation></MakeDonation>

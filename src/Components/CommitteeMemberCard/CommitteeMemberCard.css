@@ -10,9 +10,20 @@
     height: 200px;
     width: 200px;
 }
+.cmAdminCardInfo{
+    width: 320px;
+    height: 500px;
+    border-radius: 15px;
+    /* float: left; */
+    margin-top: 15px;
+    margin-left: 400px;
+    margin-bottom: 50px;
+    background-color: white;
+    box-shadow: 1px 10px 40px 10px ;
+}
 .cmCardInfo{
     width: 320px;
-    height: 400px;
+    height: 450px;
     border-radius: 15px;
     float: left;
     margin-top: 15px;

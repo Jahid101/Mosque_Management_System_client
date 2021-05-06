@@ -4,32 +4,32 @@ import { Link, useHistory } from 'react-router-dom';
 
 const ManageCM = () => {
 
-    const [event, setEvent] = useState([]);
+    const [CM, setCM] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/event')
+        fetch('http://localhost:9999/CM')
             .then(res => res.json())
-            .then(data => setEvent(data))
+            .then(data => setCM(data))
     }, [])
 
 
     const deleted = () => {
-        fetch('http://localhost:9999/event')
+        fetch('http://localhost:9999/CM')
             .then(res => res.json())
-            .then(data => setEvent(data))
+            .then(data => setCM(data))
     }
 
 
 
     const history = useHistory();
     const handleUpdate = (id) => {
-        history.push(`/updateEvent/${id}`);
+        history.push(`/updateCM/${id}`);
     }
 
 
     const handleDelete = (id) => {
 
-        fetch(`http://localhost:9999/deleteEvent/${id}`, {
+        fetch(`http://localhost:9999/deleteCM/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
@@ -45,8 +45,8 @@ const ManageCM = () => {
         <div>
             <Dashboardpage></Dashboardpage>
 
-            <div className="mt-3" style={{ marginLeft: '300px' }}>
-                <h3 className="ml-5 mb-2">Total Events: {event.length}</h3>
+            <div className="mt-3" style={{ marginLeft: '240px' }}>
+                <h3 className="ml-5 mb-2">Total Events: {CM.length}</h3>
                 <Link to="/addCM">
                     <button style={{ marginLeft: '' }} className="btn btn-info mb-3 mt-3">Add Committee Member</button>
                 </Link>
@@ -58,27 +58,31 @@ const ManageCM = () => {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Event Name</th>
-                            <th scope="col">Event Details</th>
-                            <th scope="col">Event Image</th>
-                            <th scope="col">Event Budget</th>
-                            <th scope="col" style={{ paddingLeft: '135px' }}>Action</th>
+                            <th scope="col">Name</th>
+                            <th style={{ width: '50px' }} scope="col">Email</th>
+                            <th scope="col">Designation</th>
+                            <th style={{ width: '200px' }} scope="col">Details</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">phone</th>
+                            <th scope="col" style={{ paddingLeft: '79px', width: '200px'}}>Action</th>
                         </tr>
                     </thead>
                     {
-                        event.map(event =>
+                        CM.map(CM =>
                             <tbody>
                                 <tr>
-                                    <th scope="row">{event.name}</th>
-                                    <td className="w-25">{event.eventDetails}</td>
+                                    <th scope="row">{CM.name}</th>
+                                    <td>{CM.email}</td>
+                                    <td>{CM.designation}</td>
+                                    <td>{CM.details || 'N/A'}</td>
                                     <td>
-                                        <img className="" style={{ width: '75px', height: '75px' }} src={event.imageURL} alt="" />
+                                        <img className="" style={{ width: '75px', height: '75px' }} src={CM.imageURL} alt="" />
                                     </td>
-                                    <th scope="row">{event.eventBudget} Tk</th>
+                                    <th scope="row">{CM.phone}</th>
                                     <td>
-                                        <button onClick={() => handleUpdate(event._id)} className="btn btn-success mt-3">Update</button>
+                                        <button onClick={() => handleUpdate(CM._id)} className="btn btn-success mt-3">Update</button>
 
-                                        <button onClick={() => handleDelete(event._id, event.eventBudget)} className="btn btn-danger ms-3 mt-3">Delete</button>
+                                        <button onClick={() => handleDelete(CM._id)} className="btn btn-danger ms-3 mt-3">Delete</button>
                                     </td>
                                 </tr>
                             </tbody>
