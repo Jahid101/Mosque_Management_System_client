@@ -15,8 +15,6 @@ const Fund = () => {
             .then(data => setReceivedDonation(data))
     }, [received])
 
-    console.log(receivedDonation)
-
     let totalDonation = 0;
     for (let i = 0; i < receivedDonation.length; i++) {
         const element = parseFloat(receivedDonation[i].Amount);
@@ -77,6 +75,34 @@ const Fund = () => {
     console.log(totalDeletedEventBudget)
 
 
+    //Total Fund
+    const [fund, setFund] = useState(0);
+
+
+    const totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget))
+    // setFund(totalFund);
+
+    useEffect(() => {
+
+        const totalFunding = {
+            fundAmount: totalFund
+        }
+        const url = `http://localhost:9999/fund`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(totalFunding)
+        })
+            .then(res => res.json())
+            .then(data => {
+                
+            })
+    }, [])
+    console.log(fund);
+
+
     return (
         <div>
             <Dashboardpage></Dashboardpage>
@@ -98,7 +124,7 @@ const Fund = () => {
                             <div class="card bg-info text-white shadow" style={{ width: '15rem', height: '10rem' }}>
                                 <div class="card-body text-center">
                                     <h5> <small>Total Fund Amount</small> </h5>
-                                    <h1>{(totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget)} Tk</h1>
+                                    <h1>{totalFund} Tk</h1>
                                 </div>
                             </div>
                         </div>

@@ -25,12 +25,20 @@ const MakeDonation = () => {
         setPaymentAmount(e.target.value);
     }
 
-    const handleClick = (e) => {
+
+    const handleDonationSubmit = e => {
         if (paymentAmount) {
             setIsInfoGiven(true);
         }
         e.preventDefault();
     }
+
+    // const handleClick = (e) => {
+    //     if (paymentAmount) {
+    //         setIsInfoGiven(true);
+    //     }
+    //     e.preventDefault();
+    // }
 
 
     const handlePayment = paymentId => {
@@ -61,6 +69,7 @@ const MakeDonation = () => {
             })
     }
 
+
     return (
         <div>
             <Dashboardpage></Dashboardpage>
@@ -68,7 +77,7 @@ const MakeDonation = () => {
             <div style={{ marginLeft: '300px' }}>
                 <h2 className="mb-4">Make Donation</h2>
                 <br />
-                <form>
+                <form onSubmit={handleDonationSubmit}>
                     <h5>Your Name</h5>
                     <input type="text" class="form-control w-50" name="name" defaultValue={loggedInUser.displayName} aria-label="First name" />
                     <br />
@@ -78,18 +87,18 @@ const MakeDonation = () => {
                     <br />
 
                     <h5>Donate For</h5>
-                    <input type="text" onBlur={handleDonationFor} class="form-control w-50" name="donationFor" aria-label="Last name" />
+                    <input type="text" onBlur={handleDonationFor} class="form-control w-50" name="donationFor" placeholder="Donation For" aria-label="Last name" />
                     <br />
 
-                    <h5>Amount *</h5>
-                    <input type="number" onBlur={handlePaymentAddress} class="form-control w-50" placeholder="Amount" name="description" aria-label="Last name" required />
+                    <h5>Amount</h5>
+                    <input type="number" min="0" onBlur={handlePaymentAddress} class="form-control w-50" placeholder="Amount" name="description" aria-label="Last name" required />
                     <br />
 
                     <h5>Your Phone</h5>
-                    <input type="number" onBlur={handlePaymentPhone} class="form-control w-50" placeholder="Your Phone" name="phone" aria-label="Last name" />
+                    <input type="number" min="999999999" max="9999999999" onBlur={handlePaymentPhone} class="form-control w-50" placeholder="Your Phone" name="phone" aria-label="Last name"/>
 
                     <br />
-                    <input onClick={handleClick} className="btn btn-info mb-3" type="submit" value="Go for Payment" />
+                    <input className="btn btn-info mb-3" type="submit" value="Go for Payment" />
                 </form>
                 {isInfoGiven && <div>
                     <h3 className="mt-4 mb-4">Payment</h3>

@@ -17,7 +17,6 @@ const AddEvent = () => {
             imageURL: imageURL
         };
 
-
         const url = `http://localhost:9999/addEvent`;
         fetch(url, {
             method: 'POST',
@@ -77,11 +76,11 @@ const AddEvent = () => {
                     <br />
 
                     <h5>Event Budget</h5>
-                    <input type="number" class="form-control w-50" placeholder="Event Budget" name="eventBudget" aria-label="Last name" required />
+                    <input type="number" min="0" class="form-control w-50" placeholder="Event Budget" name="eventBudget" aria-label="Last name" required />
                     <br />
 
                     <h5>Event Image</h5>
-                    <input type="file" onChange={handleImageUpload} class="mb-5" aria-label="Last name" required />
+                    <input type="file" onChange={handleImageUpload} class="mb-5 form-control w-50" aria-label="Last name" required />
 
                     {
                         <p style={{ color: 'red' }}> {imageURLStatus ? "Image uploaded successfully, Click Submit to send your data to Database." : "After choosing a file, Wait until image get uploaded."}</p>

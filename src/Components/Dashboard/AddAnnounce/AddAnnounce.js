@@ -77,7 +77,7 @@ const AddAnnounce = () => {
                     <br />
 
                     <h5>Announcement Image</h5>
-                    <input type="file" onChange={handleImageUpload} class="mb-5" aria-label="Last name" required />
+                    <input type="file" onChange={handleImageUpload} class="mb-5 form-control w-50" aria-label="Last name" required />
 
                     {
                         <p style={{ color: 'red' }}> {imageURLStatus ? "Image uploaded successfully, Click Submit to send your data to Database." : "After choosing a file, Wait until image get uploaded."}</p>

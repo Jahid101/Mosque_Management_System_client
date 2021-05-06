@@ -36,27 +36,27 @@ const Navbar = () => {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mr-3">
+                        <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/home">Home</Link>
                         </li>
-                        <li class="nav-item mr-3">
+                        <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/dashboard">Dashboard</Link>
                         </li>
-                        <li class="nav-item mr-3">
+                        <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/event">Events</Link>
                         </li>
-                        <li class="nav-item mr-3">
+                        <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/announcement">Announcements</Link>
                         </li>
-                        <li class="nav-item mr-3">
-                            <Link class="nav-link active text-light" aria-current="page" to="/committeeMember">Committee Members</Link>
+                        <li class="nav-item mr-2">
+                            <Link class="nav-link active text-light" aria-current="page" to="/committeeMember">Committee<br/><span className="ms-2">Members</span></Link>
                         </li>
-                        <li class="nav-item mr-3">
+                        <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/contact">Contact</Link>
                         </li>
                         <li class="nav-item">
                             <Link class="nav-link active text-light" to="/register">
-                                <button class="btn btn-info mr-3">
+                                <button class="btn btn-info mr-2">
                                     Register
                             </button>
                             </Link>
