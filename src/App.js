@@ -48,6 +48,10 @@ import ShowOM from './Components/ShowOM/ShowOM';
 import AddOM from './Components/Dashboard/AddOM/AddOM';
 import ManageOM from './Components/Dashboard/ManageOM/ManageOM';
 import UpdateOM from './Components/Dashboard/UpdateOM/UpdateOM';
+import AddWS from './Components/Dashboard/AddWS/AddWS';
+import WSList from './Components/Dashboard/WSList/WSList';
+import Work from './Components/Work/Work';
+import ShowWork from './Components/ShowWork/ShowWork';
 
 
 
@@ -159,15 +163,26 @@ function App() {
           <PrivateRoute path="/donationYouMade">
             <DonationYouMade></DonationYouMade>
           </PrivateRoute>
-
           <Route path="/showOM/:id">
             <ShowOM></ShowOM>
+          </Route>
+          <Route path="/showWork/:id">
+            <ShowWork></ShowWork>
           </Route>
           <Route path="/OM">
             <OM></OM>
           </Route>
+          <Route path="/work">
+            <Work></Work>
+          </Route>
           <PrivateRoute path="/addOM">
             <AddOM></AddOM>
+          </PrivateRoute>
+          <PrivateRoute path="/addWS">
+            <AddWS></AddWS>
+          </PrivateRoute>
+          <PrivateRoute path="/workingSpendList">
+            <WSList></WSList>
           </PrivateRoute>
           <PrivateRoute path="/manageOM">
             <ManageOM></ManageOM>

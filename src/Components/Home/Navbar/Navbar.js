@@ -36,9 +36,9 @@ const Navbar = () => {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mr-2">
+                        {/* <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/home">Home</Link>
-                        </li>
+                        </li> */}
                         <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/dashboard">Dashboard</Link>
                         </li>
@@ -50,6 +50,9 @@ const Navbar = () => {
                         </li>
                         <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/committeeMember">Committee<br/><span className="ms-2">Members</span></Link>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <Link class="nav-link active text-light" aria-current="page" to="/work">Works</Link>
                         </li>
                         <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/OM">Other<br/><span className="">Members</span></Link>

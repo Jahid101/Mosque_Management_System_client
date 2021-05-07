@@ -53,14 +53,34 @@ const Sidebar = () => {
                             <FontAwesomeIcon icon={faListAlt} /> <span>Donation list</span>
                         </Link>
                     </li>
+
+                    {/* <div class="btn-group dropend">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">Add</button>
+
+                            <ul class="dropdown-menu bg-success">
+
+                            </ul>
+                        </div> */}
+
                     <li>
                         <Link to="/otherAddition" className="text-white">
                             <FontAwesomeIcon icon={faPlus} /> <span>Other Addition</span>
                         </Link>
                     </li>
                     <li>
+                        <Link to="/addWS" className="text-white">
+                            <FontAwesomeIcon icon={faPlus} /> <span>Work Spending</span>
+                        </Link>
+                    </li>
+                    <li>
                         <Link to="/otherAdditionList" className="text-white">
                             <FontAwesomeIcon icon={faList} /> <span>Other Addition List</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/workingSpendList" className="text-white">
+                            <FontAwesomeIcon icon={faList} /> <span>Working spend List</span>
                         </Link>
                     </li>
                     {/* <li>
@@ -73,6 +93,7 @@ const Sidebar = () => {
                             <FontAwesomeIcon icon={faUpload} /> <span>Update Prayer Time</span>
                         </Link>
                     </li>
+
                     {/* <li>
                         <Link to="/addAnnouncement" className="text-white" >
                             <FontAwesomeIcon icon={faPlus} /> <span>Add Announcement</span>
@@ -100,12 +121,12 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Link to="/manageEvent" className="text-white">
-                            <FontAwesomeIcon icon={faTasks} /> <span>Manage Event</span>
+                            <FontAwesomeIcon icon={faTasks} /> <span>Events</span>
                         </Link>
                     </li>
                     <li>
                         <Link to="/manageAnnouncement" className="text-white">
-                            <FontAwesomeIcon icon={faTasks} /> <span>Manage Announcement</span>
+                            <FontAwesomeIcon icon={faTasks} /> <span>Announcements</span>
                         </Link>
                     </li>
                 </div>

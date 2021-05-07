@@ -16,7 +16,7 @@ const ShowCM = () => {
 
     return (
         <div className="pb-3" style={{ backgroundColor: 'teal' }}>
-            <h1 className="text-center pt-5 text-light">Committee Member Details</h1>
+            <h1 className="text-center pt-5 text-light">Member Details</h1>
 
             <div style={{ marginLeft: '75px', backgroundColor: '#00022e' }} className="row mt-5 rounded container text-light p-5">
                 <h1 className="text-center text-light mb-5">
