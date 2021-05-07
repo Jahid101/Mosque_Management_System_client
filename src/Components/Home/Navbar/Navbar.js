@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import firebase from "firebase/app";
@@ -27,6 +27,8 @@ const Navbar = () => {
             });
     }
 
+
+
     return (
         <nav class="navbar navbar-expand-lg navbarBg navbar-light mb-3 m-1 p-2 rounded">
             <div class="container-fluid text-light">
@@ -39,7 +41,7 @@ const Navbar = () => {
                         {/* <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/home">Home</Link>
                         </li> */}
-                        
+
                         <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/event">Events</Link>
                         </li>
@@ -50,13 +52,13 @@ const Navbar = () => {
                             <Link class="nav-link active text-light" aria-current="page" to="/dashboard">Dashboard</Link>
                         </li>
                         <li class="nav-item mr-2">
-                            <Link class="nav-link active text-light" aria-current="page" to="/committeeMember">Committee<br/><span className="ms-2">Members</span></Link>
+                            <Link class="nav-link active text-light" aria-current="page" to="/committeeMember">Committee<br /><span className="ms-2">Members</span></Link>
                         </li>
                         <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/work">Works</Link>
                         </li>
                         <li class="nav-item mr-2">
-                            <Link class="nav-link active text-light" aria-current="page" to="/OM">Other<br/><span className="">Members</span></Link>
+                            <Link class="nav-link active text-light" aria-current="page" to="/OM">Other<br /><span className="">Members</span></Link>
                         </li>
                         <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/contact">Contact</Link>

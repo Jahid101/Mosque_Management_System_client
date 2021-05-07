@@ -6,12 +6,17 @@ import PaymentProcess from '../Payment/PaymentProcess';
 const MakeDonation = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [name, setName] = useState(null);
     const [paymentPhone, setPaymentPhone] = useState(null);
     const [paymentAmount, setPaymentAmount] = useState(null);
     const [donationFor, setDonationFor] = useState(null);
     const [isInfoGiven, setIsInfoGiven] = useState(false);
 
     
+
+    const handleDonationName = e => {
+        setName(e.target.value);
+    }
 
     const handleDonationFor = e => {
         setDonationFor(e.target.value);
@@ -44,7 +49,7 @@ const MakeDonation = () => {
     const handlePayment = paymentId => {
 
         const donationDetails = {
-            name: loggedInUser.displayName,
+            name: loggedInUser.displayName || name || '',
             email: loggedInUser.email,
             DonationFor: donationFor,
             Amount: paymentAmount,
@@ -79,7 +84,7 @@ const MakeDonation = () => {
                 <br />
                 <form onSubmit={handleDonationSubmit}>
                     <h5>Your Name</h5>
-                    <input type="text" class="form-control w-50" name="name" defaultValue={loggedInUser.displayName} aria-label="First name" />
+                    <input type="text" class="form-control w-50" name="name" defaultValue={loggedInUser.displayName} onBlur={handleDonationName} placeholder="Name" aria-label="First name" />
                     <br />
 
                     <h5>Email</h5>
