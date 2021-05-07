@@ -96,7 +96,7 @@ const MakeDonation = () => {
                     <br />
 
                     <h5>Amount</h5>
-                    <input type="number" min="0" onBlur={handlePaymentAddress} class="form-control w-50" placeholder="Amount" name="description" aria-label="Last name" required />
+                    <input type="number" min="1" onBlur={handlePaymentAddress} class="form-control w-50" placeholder="Amount" name="description" aria-label="Last name" required />
                     <br />
 
                     <h5>Your Phone</h5>

@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
 
             <footer className="text-center mb-3">
-                <strong>© Md Jahid Hasan Anik {(new Date()).getFullYear()}</strong>
+                <strong>© Abc Mosque {(new Date()).getFullYear()}</strong>
             </footer>
         </>
         
