@@ -60,6 +60,7 @@ const UpdateEvent = () => {
     }
 
 
+
     //Event spending
     const [eventSpend, setEventSpend] = useState([]);
 
@@ -74,6 +75,45 @@ const UpdateEvent = () => {
         const e = parseFloat(eventSpend[i].eventBudget);
         totalEventSpending = totalEventSpending + e;
     }
+
+
+
+    //Work spending
+    const [workSpend, setWorkSpend] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/WSList')
+            .then(res => res.json())
+            .then(data => setWorkSpend(data))
+    }, [])
+
+    let totalWorkSpending = 0;
+    for (let i = 0; i < workSpend.length; i++) {
+        const e = parseFloat(workSpend[i].amount);
+        totalWorkSpending = totalWorkSpending + e;
+    }
+
+    console.log(totalWorkSpending)
+
+
+
+    //Total PaidSalary Amount
+    const [paidSalary, setPaidSalary] = useState([]);
+
+    const salaryStatus = 'Paid';
+
+    useEffect(() => {
+        fetch('http://localhost:9999/paidSalary?salaryStatus=' + salaryStatus)
+            .then(res => res.json())
+            .then(data => setPaidSalary(data))
+    }, [salaryStatus])
+
+    let totalPaidSalary = 0;
+    for (let i = 0; i < paidSalary.length; i++) {
+        const element = parseFloat(paidSalary[i].salary);
+        totalPaidSalary = totalPaidSalary + element;
+    }
+    console.log(totalPaidSalary);
 
 
 
@@ -92,8 +132,11 @@ const UpdateEvent = () => {
         totalDeletedEventBudget = totalDeletedEventBudget + e;
     }
 
-    var totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget))
+    //Total Fund
+    const totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget + totalPaidSalary + totalWorkSpending))
 
+
+    
     // const handleServiceSubmit = () => {
 
     // }
@@ -129,7 +172,7 @@ const UpdateEvent = () => {
 
     const handleEventUpdate = (id) => {
 
-        const updatedEvent = { id, name, eventDetails, eventBudget, eventImage};
+        const updatedEvent = { id, name, eventDetails, eventBudget, eventImage };
 
         console.log(updatedEvent)
 

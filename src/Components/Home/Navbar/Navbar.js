@@ -39,14 +39,15 @@ const Navbar = () => {
                         {/* <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/home">Home</Link>
                         </li> */}
-                        <li class="nav-item mr-2">
-                            <Link class="nav-link active text-light" aria-current="page" to="/dashboard">Dashboard</Link>
-                        </li>
+                        
                         <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/event">Events</Link>
                         </li>
                         <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/announcement">Announcements</Link>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <Link class="nav-link active text-light" aria-current="page" to="/dashboard">Dashboard</Link>
                         </li>
                         <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/committeeMember">Committee<br/><span className="ms-2">Members</span></Link>

@@ -79,6 +79,25 @@ const Fund = () => {
 
 
 
+    //Work spending
+    const [workSpend, setWorkSpend] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/WSList')
+            .then(res => res.json())
+            .then(data => setWorkSpend(data))
+    }, [])
+
+    let totalWorkSpending = 0;
+    for (let i = 0; i < workSpend.length; i++) {
+        const e = parseFloat(workSpend[i].amount);
+        totalWorkSpending = totalWorkSpending + e;
+    }
+
+    console.log(totalWorkSpending)
+
+
+
     //deleted Event budget
     const [deletedEvent, setDeletedEvent] = useState([]);
 
@@ -99,7 +118,7 @@ const Fund = () => {
 
 
     //Total Fund
-    const totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget + totalPaidSalary))
+    const totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget + totalPaidSalary + totalWorkSpending))
 
 
 
@@ -124,7 +143,7 @@ const Fund = () => {
                             <div class="card bg-info text-white shadow" style={{ width: '15rem', height: '10rem' }}>
                                 <div class="card-body text-center">
                                     <h5> <small>Total Fund Amount</small> </h5>
-                                    <h1><strong style={{color: 'purple'}}>{totalFund}</strong> Tk</h1>
+                                    <h1><strong style={{ color: 'purple' }}>{totalFund}</strong> Tk</h1>
                                 </div>
                             </div>
                         </div>
@@ -170,16 +189,16 @@ const Fund = () => {
                         <div class="col-md-3">
                             <div class="card bg-info text-white shadow" style={{ width: '15rem', height: '10rem' }}>
                                 <div class="card-body text-center">
-                                    <h5> <small>Others Spending ()</small> </h5>
-                                    <h1> Tk</h1>
+                                    <h5> <small>Work Spending ({workSpend.length})</small> </h5>
+                                    <h1>{totalWorkSpending} Tk</h1>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="card bg-success text-white shadow" style={{ width: '15rem', height: '10rem' }}>
                                 <div class="card-body text-center">
-                                    <h5> <small>Total Event Cost ({eventSpend.length + deletedEvent.length })</small> </h5>
-                                    <h1>{totalEventSpending+totalDeletedEventBudget}</h1>
+                                    <h5> <small>Total Event Cost ({eventSpend.length + deletedEvent.length})</small> </h5>
+                                    <h1>{totalEventSpending + totalDeletedEventBudget} Tk</h1>
                                 </div>
                             </div>
                         </div>

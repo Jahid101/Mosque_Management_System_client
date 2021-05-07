@@ -114,6 +114,45 @@ const AddEvent = () => {
 
 
 
+    //Work spending
+    const [workSpend, setWorkSpend] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/WSList')
+            .then(res => res.json())
+            .then(data => setWorkSpend(data))
+    }, [])
+
+    let totalWorkSpending = 0;
+    for (let i = 0; i < workSpend.length; i++) {
+        const e = parseFloat(workSpend[i].amount);
+        totalWorkSpending = totalWorkSpending + e;
+    }
+
+    console.log(totalWorkSpending)
+
+
+
+    //Total PaidSalary Amount
+    const [paidSalary, setPaidSalary] = useState([]);
+
+    const salaryStatus = 'Paid';
+
+    useEffect(() => {
+        fetch('http://localhost:9999/paidSalary?salaryStatus=' + salaryStatus)
+            .then(res => res.json())
+            .then(data => setPaidSalary(data))
+    }, [salaryStatus])
+
+    let totalPaidSalary = 0;
+    for (let i = 0; i < paidSalary.length; i++) {
+        const element = parseFloat(paidSalary[i].salary);
+        totalPaidSalary = totalPaidSalary + element;
+    }
+    console.log(totalPaidSalary);
+
+
+
     //deleted Event budget
     const [deletedEvent, setDeletedEvent] = useState([]);
 
@@ -129,10 +168,12 @@ const AddEvent = () => {
         totalDeletedEventBudget = totalDeletedEventBudget + e;
     }
 
-    var totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget))
+
+    const totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget + totalPaidSalary + totalWorkSpending))
 
     console.log(totalFund)
 
+    
     const handleBudgetCheck = (e) => {
         console.log(e.target.value)
     }
@@ -175,8 +216,8 @@ const AddEvent = () => {
 
                     <br />
                     {imageURLStatus ?
-                    <input className="btn btn-success mb-3" type="submit" value="Submit" />
-                    :''}
+                        <input className="btn btn-success mb-3" type="submit" value="Submit" />
+                        : ''}
                     {
                         <span style={{ color: 'green' }}> {dbStatus ? "Event added successfully." : ""}</span>
                     }

@@ -119,6 +119,25 @@ const ManageOM = () => {
 
 
 
+    //Work spending
+    const [workSpend, setWorkSpend] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/WSList')
+            .then(res => res.json())
+            .then(data => setWorkSpend(data))
+    }, [])
+
+    let totalWorkSpending = 0;
+    for (let i = 0; i < workSpend.length; i++) {
+        const e = parseFloat(workSpend[i].amount);
+        totalWorkSpending = totalWorkSpending + e;
+    }
+
+    console.log(totalWorkSpending)
+
+
+    
     //deleted Event budget
     const [deletedEvent, setDeletedEvent] = useState([]);
 
@@ -139,7 +158,7 @@ const ManageOM = () => {
 
 
     //Total Fund
-    var totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget + totalPaidSalary))
+    var totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget + totalPaidSalary + totalWorkSpending))
 
 
 
