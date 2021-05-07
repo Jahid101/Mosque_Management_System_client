@@ -46,7 +46,7 @@ const ManageCM = () => {
             <Dashboardpage></Dashboardpage>
 
             <div className="mt-3" style={{ marginLeft: '240px' }}>
-                <h3 className="ml-5 mb-2">Total Events: {CM.length}</h3>
+                <h3 className="ml-5 mb-2">Total Committee Members: {CM.length}</h3>
                 <Link to="/addCM">
                     <button style={{ marginLeft: '' }} className="btn btn-info mb-3 mt-3">Add Committee Member</button>
                 </Link>
@@ -64,6 +64,7 @@ const ManageCM = () => {
                             <th style={{ width: '200px' }} scope="col">Details</th>
                             <th scope="col">Image</th>
                             <th scope="col">phone</th>
+                            <th scope="col">Date & Time</th>
                             <th scope="col" style={{ paddingLeft: '79px', width: '200px'}}>Action</th>
                         </tr>
                     </thead>
@@ -78,7 +79,13 @@ const ManageCM = () => {
                                     <td>
                                         <img className="" style={{ width: '75px', height: '75px' }} src={CM.imageURL} alt="" />
                                     </td>
-                                    <th scope="row">{CM.phone}</th>
+                                    <td>{CM.phone}</td>
+                                    <td>
+                                        {new Date(CM.time).toLocaleTimeString()}
+                                        <br />
+
+                                        {new Date(CM.time).toLocaleDateString()}
+                                    </td>
                                     <td>
                                         <button onClick={() => handleUpdate(CM._id)} className="btn btn-success mt-3">Update</button>
 

@@ -19,7 +19,7 @@ const UpdateAnnounce = () => {
     useEffect(() => {
         fetch(`http://localhost:9999/updateAnnouncement/${id}`)
             .then(res => res.json())
-            .then(data =>  setAnnouncement(data))
+            .then(data => setAnnouncement(data))
     }, [id])
 
 
@@ -40,7 +40,12 @@ const UpdateAnnounce = () => {
 
     const handleAnnouncementUpdate = (id) => {
 
-        const updatedAnnouncement = { id, title, announcementDetails, announcementImage };
+        const updatedAnnouncement = {
+            id,
+            title: title || announcement.title,
+            announcementDetails: announcementDetails || announcement.announcementDetails,
+            announcementImage: announcementImage || announcement.imageURL
+        };
 
         console.log(updatedAnnouncement)
 

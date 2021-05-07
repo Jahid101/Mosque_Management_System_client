@@ -8,12 +8,14 @@ const AddEvent = () => {
     const [imageURLStatus, setImageURLStatus] = useState();
     const [dbStatus, setDbStatus] = useState(false);
 
-
     const handleServiceSubmit = e => {
         const eventInfo = {
             name: e.target.name.value,
             eventDetails: e.target.eventDetails.value,
             eventBudget: e.target.eventBudget.value,
+            eventStart: e.target.eventStart.value,
+            eventEnd: e.target.eventEnd.value,
+            time: new Date(),
             imageURL: imageURL
         };
 
@@ -132,7 +134,7 @@ const AddEvent = () => {
     console.log(totalFund)
 
     const handleBudgetCheck = (e) => {
-        
+        console.log(e.target.value)
     }
 
 
@@ -153,20 +155,28 @@ const AddEvent = () => {
                     <br />
 
                     <h5>Event Budget</h5>
-                    <input type="number" min="1" max={totalFund} onBlur={handleBudgetCheck} class="form-control w-50" placeholder="Event Budget" name="eventBudget" aria-label="Last name" required />
+                    <input type="number" min="" max={totalFund} onBlur={handleBudgetCheck} class="form-control w-50" placeholder="Event Budget" name="eventBudget" aria-label="Last name" required />
+                    <br />
+
+                    <h5>Event Start</h5>
+                    <input type="date" min="2021-05-07" max="2022-05-07" class="form-control w-50" placeholder="Event Budget" name="eventStart" aria-label="Last name" required />
+                    <br />
+
+                    <h5>Event End</h5>
+                    <input type="date" min="2021-05-07" max="2022-05-07" class="form-control w-50" placeholder="Event Budget" name="eventEnd" aria-label="Last name" required />
                     <br />
 
                     <h5>Event Image</h5>
-                    <input type="file" onChange={handleImageUpload} class="mb-5 form-control w-50" aria-label="Last name" required />
+                    <input type="file" onChange={handleImageUpload} class="mb-3 form-control w-50" aria-label="Last name" required />
 
                     {
                         <p style={{ color: 'red' }}> {imageURLStatus ? "Image uploaded successfully, Click Submit to send your data to Database." : "After choosing a file, Wait until image get uploaded."}</p>
                     }
 
                     <br />
-                    {/* {imageURLStatus ? */}
+                    {imageURLStatus ?
                     <input className="btn btn-success mb-3" type="submit" value="Submit" />
-                    {/* :''} */}
+                    :''}
                     {
                         <span style={{ color: 'green' }}> {dbStatus ? "Event added successfully." : ""}</span>
                     }

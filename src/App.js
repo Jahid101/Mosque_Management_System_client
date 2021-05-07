@@ -41,6 +41,8 @@ import Announcement from './Components/Home/Announcement/Announcement';
 import ManageCM from './Components/Dashboard/ManageCM/ManageCM';
 import AddCM from './Components/Dashboard/AddCM/AddCM';
 import ShowCM from './Components/ShowCM/ShowCM';
+import ShowCMAdmin from './Components/ShowCMAdmin/ShowCMAdmin';
+import UpdateCM from './Components/Dashboard/UpdateCM/UpdateCM';
 
 
 
@@ -134,8 +136,14 @@ function App() {
           <Route path="/showCM/:id">
             <ShowCM></ShowCM>
           </Route>
+          <Route path="/showCMAdmin/:id">
+            <ShowCMAdmin></ShowCMAdmin>
+          </Route>
           <PrivateRoute path="/makeDonation">
             <MakeDonation></MakeDonation>
+          </PrivateRoute>
+          <PrivateRoute path="/updateCM/:id">
+            <UpdateCM></UpdateCM>
           </PrivateRoute>
           <PrivateRoute path="/updateEvent/:id">
             <UpdateEvent></UpdateEvent>

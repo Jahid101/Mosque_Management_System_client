@@ -15,16 +15,16 @@ const AddPrayerTime = () => {
 
     useEffect(() => {
         fetch('http://localhost:9999/prayerTime')
-        .then(res => res.json())
-        .then(data => {
-            data.map(data => setPrayerTime(data))
-        })
+            .then(res => res.json())
+            .then(data => {
+                data.map(data => setPrayerTime(data))
+            })
     }, [])
 
-    
+
     const handleFajrBlur = (e) => {
         setFAJR(e.target.value)
-       
+
     }
 
     const handleZuhrBlur = (e) => {
@@ -60,14 +60,15 @@ const AddPrayerTime = () => {
 
     const handlePrayerTime = (id) => {
 
-        // setFAJR(e.target.FAJR.value)
-        // setZUHR(e.target.ZUHR.value)
-        // setASR(e.target.ASR.value)
-        // setMAGRIB(e.target.MAGRIB.value)
-        // setISHA(e.target.ISHA.value)
-        // setJUMAH(e.target.JUMAH.value)
-
-        const updatedPrayerTime = { id, FAJR, ZUHR, ASR, MAGRIB, ISHA, JUMAH };
+        const updatedPrayerTime = {
+            id,
+            FAJR: FAJR || prayerTime.FAJR,
+            ZUHR: ZUHR || prayerTime.ZUHR,
+            ASR: ASR || prayerTime.ASR,
+            MAGRIB: MAGRIB || prayerTime.MAGRIB,
+            ISHA: ISHA || prayerTime.ISHA,
+            JUMAH: JUMAH || prayerTime.JUMAH
+        };
 
         console.log(updatedPrayerTime)
 
@@ -86,8 +87,12 @@ const AddPrayerTime = () => {
                     newPrayerTime();
                 }
             })
-            // e.preventDefault();
+        // e.preventDefault();
     }
+
+    const handlePrayerTimeSubmit = (e) => {
+        e.preventDefault();
+    } 
 
 
     return (
@@ -97,7 +102,7 @@ const AddPrayerTime = () => {
                 <div style={{ marginLeft: '300px' }}>
                     <h2 className="mb-4">Update Prayer Time</h2>
                     <br />
-                    {/* <form> */}
+                    <form onSubmit={handlePrayerTimeSubmit}>
                     <h5>FAJR</h5>
                     <input type="text" onBlur={handleFajrBlur} class="form-control w-50" name="FAJR" aria-label="First name" autoFocus defaultValue={prayerTime.FAJR} required />
                     <br />
@@ -123,8 +128,8 @@ const AddPrayerTime = () => {
                     <br />
 
                     <br />
-                    <button onClick={() => handlePrayerTime(prayerTime._id)}  className="btn btn-success mb-3">Update</button>
-                    {/* </form> */}
+                    <button onClick={() => handlePrayerTime(prayerTime._id)} className="btn btn-success mb-3">Update</button>
+                    </form>
                 </div>
             </div>
         </div>

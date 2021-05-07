@@ -9,7 +9,7 @@ const AddCM = () => {
     const [dbStatus, setDbStatus] = useState(false);
 
 
-    const handleServiceSubmit = e => {
+    const handleCMSubmit = e => {
         const CMInfo = {
             name: e.target.name.value,
             email: e.target.email.value,
@@ -70,7 +70,7 @@ const AddCM = () => {
             <div style={{ marginLeft: '300px' }}>
                 <h2 className="mb-3">Add Committee Member</h2>
                 <br />
-                <form onSubmit={handleServiceSubmit}>
+                <form onSubmit={handleCMSubmit}>
                     <h5>Name</h5>
                     <input type="text" class="form-control w-50" autoFocus placeholder="Name" name="name" aria-label="First name" required />
                     <br />

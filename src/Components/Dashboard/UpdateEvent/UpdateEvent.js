@@ -129,7 +129,7 @@ const UpdateEvent = () => {
 
     const handleEventUpdate = (id) => {
 
-        const updatedEvent = { id, name, eventDetails, eventBudget, eventImage };
+        const updatedEvent = { id, name, eventDetails, eventBudget, eventImage};
 
         console.log(updatedEvent)
 

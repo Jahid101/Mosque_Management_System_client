@@ -14,9 +14,9 @@ const AddAnnounce = () => {
         const eventInfo = {
             title: e.target.title.value,
             announcementDetails: e.target.announcementDetails.value,
+            time: new Date(),
             imageURL: imageURL
         };
-
 
         const url = `http://localhost:9999/addAnnouncement`;
         fetch(url, {

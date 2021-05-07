@@ -44,7 +44,7 @@ const ManageAnnounce = () => {
         <div>
             <Dashboardpage></Dashboardpage>
 
-            <div className="mt-3" style={{ marginLeft: '300px' }}>
+            <div className="mt-3" style={{ marginLeft: '240px' }}>
                 <h3 className="ml-5 mb-5">Total Announcements: {announcement.length}</h3>
                 <Link to="/addAnnouncement">
                     <button style={{ marginLeft: '' }} className="btn btn-info mb-3">Add Announcement</button>
@@ -59,6 +59,7 @@ const ManageAnnounce = () => {
                             <th scope="col">Announcement Title</th>
                             <th scope="col">Announcement Details</th>
                             <th scope="col">Announcement Image</th>
+                            <th scope="col">Announcement Date & Time</th>
                             <th scope="col" className="text-center">Action</th>
                         </tr>
                     </thead>
@@ -67,14 +68,20 @@ const ManageAnnounce = () => {
                             <tbody>
                                 <tr>
                                     <th scope="row">{announcement.title}</th>
-                                    <td className="w-25">{announcement.announcementDetails}</td>
+                                    <td className="">{announcement.announcementDetails}</td>
                                     <td>
                                         <img className="" style={{ width: '75px', height: '75px' }} src={announcement.imageURL} alt="" />
                                     </td>
                                     <td>
-                                        <button onClick={() => handleUpdate(announcement._id)} className="btn btn-success ms-5 mt-3">Update</button>
+                                        {new Date(announcement.time).toLocaleTimeString()}
+                                        <br />
 
-                                        <button onClick={() => handleDelete(announcement._id)} className="btn btn-danger ms-5 mt-3">Delete</button>
+                                        {new Date(announcement.time).toLocaleDateString()}
+                                    </td>
+                                    <td>
+                                        <button onClick={() => handleUpdate(announcement._id)} className="btn btn-success ms-3 mt-3">Update</button>
+
+                                        <button onClick={() => handleDelete(announcement._id)} className="btn btn-danger ms-3 mt-3">Delete</button>
                                     </td>
                                 </tr>
                             </tbody>
