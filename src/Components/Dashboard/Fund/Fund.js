@@ -3,12 +3,11 @@ import Dashboardpage from '../Dashboardpage/Dashboardpage';
 
 const Fund = () => {
 
+    //Total Donation Amount
     const [receivedDonation, setReceivedDonation] = useState([]);
 
     const received = 'Received';
 
-
-    //Total Donation Amount
     useEffect(() => {
         fetch('http://localhost:9999/receivedDonation?status=' + received)
             .then(res => res.json())
@@ -21,6 +20,27 @@ const Fund = () => {
         totalDonation = totalDonation + element;
     }
     console.log(totalDonation);
+
+
+
+    //Total PaidSalary Amount
+    const [paidSalary, setPaidSalary] = useState([]);
+
+    const salaryStatus = 'Paid';
+
+    useEffect(() => {
+        fetch('http://localhost:9999/paidSalary?salaryStatus=' + salaryStatus)
+            .then(res => res.json())
+            .then(data => setPaidSalary(data))
+    }, [salaryStatus])
+
+    let totalPaidSalary = 0;
+    for (let i = 0; i < paidSalary.length; i++) {
+        const element = parseFloat(paidSalary[i].salary);
+        totalPaidSalary = totalPaidSalary + element;
+    }
+    console.log(totalPaidSalary);
+
 
 
     //Others Addition
@@ -37,6 +57,7 @@ const Fund = () => {
         const elmnt = parseFloat(otherAddition[i].amount);
         totalOtherDonation = totalOtherDonation + elmnt;
     }
+
 
 
     //Event spending
@@ -57,6 +78,7 @@ const Fund = () => {
     console.log(totalEventSpending)
 
 
+
     //deleted Event budget
     const [deletedEvent, setDeletedEvent] = useState([]);
 
@@ -75,32 +97,10 @@ const Fund = () => {
     console.log(totalDeletedEventBudget)
 
 
+
     //Total Fund
-    // const [fund, setFund] = useState(0);
+    const totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget + totalPaidSalary))
 
-        const totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget))
-
-        // setFund(totalFund);
-        // console.log(fund)
-
-// useEffect(() => {
-//         const totalFunding = {
-//             fundAmount: totalFund
-//         }
-
-//         const url = `http://localhost:9999/fund`;
-//         fetch(url, {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(totalFunding)
-//         })
-//             .then(res => res.json())
-//             .then(data => {
-
-//             })
-//     }, [])
 
 
     return (
@@ -124,7 +124,7 @@ const Fund = () => {
                             <div class="card bg-info text-white shadow" style={{ width: '15rem', height: '10rem' }}>
                                 <div class="card-body text-center">
                                     <h5> <small>Total Fund Amount</small> </h5>
-                                    <h1>{totalFund} Tk</h1>
+                                    <h1><strong style={{color: 'purple'}}>{totalFund}</strong> Tk</h1>
                                 </div>
                             </div>
                         </div>
@@ -139,8 +139,47 @@ const Fund = () => {
                         <div class="col-md-3">
                             <div class="card bg-secondary text-white shadow" style={{ width: '15rem', height: '10rem' }}>
                                 <div class="card-body text-center">
-                                    <h5> <small>Total Donations</small> </h5>
+                                    <h5> <small>Total Donor</small> </h5>
                                     <h1>{receivedDonation.length}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="container pt-3">
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <div class="card bg-secondary text-white shadow" style={{ width: '15rem', height: '10rem' }}>
+                                <div class="card-body text-center">
+                                    <h5> <small>Salary Paid ({paidSalary.length})</small></h5>
+                                    <h1>{totalPaidSalary} Tk</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-primary text-white shadow" style={{ width: '15rem', height: '10rem' }}>
+                                <div class="card-body text-center">
+                                    <h5> <small>Others Additions ({otherAddition.length})</small></h5>
+                                    <h1>{totalOtherDonation} Tk</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-info text-white shadow" style={{ width: '15rem', height: '10rem' }}>
+                                <div class="card-body text-center">
+                                    <h5> <small>Others Spending ()</small> </h5>
+                                    <h1> Tk</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-success text-white shadow" style={{ width: '15rem', height: '10rem' }}>
+                                <div class="card-body text-center">
+                                    <h5> <small>Total Event Cost ({eventSpend.length + deletedEvent.length })</small> </h5>
+                                    <h1>{totalEventSpending+totalDeletedEventBudget}</h1>
                                 </div>
                             </div>
                         </div>

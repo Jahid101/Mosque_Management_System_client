@@ -28,7 +28,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav class="navbar navbar-expand-lg navbarBg navbar-light mb-3 m-1 rounded">
+        <nav class="navbar navbar-expand-lg navbarBg navbar-light mb-3 m-1 p-2 rounded">
             <div class="container-fluid text-light">
                 <Link class="navbar-brand" to="/"><h3 class="text-light"><strong>ABC Mosque</strong></h3></Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +50,9 @@ const Navbar = () => {
                         </li>
                         <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/committeeMember">Committee<br/><span className="ms-2">Members</span></Link>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <Link class="nav-link active text-light" aria-current="page" to="/OM">Other<br/><span className="">Members</span></Link>
                         </li>
                         <li class="nav-item mr-2">
                             <Link class="nav-link active text-light" aria-current="page" to="/contact">Contact</Link>

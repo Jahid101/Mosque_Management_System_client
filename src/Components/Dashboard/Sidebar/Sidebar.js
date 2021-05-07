@@ -94,6 +94,11 @@ const Sidebar = () => {
                         </Link>
                     </li>
                     <li>
+                        <Link to="/manageOM" className="text-white" >
+                            <FontAwesomeIcon icon={faTasks} /> <span>Other Members</span>
+                        </Link>
+                    </li>
+                    <li>
                         <Link to="/manageEvent" className="text-white">
                             <FontAwesomeIcon icon={faTasks} /> <span>Manage Event</span>
                         </Link>

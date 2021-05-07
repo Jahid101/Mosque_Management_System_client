@@ -43,6 +43,11 @@ import AddCM from './Components/Dashboard/AddCM/AddCM';
 import ShowCM from './Components/ShowCM/ShowCM';
 import ShowCMAdmin from './Components/ShowCMAdmin/ShowCMAdmin';
 import UpdateCM from './Components/Dashboard/UpdateCM/UpdateCM';
+import OM from './Components/OM/OM';
+import ShowOM from './Components/ShowOM/ShowOM';
+import AddOM from './Components/Dashboard/AddOM/AddOM';
+import ManageOM from './Components/Dashboard/ManageOM/ManageOM';
+import UpdateOM from './Components/Dashboard/UpdateOM/UpdateOM';
 
 
 
@@ -154,11 +159,27 @@ function App() {
           <PrivateRoute path="/donationYouMade">
             <DonationYouMade></DonationYouMade>
           </PrivateRoute>
+
+          <Route path="/showOM/:id">
+            <ShowOM></ShowOM>
+          </Route>
+          <Route path="/OM">
+            <OM></OM>
+          </Route>
+          <PrivateRoute path="/addOM">
+            <AddOM></AddOM>
+          </PrivateRoute>
+          <PrivateRoute path="/manageOM">
+            <ManageOM></ManageOM>
+          </PrivateRoute>
+          <PrivateRoute path="/updateOM/:id">
+            <UpdateOM></UpdateOM>
+          </PrivateRoute>
           <PrivateRoute path="/serviceBooking/:id">
             <ServiceBooking></ServiceBooking>
           </PrivateRoute>
           <PrivateRoute path="/serviceBooking">
-          <ServiceBooking></ServiceBooking>
+            <ServiceBooking></ServiceBooking>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>

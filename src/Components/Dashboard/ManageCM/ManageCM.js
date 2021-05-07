@@ -35,7 +35,7 @@ const ManageCM = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    alert('Event Deleted successfully');
+                    alert('Member Deleted successfully');
                     deleted();
                 }
             })

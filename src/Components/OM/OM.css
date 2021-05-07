@@ -1,0 +1,23 @@
+.omBg{
+    background-image: url('https://thedigitalislam.com/wp-content/uploads/2019/10/Dark-Islamic-Background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 50px;
+}
+
+.omCardInfo img{
+    height: 200px;
+    width: 200px;
+}
+.omCardInfo{
+    width: 320px;
+    height: 450px;
+    border-radius: 15px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    background-color: white;
+    box-shadow: 1px 10px 40px 10px ;
+}

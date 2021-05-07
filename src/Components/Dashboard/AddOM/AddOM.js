@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 
 const AddCM = () => {
@@ -10,29 +10,31 @@ const AddCM = () => {
 
 
     const handleCMSubmit = e => {
-        const CMInfo = {
+        const OMInfo = {
             name: e.target.name.value,
             email: e.target.email.value,
             designation: e.target.designation.value,
             details: e.target.details.value,
             phone: e.target.phone.value,
+            salary: e.target.salary.value,
+            salaryStatus: 'Pending',
             time: new Date(),
             imageURL: imageURL
         };
 
-        const url = `http://localhost:9999/addCM`;
+        const url = `http://localhost:9999/addOM`;
         fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(CMInfo)
+            body: JSON.stringify(OMInfo)
         })
             .then(res => res.json())
             .then(data => {
                 setDbStatus(data);
                 if (data) {
-                    alert('Committee Member added successfully.')
+                    alert('Member added successfully.')
                     e.target.reset();
                 }
             })
@@ -68,7 +70,7 @@ const AddCM = () => {
             <Dashboardpage></Dashboardpage>
 
             <div style={{ marginLeft: '300px' }}>
-                <h2 className="mb-3">Add Committee Member</h2>
+                <h2 className="mb-3">Add Member</h2>
                 <br />
                 <form onSubmit={handleCMSubmit}>
                     <h5>Name</h5>
@@ -89,6 +91,10 @@ const AddCM = () => {
 
                     <h5>Phone</h5>
                     <input type="number" min="999999999" max="9999999999" class="form-control w-50" placeholder="Phone" name="phone" aria-label="Last name" />
+                    <br />
+
+                    <h5>Salary</h5>
+                    <input type="number" min="1" class="form-control w-50" placeholder="Salary" name="salary" aria-label="Last name" />
                     <br />
 
                     <h5>Image</h5>
