@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import Sidebar from '../Sidebar/Sidebar';
 
 const ManageAnnounce = () => {
 
@@ -42,7 +43,8 @@ const ManageAnnounce = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            {/* <Dashboardpage></Dashboardpage> */}
+            <Sidebar></Sidebar>
 
             <div className="mt-3" style={{ marginLeft: '240px' }}>
                 <h3 className="ml-5 mb-5">Total Announcements: {announcement.length}</h3>

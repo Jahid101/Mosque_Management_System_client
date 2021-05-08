@@ -6,7 +6,7 @@ import "./Donation.css";
 const Donation = () => {
 
     return (
-        <div style={{ color: 'black', padding: '15px' }} className="row mt-5 m-2 donation">
+        <div style={{ color: 'black', padding: '15px' }} className="row mt-3 mb-3 m-2 donation">
             <h1 className="text-center mt-5 mb-4"><strong>Sadakah</strong></h1>
             <div className="col-md-6 text-center">
                 <h1 className="mt-5">"Please Help Keep Families <br /> Healthy and Safe when <br />Lives are at Risk"</h1>

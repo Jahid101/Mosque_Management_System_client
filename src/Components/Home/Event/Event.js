@@ -13,7 +13,7 @@ const Event = () => {
     }, [])
 
     return (
-        <div className="mt-5 eventBg" id="event">
+        <div className="mt-2 eventBg" id="event">
             <div className="container">
                 <h1 className="text-center mb-3" style={{color: 'white', fontSize:'50px'}}> <strong>Events</strong> </h1>
                 <div className="row">

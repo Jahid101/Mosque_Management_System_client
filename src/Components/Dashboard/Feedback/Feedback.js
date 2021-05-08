@@ -1,6 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../App';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import Sidebar from '../Sidebar/Sidebar';
+import UserSidebar from '../UserSidebar/UserSidebar';
+
 
 const Feedback = () => {
 
@@ -41,7 +44,9 @@ const Feedback = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            {/* <Dashboardpage></Dashboardpage> */}
+            {/* <Sidebar></Sidebar> */}
+            <UserSidebar></UserSidebar>
 
             <div style={{ marginLeft: '250px' }} className="bg-info p-5 w-75">
                 <h2 className="mb-4">Your Feedback</h2>

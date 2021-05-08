@@ -3,7 +3,7 @@ import "./PillarsOfIslam.css";
 
 const PillarsOfIslam = () => {
     return (
-        <div class="row mt-5 pillarBg ">
+        <div class="row mt-2 pillarBg ">
             <h1 class="text-center mb-4">The Pillars of Islam</h1>
             <div class="col-md-2 ms-4">
                 <img class="w-75" src="https://cdn.iconscout.com/icon/free/png-512/praying-dua-namaz-allah-is-one-faith-in-1-49580.png" alt="" />

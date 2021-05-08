@@ -3,7 +3,7 @@ import React from 'react';
 
 const FixerCard = ({ expert }) => {
     return (
-        <div class="col-md-3 container fixerCardInfo cardDesign mt-5 p-3 btn">
+        <div class="col-md-3 container fixerCardInfo cardDesign mt-2 p-3 btn">
             <div>
                 <img src={expert.img} alt="" />
                 <div>

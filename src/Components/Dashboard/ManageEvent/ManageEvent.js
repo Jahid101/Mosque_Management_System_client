@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 import { Link, useHistory } from 'react-router-dom';
+import Sidebar from '../Sidebar/Sidebar';
 
 const ManageEvent = () => {
 
@@ -75,7 +76,8 @@ const ManageEvent = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            {/* <Dashboardpage></Dashboardpage> */}
+            <Sidebar></Sidebar>
 
             <div className="mt-3" style={{ marginLeft: '240px' }}>
                 <h3 className="ml-5 mb-2">Total Events: {event.length}</h3>

@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import Sidebar from '../Sidebar/Sidebar';
+import UserSidebar from '../UserSidebar/UserSidebar';
+
 
 const DonationYouMade = () => {
 
@@ -17,7 +20,9 @@ const DonationYouMade = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            {/* <Dashboardpage></Dashboardpage> */}
+            {/* <Sidebar></Sidebar> */}
+            <UserSidebar></UserSidebar>
 
             <div className="mt-3 p-3" style={{ marginLeft: '230px' }}>
                 <h2 className="ml-5 mb-5">Total Donation You Made : {donation.length}</h2>

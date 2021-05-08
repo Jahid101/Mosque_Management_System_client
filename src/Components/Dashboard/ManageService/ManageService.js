@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import Sidebar from '../Sidebar/Sidebar';
 
 const ManageService = () => {
 
@@ -36,7 +37,8 @@ const ManageService = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            {/* <Dashboardpage></Dashboardpage> */}
+            <Sidebar></Sidebar>
 
             <div className="mt-3" style={{ marginLeft: '300px' }}>
                 <h3 className="ml-5 mb-5">Total Product : {service.length}</h3>

@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../App';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 import PaymentProcess from '../Payment/PaymentProcess';
+import Sidebar from '../Sidebar/Sidebar';
+import UserSidebar from '../UserSidebar/UserSidebar';
 
 const MakeDonation = () => {
 
@@ -77,8 +79,9 @@ const MakeDonation = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
-
+            {/* <Dashboardpage></Dashboardpage> */}
+            {/* <Sidebar></Sidebar> */}
+            <UserSidebar></UserSidebar>
             <div style={{ marginLeft: '300px' }}>
                 <h2 className="mb-4">Make Donation</h2>
                 <br />

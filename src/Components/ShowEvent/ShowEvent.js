@@ -30,11 +30,16 @@ const ShowEvent = () => {
                 </div>
 
                 <div className="col-md-6 mt-4 mb-5">
-                    <p>{event.eventDetails}</p>
+                    <p>Event Start: <span style={{color: 'yellow', fontSize: '20px'}}>{new Date(event.eventStart).toLocaleDateString()}</span></p>
+                    <br/>
+                    <p>Event End: <span style={{color: 'yellow', fontSize: '20px'}}>{new Date(event.eventEnd).toLocaleDateString()}</span></p>
+                    <br/>
+                    <p>Event Details: <span style={{color: 'yellow', fontSize: '20px'}}>{event.eventDetails}</span></p>
+                    
                     <br />
 
                     <Link to="/makeDonation">
-                        <button className="btn btn-success btn-lg ms-5">Donate</button>
+                        <button className="btn btn-success btn-lg">Donate</button>
                     </Link>
                 </div>
             </div>

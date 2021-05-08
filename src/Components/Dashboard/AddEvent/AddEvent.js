@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import Sidebar from '../Sidebar/Sidebar';
 
 const AddEvent = () => {
 
@@ -181,7 +182,8 @@ const AddEvent = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            {/* <Dashboardpage></Dashboardpage> */}
+            <Sidebar></Sidebar>
 
             <div style={{ marginLeft: '300px' }}>
                 <h2 className="mb-4">Add Event</h2>

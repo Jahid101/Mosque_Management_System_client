@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import Sidebar from '../Sidebar/Sidebar';
 
 const UpdateEvent = () => {
 
@@ -218,7 +219,8 @@ const UpdateEvent = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            {/* <Dashboardpage></Dashboardpage> */}
+            <Sidebar></Sidebar>
 
             <div style={{ marginLeft: '300px' }}>
                 <h2 className="mb-4">Update Event</h2>

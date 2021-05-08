@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import Sidebar from '../Sidebar/Sidebar';
 
 
 const OtherAdditionList = () => {
@@ -15,7 +16,8 @@ const OtherAdditionList = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            {/* <Dashboardpage></Dashboardpage> */}
+            <Sidebar></Sidebar>
 
             <div className="mt-3 p-2" style={{ marginLeft: '230px' }}>
                 <h2 className="ml-5 mb-5">Other Addition List : {otherAddition.length}</h2>

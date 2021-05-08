@@ -6,7 +6,7 @@ const FastingTime = () => {
 
     return (
         <div>
-            <div class="mt-5 fastingTimeBg  m-2 p-5">
+            <div class="mt-3 mb-3 fastingTimeBg  m-2 p-5">
                 <h1 class="text-center text-dark"><strong>Fasting Time in Our City</strong></h1>
                 <table class="table mt-3 text-dark">
                     <thead>

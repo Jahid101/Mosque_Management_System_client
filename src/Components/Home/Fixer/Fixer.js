@@ -21,7 +21,7 @@ const experts = [
 const Fixer = () => {
     return (
         <div>
-            <div className="mt-5 fixerBg">
+            <div className="mt-2 fixerBg">
                 <h1 className="text-center mb-3 text-light" style={{ color: 'black', fontSize: '55px' }}>OUR EXPERTS</h1>
                 <div className="row">
                     {

@@ -1,5 +1,6 @@
 import React from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import Sidebar from '../Sidebar/Sidebar';
 
 const AddAdmin = () => {
 
@@ -31,7 +32,9 @@ const AddAdmin = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            {/* <Dashboardpage></Dashboardpage> */}
+            <Sidebar></Sidebar>
+            
             <div style={{ marginLeft: '300px' }}>
                 <h2 className="mb-4">Add a Admin</h2>
                 <br />

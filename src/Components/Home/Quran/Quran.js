@@ -3,8 +3,8 @@ import "./Quran.css";
 
 const Quran = () => {
     return (
-        <div style={{ height: '750px', color: 'white', padding: '15px' }} className="row mt-5 m-2 quran">
-            <h1 className="text-center mt-5 mb-4"><strong>Listen to holy Quran</strong></h1>
+        <div style={{ height: '750px', color: 'white', padding: '15px' }} className="row mt-3 mb-3 m-2 quran">
+            <h1 className="text-center mt-2 mb-4"><strong>Listen to holy Quran</strong></h1>
             <div className="col-md-6 text-center">
                 <h1 className="mt-2">"The word Quran occurs some 70 times in the text itself, and other names and words are also said to refer to the Quran. The Quran is thought by Muslims to be not simply divinely inspired, but the literal word of Allah."</h1>
             </div>

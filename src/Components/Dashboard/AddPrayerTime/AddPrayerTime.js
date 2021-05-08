@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import Sidebar from '../Sidebar/Sidebar';
 
 
 const AddPrayerTime = () => {
@@ -98,7 +99,9 @@ const AddPrayerTime = () => {
     return (
         <div>
             <div>
-                <Dashboardpage></Dashboardpage>
+                {/* <Dashboardpage></Dashboardpage> */}
+                <Sidebar></Sidebar>
+                
                 <div style={{ marginLeft: '300px' }}>
                     <h2 className="mb-4">Update Prayer Time</h2>
                     <br />

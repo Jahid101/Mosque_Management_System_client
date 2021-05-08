@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Fund = () => {
 
@@ -124,7 +125,8 @@ const Fund = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            {/* <Dashboardpage></Dashboardpage> */}
+            <Sidebar></Sidebar>
 
             <div style={{ marginLeft: '230px' }}>
                 <h1 className="mt-3 text-center">Fund</h1>
@@ -168,24 +170,24 @@ const Fund = () => {
 
 
 
-                <div class="container pt-3">
+                <div style={{ marginLeft: '150px' }} class="container pt-3 mt-3">
                     <div class="row ">
                         <div class="col-md-3">
-                            <div class="card bg-secondary text-white shadow" style={{ width: '15rem', height: '10rem' }}>
+                            <div class="card bg-primary text-white shadow" style={{ width: '15rem', height: '10rem' }}>
                                 <div class="card-body text-center">
                                     <h5> <small>Salary Paid ({paidSalary.length})</small></h5>
                                     <h1>{totalPaidSalary} Tk</h1>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        {/* <div class="col-md-3">
                             <div class="card bg-primary text-white shadow" style={{ width: '15rem', height: '10rem' }}>
                                 <div class="card-body text-center">
                                     <h5> <small>Others Additions ({otherAddition.length})</small></h5>
                                     <h1>{totalOtherDonation} Tk</h1>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div class="col-md-3">
                             <div class="card bg-info text-white shadow" style={{ width: '15rem', height: '10rem' }}>
                                 <div class="card-body text-center">

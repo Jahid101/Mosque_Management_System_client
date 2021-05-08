@@ -13,7 +13,7 @@ const Announcement = () => {
     }, [])
 
     return (
-        <div className="mt-5 announcementBg" id="announcement">
+        <div className="mt-2 announcementBg" id="announcement">
             <h1 className="text-center mb-3 text-light" style={{ color: 'black', fontSize: '55px' }}>Announcements</h1>
             <div className="row">
                 {

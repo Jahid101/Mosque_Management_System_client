@@ -27,10 +27,10 @@ const Navbar = () => {
             });
     }
 
-
+console.log(loggedInUser.displayName);
 
     return (
-        <nav class="navbar navbar-expand-lg navbarBg navbar-light mb-3 m-1 p-2 rounded">
+        <nav class="navbar navbar-expand-lg navbarBg navbar-light m-1 p-2 rounded">
             <div class="container-fluid text-light">
                 <Link class="navbar-brand" to="/"><h3 class="text-light"><strong>ABC Mosque</strong></h3></Link>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,42 +38,45 @@ const Navbar = () => {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        {/* <li class="nav-item mr-2">
+                        {/* <li class="nav-item ">
                             <Link class="nav-link active text-light" aria-current="page" to="/home">Home</Link>
                         </li> */}
 
-                        <li class="nav-item mr-2">
+                        <li class="nav-item ">
                             <Link class="nav-link active text-light" aria-current="page" to="/event">Events</Link>
                         </li>
-                        <li class="nav-item mr-2">
+                        <li class="nav-item ">
+                            <Link class="nav-link active text-light" aria-current="page" to="/donate">Donate</Link>
+                        </li>
+                        <li class="nav-item ">
                             <Link class="nav-link active text-light" aria-current="page" to="/announcement">Announcements</Link>
                         </li>
-                        <li class="nav-item mr-2">
+                        <li class="nav-item ">
                             <Link class="nav-link active text-light" aria-current="page" to="/dashboard">Dashboard</Link>
                         </li>
-                        <li class="nav-item mr-2">
+                        <li class="nav-item ">
                             <Link class="nav-link active text-light" aria-current="page" to="/committeeMember">Committee<br /><span className="ms-2">Members</span></Link>
                         </li>
-                        <li class="nav-item mr-2">
+                        <li class="nav-item ">
                             <Link class="nav-link active text-light" aria-current="page" to="/work">Works</Link>
                         </li>
-                        <li class="nav-item mr-2">
+                        <li class="nav-item ">
                             <Link class="nav-link active text-light" aria-current="page" to="/OM">Other<br /><span className="">Members</span></Link>
                         </li>
-                        <li class="nav-item mr-2">
+                        <li class="nav-item ">
                             <Link class="nav-link active text-light" aria-current="page" to="/contact">Contact</Link>
                         </li>
                         <li class="nav-item">
                             <Link class="nav-link active text-light" to="/register">
-                                <button class="btn btn-info mr-2">
+                                <button class="btn btn-info ">
                                     Register
                             </button>
                             </Link>
                         </li>
                         <li class="nav-item active">
-                            <p>{loggedInUser.email}</p>
+                            <p>{loggedInUser.displayName}</p>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item active mr-2">
                             <Link class="nav-link active text-light" to="/login" tabindex="-1" aria-disabled="true">
                                 <input type="submit" class="btn btn-success" onClick={handleSignOut} value={loggedInUser.email ? 'Log Out' : 'Log In'} />
                             </Link>

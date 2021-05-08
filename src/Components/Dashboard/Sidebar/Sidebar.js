@@ -27,7 +27,7 @@ const Sidebar = () => {
         <div className="sidebar col-md-3 abcd col-lg-2 pt-3 pb-3 rounded d-md-block m-1 collapse" style={{ height: "750px" }}>
             <ul className="list-unstyled">
 
-                <li>
+                {/* <li>
                     <Link to="/makeDonation" className="text-white">
                         <FontAwesomeIcon icon={faMoneyBill} /> <span>
                             Make Donation
@@ -45,9 +45,9 @@ const Sidebar = () => {
                     <Link to="/feedback" className="text-white">
                         <FontAwesomeIcon icon={faCommentDots} /> <span>Feedback</span>
                     </Link>
-                </li>
+                </li> */}
 
-                {checkAdmin && <div>
+                {/* {checkAdmin && <div> */}
                     <li>
                         <Link to="/donationList" className="text-white">
                             <FontAwesomeIcon icon={faListAlt} /> <span>Donation list</span>
@@ -129,8 +129,8 @@ const Sidebar = () => {
                             <FontAwesomeIcon icon={faTasks} /> <span>Announcements</span>
                         </Link>
                     </li>
-                </div>
-                }
+                {/* </div>
+                } */}
             </ul>
         </div>
     );

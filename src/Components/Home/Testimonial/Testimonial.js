@@ -13,7 +13,7 @@ const Testimonial = () => {
 
     return (
         <div>
-            <div className="mt-5 testimonialBg ">
+            <div className="mt-2 testimonialBg ">
                 <h1 className="text-center mb-3" style={{color: 'black', fontSize:'50px'}}>Testimonials</h1>
                 <div className="row">
                     {

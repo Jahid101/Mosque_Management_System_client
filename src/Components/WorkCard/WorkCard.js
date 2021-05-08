@@ -19,15 +19,18 @@ const WorkCard = (props) => {
             })
     }, [received])
 
-    const [admin, setAdmin] = useState({})
+    const [checkAdmin, setCheckAdmin] = useState(false);
+
 
     useEffect(() => {
-        fetch('http://localhost:9999/admin')
+        fetch('http://localhost:9999/checkAdmin', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
             .then(res => res.json())
-            .then(data => {
-                data.map(data => setAdmin(data))
-            })
-    }, [])
+            .then(data => setCheckAdmin(data));
+    }, [loggedInUser.email])
 
     // console.log(admin.email)
 
@@ -39,14 +42,12 @@ const WorkCard = (props) => {
         if (loggedInUser.email === receivedDonation.email) {
             history.push(`/showWork/${_id}`);
         }
+        else if (checkAdmin) {
+            history.push(`/showWork/${_id}`);
+            console.log('in')
+        }
         else {
-            if (loggedInUser.email === admin.email) {
-                history.push(`/showWork/${_id}`);
-                console.log('in')
-            }
-            else {
-                alert('Access Denied !!!')
-            }
+            alert('Access Denied !!!')
         }
     }
 

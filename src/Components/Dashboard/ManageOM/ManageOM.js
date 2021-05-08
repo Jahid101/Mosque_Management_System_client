@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 import { Link, useHistory } from 'react-router-dom';
+import Sidebar from '../Sidebar/Sidebar';
 
 const ManageOM = () => {
 
@@ -225,7 +226,8 @@ const ManageOM = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            {/* <Dashboardpage></Dashboardpage> */}
+            <Sidebar></Sidebar>
 
             <div className="mt-3" style={{ marginLeft: '235px' }}>
                 <h3 className="ml-5 mb-2">Other Members: {OM.length}</h3>

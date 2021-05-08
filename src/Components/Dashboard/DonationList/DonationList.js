@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import Sidebar from '../Sidebar/Sidebar';
 
 
 const DonationList = () => {
@@ -47,7 +48,8 @@ const DonationList = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            {/* <Dashboardpage></Dashboardpage> */}
+            <Sidebar></Sidebar>
 
             <div className="mt-3 p-2" style={{ marginLeft: '230px' }}>
                 <h2 className="ml-5 mb-5">Total Donated List : {donation.length}</h2>

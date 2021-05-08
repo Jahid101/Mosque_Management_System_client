@@ -14,7 +14,7 @@ const PrayerTime = () => {
     }, [])
 
     return (
-        <div class="mt-5 prayerTimeBg m-2" id="prayerTime">
+        <div class="mt-2 prayerTimeBg m-2" id="prayerTime">
             <h1 class="text-center text-light">Prayer Time</h1>
             <strong>
                 <table class="table mt-3 text-light">

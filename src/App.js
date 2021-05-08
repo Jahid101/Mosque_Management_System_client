@@ -82,6 +82,9 @@ function App() {
           <PrivateRoute path="/dashboard">
             <Welcome></Welcome>
           </PrivateRoute>
+          <PrivateRoute path="/donate">
+            <MakeDonation></MakeDonation>
+          </PrivateRoute>
           <PrivateRoute path="/serviceList">
             <ServiceList></ServiceList>
           </PrivateRoute>
