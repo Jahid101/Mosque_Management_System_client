@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../../App';
+import CMDashboard from '../CMDashboard/CMDashboard';
 import Dashboardpage from '../Dashboardpage/Dashboardpage';
 import Sidebar from '../Sidebar/Sidebar';
 
@@ -120,7 +122,6 @@ const Fund = () => {
 
     //Total Fund
     const totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget + totalPaidSalary + totalWorkSpending))
-
 
 
     return (

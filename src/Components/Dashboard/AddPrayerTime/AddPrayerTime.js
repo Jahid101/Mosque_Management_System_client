@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
-// import Dashboardpage from '../Dashboardpage/Dashboardpage';
-// import TimePicker from 'react-time-picker';
+import Dashboardpage from '../Dashboardpage/Dashboardpage';
 import Sidebar from '../Sidebar/Sidebar';
 
 
 const AddPrayerTime = () => {
 
     const [prayerTime, setPrayerTime] = useState([]);
-
-    // const [value, onChange] = useState('10:00');
-    // console.log(value)
 
     const [FAJR, setFAJR] = useState('');
     const [ZUHR, setZUHR] = useState('');
@@ -97,7 +93,7 @@ const AddPrayerTime = () => {
 
     const handlePrayerTimeSubmit = (e) => {
         e.preventDefault();
-    }
+    } 
 
 
     return (
@@ -105,45 +101,37 @@ const AddPrayerTime = () => {
             <div>
                 {/* <Dashboardpage></Dashboardpage> */}
                 <Sidebar></Sidebar>
-
+                
                 <div style={{ marginLeft: '300px' }}>
                     <h2 className="mb-4">Update Prayer Time</h2>
                     <br />
                     <form onSubmit={handlePrayerTimeSubmit}>
+                    <h5>FAJR</h5>
+                    <input type="text" onBlur={handleFajrBlur} class="form-control w-50" name="FAJR" aria-label="First name" autoFocus defaultValue={prayerTime.FAJR} required />
+                    <br />
 
-                        {/* <div>
-                            <TimePicker
-                                onChange={onChange}
-                                value={value}
-                            />
-                        </div> */}
+                    <h5>ZUHR</h5>
+                    <input type="text" onBlur={handleZuhrBlur} class="form-control w-50" name="ZUHR" aria-label="Last name" defaultValue={prayerTime.ZUHR} required />
+                    <br />
 
-                        <h5>FAJR</h5>
-                        <input type="text" onBlur={handleFajrBlur} class="form-control w-50" name="FAJR" aria-label="First name" autoFocus defaultValue={prayerTime.FAJR} required />
-                        <br />
+                    <h5>ASR</h5>
+                    <input type="text" onBlur={handleAsrBlur} class="form-control w-50" name="ASR" aria-label="Last name" defaultValue={prayerTime.ASR} required />
+                    <br />
 
-                        <h5>ZUHR</h5>
-                        <input type="text" onBlur={handleZuhrBlur} class="form-control w-50" name="ZUHR" aria-label="Last name" defaultValue={prayerTime.ZUHR} required />
-                        <br />
+                    <h5>MAGRIB</h5>
+                    <input type="text" onBlur={handleMagribBlur} class="form-control w-50" name="MAGRIB" aria-label="Last name" defaultValue={prayerTime.MAGRIB} required />
+                    <br />
 
-                        <h5>ASR</h5>
-                        <input type="text" onBlur={handleAsrBlur} class="form-control w-50" name="ASR" aria-label="Last name" defaultValue={prayerTime.ASR} required />
-                        <br />
+                    <h5>ISHA'A</h5>
+                    <input type="text" onBlur={handleIshaBlur} class="form-control w-50" name="ISHA" aria-label="Last name" defaultValue={prayerTime.ISHA} required />
+                    <br />
 
-                        <h5>MAGRIB</h5>
-                        <input type="text" onBlur={handleMagribBlur} class="form-control w-50" name="MAGRIB" aria-label="Last name" defaultValue={prayerTime.MAGRIB} required />
-                        <br />
+                    <h5>JUMAH</h5>
+                    <input type="text" onBlur={handleJumahBlur} class="form-control w-50" name="JUMAH" aria-label="Last name" defaultValue={prayerTime.JUMAH} required />
+                    <br />
 
-                        <h5>ISHA'A</h5>
-                        <input type="text" onBlur={handleIshaBlur} class="form-control w-50" name="ISHA" aria-label="Last name" defaultValue={prayerTime.ISHA} required />
-                        <br />
-
-                        <h5>JUMAH</h5>
-                        <input type="text" onBlur={handleJumahBlur} class="form-control w-50" name="JUMAH" aria-label="Last name" defaultValue={prayerTime.JUMAH} required />
-                        <br />
-
-                        <br />
-                        <button onClick={() => handlePrayerTime(prayerTime._id)} className="btn btn-success mb-3">Update</button>
+                    <br />
+                    <button onClick={() => handlePrayerTime(prayerTime._id)} className="btn btn-success mb-3">Update</button>
                     </form>
                 </div>
             </div>

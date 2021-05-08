@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Dashboardpage from '../Dashboardpage/Dashboardpage';
 import Sidebar from '../Sidebar/Sidebar';
 
 
@@ -14,9 +13,9 @@ const OtherAdditionList = () => {
     }, [])
 
 
+
     return (
         <div>
-            {/* <Dashboardpage></Dashboardpage> */}
             <Sidebar></Sidebar>
 
             <div className="mt-3 p-2" style={{ marginLeft: '230px' }}>

@@ -74,7 +74,7 @@ console.log(loggedInUser.displayName);
                             </Link>
                         </li>
                         <li class="nav-item active">
-                            <p>{loggedInUser.displayName}</p>
+                            <p>{loggedInUser.displayName || loggedInUser.email}</p>
                         </li>
                         <li class="nav-item active mr-2">
                             <Link class="nav-link active text-light" to="/login" tabindex="-1" aria-disabled="true">

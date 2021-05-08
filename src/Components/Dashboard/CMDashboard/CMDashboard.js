@@ -1,31 +1,20 @@
+import { faFunnelDollar, faList, faListAlt, faTasks } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Sidebar.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList, faPlus, faTasks, faListAlt, faFunnelDollar, faUpload } from '@fortawesome/free-solid-svg-icons';
 
 
-const Sidebar = () => {
+const CMDashboard = () => {
 
     return (
         <div className="sidebar col-md-3 abcd col-lg-2 pt-3 pb-3 rounded d-md-block m-1 collapse" style={{ height: "600px" }}>
             <ul className="list-unstyled">
 
-                    <li>
-                        <Link to="/donationList" className="text-white">
-                            <FontAwesomeIcon icon={faListAlt} /> <span>Donation list</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/otherAddition" className="text-white">
-                            <FontAwesomeIcon icon={faPlus} /> <span>Other Addition</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/addWS" className="text-white">
-                            <FontAwesomeIcon icon={faPlus} /> <span>Work Spending</span>
-                        </Link>
-                    </li>
+                <li>
+                    <Link to="/donationList" className="text-white">
+                        <FontAwesomeIcon icon={faListAlt} /> <span>Donation list</span>
+                    </Link>
+                </li>
                 <li>
                     <Link to="/otherAdditionList" className="text-white">
                         <FontAwesomeIcon icon={faList} /> <span>Other Addition List</span>
@@ -34,11 +23,6 @@ const Sidebar = () => {
                 <li>
                     <Link to="/workingSpendList" className="text-white">
                         <FontAwesomeIcon icon={faList} /> <span>Working spend List</span>
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/addPrayerTime" className="text-white" >
-                        <FontAwesomeIcon icon={faUpload} /> <span>Update Prayer Time</span>
                     </Link>
                 </li>
                 <li>
@@ -71,4 +55,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default CMDashboard;

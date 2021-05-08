@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Dashboardpage from '../Dashboardpage/Dashboardpage';
 import Sidebar from '../Sidebar/Sidebar';
 
 
@@ -14,9 +13,9 @@ const WSList = () => {
     }, [])
 
 
+
     return (
         <div>
-            {/* <Dashboardpage></Dashboardpage> */}
             <Sidebar></Sidebar>
 
             <div className="mt-3 p-2" style={{ marginLeft: '225px' }}>
@@ -42,11 +41,11 @@ const WSList = () => {
                                     {/* <td>{WS.email}</td> */}
                                     <td>{WS.details}</td>
                                     <td>
-                                    <img className="" style={{ width: '70px', height: '50px' }} src={WS.receiptImageURL} alt="" />
+                                        <img className="" style={{ width: '70px', height: '50px' }} src={WS.receiptImageURL} alt="" />
                                     </td>
 
                                     <td>
-                                    <img className="" style={{ width: '70px', height: '50px' }} src={WS.workingImageURL} alt="" />
+                                        <img className="" style={{ width: '70px', height: '50px' }} src={WS.workingImageURL} alt="" />
                                     </td>
 
                                     <td><strong>{WS.amount} Tk</strong></td>

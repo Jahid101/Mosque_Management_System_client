@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Dashboardpage from '../Dashboardpage/Dashboardpage';
 import Sidebar from '../Sidebar/Sidebar';
 
 
@@ -19,9 +18,6 @@ const DonationList = () => {
             .then(res => res.json())
             .then(data => setDonation(data))
     }
-
-
-
 
 
     const handleDoneBtn = (id) => {
@@ -46,9 +42,10 @@ const DonationList = () => {
             })
     }
 
+
+
     return (
         <div>
-            {/* <Dashboardpage></Dashboardpage> */}
             <Sidebar></Sidebar>
 
             <div className="mt-3 p-2" style={{ marginLeft: '230px' }}>
