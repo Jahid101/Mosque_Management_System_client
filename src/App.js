@@ -52,6 +52,13 @@ import AddWS from './Components/Dashboard/AddWS/AddWS';
 import WSList from './Components/Dashboard/WSList/WSList';
 import Work from './Components/Work/Work';
 import ShowWork from './Components/ShowWork/ShowWork';
+import CMAnnounce from './Components/Dashboard/CMDashboardPage/CMAnnounce';
+import CMEvnt from './Components/Dashboard/CMDashboardPage/CMEvnt';
+import CMOm from './Components/Dashboard/CMDashboardPage/CMOm';
+import CMCm from './Components/Dashboard/CMDashboardPage/CMCm';
+import CMFund from './Components/Dashboard/CMDashboardPage/CMFund';
+import CMDtnList from './Components/Dashboard/CMDashboardPage/CMDtnList';
+import CMOthrAdtnList from './Components/Dashboard/CMDashboardPage/CMOthrAdtnList';
 
 
 
@@ -192,6 +199,30 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/updateOM/:id">
             <UpdateOM></UpdateOM>
+          </PrivateRoute>
+          <PrivateRoute path="/CMmanageAnnouncement">
+            <CMAnnounce></CMAnnounce>
+          </PrivateRoute>
+          <PrivateRoute path="/CMmanageEvent">
+            <CMEvnt></CMEvnt>
+          </PrivateRoute>
+          <PrivateRoute path="/CMmanageOM">
+            <CMOm></CMOm>
+          </PrivateRoute>
+          <PrivateRoute path="/CMmanageCM">
+            <CMCm></CMCm>
+          </PrivateRoute>
+          <PrivateRoute path="/CMfund">
+            <CMFund></CMFund>
+          </PrivateRoute>
+          <PrivateRoute path="/CMworkingSpendList">
+            <CMDtnList></CMDtnList>
+          </PrivateRoute>
+          <PrivateRoute path="/CMotherAdditionList">
+            <CMOthrAdtnList></CMOthrAdtnList>
+          </PrivateRoute>
+          <PrivateRoute path="/CMdonationList">
+            <CMDtnList></CMDtnList>
           </PrivateRoute>
           <PrivateRoute path="/serviceBooking/:id">
             <ServiceBooking></ServiceBooking>

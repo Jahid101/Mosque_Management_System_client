@@ -11,42 +11,42 @@ const CMDashboard = () => {
             <ul className="list-unstyled">
 
                 <li>
-                    <Link to="/donationList" className="text-white">
+                    <Link to="/CMdonationList" className="text-white">
                         <FontAwesomeIcon icon={faListAlt} /> <span>Donation list</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/otherAdditionList" className="text-white">
+                    <Link to="/CMotherAdditionList" className="text-white">
                         <FontAwesomeIcon icon={faList} /> <span>Other Addition List</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/workingSpendList" className="text-white">
+                    <Link to="/CMworkingSpendList" className="text-white">
                         <FontAwesomeIcon icon={faList} /> <span>Working spend List</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/fund" className="text-white" >
+                    <Link to="/CMfund" className="text-white" >
                         <FontAwesomeIcon icon={faFunnelDollar} /> <span>Fund</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/manageCM" className="text-white" >
+                    <Link to="/CMmanageCM" className="text-white" >
                         <FontAwesomeIcon icon={faTasks} /> <span>Committee Members</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/manageOM" className="text-white" >
+                    <Link to="/CMmanageOM" className="text-white" >
                         <FontAwesomeIcon icon={faTasks} /> <span>Other Members</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/manageEvent" className="text-white">
+                    <Link to="/CMmanageEvent" className="text-white">
                         <FontAwesomeIcon icon={faTasks} /> <span>Events</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/manageAnnouncement" className="text-white">
+                    <Link to="/CMmanageAnnouncement" className="text-white">
                         <FontAwesomeIcon icon={faTasks} /> <span>Announcements</span>
                     </Link>
                 </li>
