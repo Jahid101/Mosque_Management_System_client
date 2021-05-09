@@ -107,27 +107,27 @@ const AddPrayerTime = () => {
                     <br />
                     <form onSubmit={handlePrayerTimeSubmit}>
                     <h5>FAJR</h5>
-                    <input type="text" onBlur={handleFajrBlur} class="form-control w-50" name="FAJR" aria-label="First name" autoFocus defaultValue={prayerTime.FAJR} required />
+                    <input type="time" onBlur={handleFajrBlur} class="form-control w-50" name="FAJR" aria-label="First name" autoFocus defaultValue={prayerTime.FAJR} required />
                     <br />
 
                     <h5>ZUHR</h5>
-                    <input type="text" onBlur={handleZuhrBlur} class="form-control w-50" name="ZUHR" aria-label="Last name" defaultValue={prayerTime.ZUHR} required />
+                    <input type="time" onBlur={handleZuhrBlur} class="form-control w-50" name="ZUHR" aria-label="Last name" defaultValue={prayerTime.ZUHR} required />
                     <br />
 
                     <h5>ASR</h5>
-                    <input type="text" onBlur={handleAsrBlur} class="form-control w-50" name="ASR" aria-label="Last name" defaultValue={prayerTime.ASR} required />
+                    <input type="time" onBlur={handleAsrBlur} class="form-control w-50" name="ASR" aria-label="Last name" defaultValue={prayerTime.ASR} required />
                     <br />
 
                     <h5>MAGRIB</h5>
-                    <input type="text" onBlur={handleMagribBlur} class="form-control w-50" name="MAGRIB" aria-label="Last name" defaultValue={prayerTime.MAGRIB} required />
+                    <input type="time" onBlur={handleMagribBlur} class="form-control w-50" name="MAGRIB" aria-label="Last name" defaultValue={prayerTime.MAGRIB} required />
                     <br />
 
                     <h5>ISHA'A</h5>
-                    <input type="text" onBlur={handleIshaBlur} class="form-control w-50" name="ISHA" aria-label="Last name" defaultValue={prayerTime.ISHA} required />
+                    <input type="time" onBlur={handleIshaBlur} class="form-control w-50" name="ISHA" aria-label="Last name" defaultValue={prayerTime.ISHA} required />
                     <br />
 
                     <h5>JUMAH</h5>
-                    <input type="text" onBlur={handleJumahBlur} class="form-control w-50" name="JUMAH" aria-label="Last name" defaultValue={prayerTime.JUMAH} required />
+                    <input type="time" onBlur={handleJumahBlur} class="form-control w-50" name="JUMAH" aria-label="Last name" defaultValue={prayerTime.JUMAH} required />
                     <br />
 
                     <br />

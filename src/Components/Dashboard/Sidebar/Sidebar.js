@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList, faPlus, faTasks, faListAlt, faFunnelDollar, faUpload } from '@fortawesome/free-solid-svg-icons';
+import { faList, faPlus, faTasks, faListAlt, faFunnelDollar, faUpload, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 const Sidebar = () => {
@@ -44,6 +44,11 @@ const Sidebar = () => {
                 <li>
                     <Link to="/fund" className="text-white" >
                         <FontAwesomeIcon icon={faFunnelDollar} /> <span>Fund</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/report" className="text-white" >
+                        <FontAwesomeIcon icon={faFileAlt} /> <span>Report</span>
                     </Link>
                 </li>
                 <li>

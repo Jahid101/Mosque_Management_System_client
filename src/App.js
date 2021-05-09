@@ -59,6 +59,7 @@ import CMCm from './Components/Dashboard/CMDashboardPage/CMCm';
 import CMFund from './Components/Dashboard/CMDashboardPage/CMFund';
 import CMDtnList from './Components/Dashboard/CMDashboardPage/CMDtnList';
 import CMOthrAdtnList from './Components/Dashboard/CMDashboardPage/CMOthrAdtnList';
+import Report from './Components/Dashboard/Report/Report';
 
 
 
@@ -196,6 +197,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/manageOM">
             <ManageOM></ManageOM>
+          </PrivateRoute>
+          <PrivateRoute path="/report">
+            <Report></Report>
           </PrivateRoute>
           <PrivateRoute path="/updateOM/:id">
             <UpdateOM></UpdateOM>
