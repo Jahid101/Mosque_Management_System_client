@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import firebase from "firebase/app";
@@ -72,6 +72,9 @@ console.log(loggedInUser.displayName);
                                     Register
                             </button>
                             </Link>
+                        </li>
+                        <li class="nav-item active">
+                            <img className="w-50" src={loggedInUser.photoURL} alt="" />
                         </li>
                         <li class="nav-item active">
                             <p>{loggedInUser.displayName || loggedInUser.email}</p>
