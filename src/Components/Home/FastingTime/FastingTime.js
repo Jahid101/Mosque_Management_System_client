@@ -5,10 +5,10 @@ import "./FastingTime.css";
 const FastingTime = () => {
 
     return (
-        <div>
+        <div style={{color: 'purple'}}>
             <div class="mt-3 mb-3 fastingTimeBg  m-2 p-5">
-                <h1 class="text-center text-dark"><strong>Fasting Time in Our City</strong></h1>
-                <table class="table mt-3 text-dark">
+                <h1 class="text-center"><strong>Fasting Time in Our City</strong></h1>
+                <table class="table mt-3">
                     <thead>
                         <tr className="text-center">
                             <th scope="col"><h3>Sehr Time Today:</h3></th>
