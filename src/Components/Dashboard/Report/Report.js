@@ -1,5 +1,5 @@
 import 'date-fns';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import {
@@ -13,7 +13,7 @@ import Sidebar from '../Sidebar/Sidebar';
 
 const Report = () => {
 
-    const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:10'));
+    const [selectedDate, setSelectedDate] = useState(new Date());
 
     const handleDateChange = (date) => {
         setSelectedDate(date)
@@ -23,13 +23,65 @@ const Report = () => {
         else {
             console.log('out')
         }
-
     };
 
-    const handleTimeChange = (date) => {
-        setSelectedDate(date)
-        console.log(new Date(date).toLocaleTimeString())
-    };
+
+    const [check, setCheck] = useState([]);
+
+    const callDate = (d) => {
+        //     fetch('http://localhost:9999/donationTime?donationTime=' + d)
+        //         .then(res => res.json())
+        //         .then(data => {
+        //             data.map(data => setCheck(data))
+        //         })
+        //         console.log(check)
+
+
+    }
+
+
+
+    const received = 'Received';
+    const [checkAdmin, setCheckAdmin] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/receivedDonation?status=' + received)
+            .then(res => res.json())
+            .then(data => {
+                // data.map(data => setCheckAdmin(data))
+                setCheckAdmin(data)
+            })
+    }, [received])
+
+    console.log(checkAdmin.donationTime)
+
+    var a = selectedDate.toLocaleDateString()
+    var b = new Date(checkAdmin.donationTime).toLocaleDateString()
+    console.log(a, b)
+
+    // for (let i = 0; i < checkAdmin.length; i++) {
+    //     setCheck(checkAdmin[i].donationTime)
+    // }
+    // console.log(check)
+
+    const clicka = () => {
+        // if (a === b) {
+        //     console.log('big', b)
+        //     console.log(selectedDate)
+        //     callDate(selectedDate);
+        // }
+        // else {
+        //     console.log('small', a)
+        // }
+        for (let i = 0; i < checkAdmin.length; i++) {
+            let c = new Date(checkAdmin[i].donationTime).toLocaleDateString()
+            if (c === a){
+                console.log('object')
+            }
+        }
+        // console.log(check)
+    }
+
 
     return (
         <div>
@@ -39,19 +91,23 @@ const Report = () => {
 
                 <div>
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                        <KeyboardTimePicker
+                        <KeyboardDatePicker
                             margin="normal"
-                            id="time-picker"
-                            label=""
-                            
+                            id="date-picker-dialog"
+                            // label="Date picker dialog"
+                            format="MM/dd/yyyy"
+                            minDate="2021-01-01"
                             value={selectedDate}
-                            onChange={handleTimeChange}
+                            // defaultValue={selectedDate}
+                            onChange={handleDateChange}
                             KeyboardButtonProps={{
-                                'aria-label': 'change time',
+                                'aria-label': 'change date',
                             }}
                         />
                     </MuiPickersUtilsProvider>
                 </div>
+                {/* <input  type="date" name="" id="" /> */}
+                <button onClick={clicka}>sacdasd</button>
 
             </div>
         </div>

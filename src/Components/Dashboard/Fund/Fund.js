@@ -1,7 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../../App';
-import CMDashboard from '../CMDashboard/CMDashboard';
-import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import React, { useEffect, useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 
 const Fund = () => {

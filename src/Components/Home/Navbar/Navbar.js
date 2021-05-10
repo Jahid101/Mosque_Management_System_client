@@ -73,9 +73,9 @@ console.log(loggedInUser.displayName);
                             </button>
                             </Link>
                         </li>
-                        <li class="nav-item active">
+                        {/* <li class="nav-item active">
                             <img className="w-50" src={loggedInUser.photoURL} alt="" />
-                        </li>
+                        </li> */}
                         <li class="nav-item active">
                             <p>{loggedInUser.displayName || loggedInUser.email}</p>
                         </li>
