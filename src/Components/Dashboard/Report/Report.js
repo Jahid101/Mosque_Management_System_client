@@ -6,14 +6,13 @@ import {
     KeyboardDatePicker,
 } from '@material-ui/pickers';
 import Sidebar from '../Sidebar/Sidebar';
-import { Redirect } from 'react-router';
+
 
 
 const Report = () => {
 
-    const [status, setStatus] = useState(false);
-
     //Donation show in Report
+    const [donationStatus, setDonationStatus] = useState(false);
     const [selectedFromDate, setSelectedFromDate] = useState(new Date());
     const [selectedToDate, setSelectedToDate] = useState(new Date());
     const [donationCheck, setDonationCheck] = useState([]);
@@ -25,7 +24,6 @@ const Report = () => {
         fetch('http://localhost:9999/receivedDonation?status=' + received)
             .then(res => res.json())
             .then(data => {
-                // data.map(data => setCheckAdmin(data))
                 setDonation(data)
             })
     }, [received])
@@ -40,17 +38,16 @@ const Report = () => {
     };
 
 
-    var clickedFromDate = selectedFromDate.getTime()
-    var clickedToDate = selectedToDate.getTime()
-    console.log(clickedFromDate, clickedToDate)
+    var clickedFromDate = selectedFromDate.getDate()
+    var clickedToDate = selectedToDate.getDate()
+
     const handleDonations = () => {
-        let newList = donation.filter(dn => new Date(dn.donationTime).getTime() >= clickedFromDate && new Date(dn.donationTime).getTime() <= clickedToDate)
+        let newList = donation.filter(dn => new Date(dn.donationTime).getDate() >= clickedFromDate && new Date(dn.donationTime).getDate() <= clickedToDate)
         console.log(newList)
         setDonationCheck(newList)
-        setStatus(true)
+        setDonationStatus(true)
     }
 
-    // console.log(donationCheck)
 
     let totalDonation = 0;
     for (let i = 0; i < donationCheck.length; i++) {
@@ -58,6 +55,9 @@ const Report = () => {
         totalDonation = totalDonation + element;
     }
     console.log(totalDonation)
+
+
+    
 
 
     const printDiv = (print) => {
@@ -92,7 +92,6 @@ const Report = () => {
                             format="MM/dd/yyyy"
                             minDate="2021-01-01"
                             value={selectedFromDate}
-                            // defaultValue={selectedDate}
                             onChange={handleFromDateChange}
                             KeyboardButtonProps={{
                                 'aria-label': 'change date',
@@ -110,7 +109,6 @@ const Report = () => {
                             format="MM/dd/yyyy"
                             minDate="2021-01-01"
                             value={selectedToDate}
-                            // defaultValue={selectedDate}
                             onChange={handleToDateChange}
                             KeyboardButtonProps={{
                                 'aria-label': 'change date',
@@ -124,7 +122,7 @@ const Report = () => {
 
 
 
-                {status && <div id="print">
+                {donationStatus && <div id="print">
                     {
                         <table id="table" class="table text-center mb-5">
                             <thead>
