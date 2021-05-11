@@ -8,13 +8,13 @@ import {
 import Sidebar from '../Sidebar/Sidebar';
 
 
-
 const Report = () => {
 
     const [status, setStatus] = useState(false);
 
     //Donation show in Report
-    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [selectedFromDate, setSelectedFromDate] = useState(new Date());
+    const [selectedToDate, setSelectedToDate] = useState(new Date());
     const [donationCheck, setDonationCheck] = useState([]);
     const [donation, setDonation] = useState([]);
 
@@ -30,25 +30,40 @@ const Report = () => {
     }, [received])
 
 
-    const handleDateChange = (date) => {
-        setSelectedDate(date)
+    const handleFromDateChange = (date) => {
+        setSelectedFromDate(date)
+    };
+
+    const handleToDateChange = (date) => {
+        setSelectedToDate(date)
     };
 
 
-    var a = selectedDate.toLocaleDateString()
+    var clickedFromDate = selectedFromDate.getTime()
+    var clickedToDate = selectedToDate.getTime()
+    console.log(clickedFromDate, clickedToDate)
     const handleDonations = () => {
-        let r = donation.filter(dn => new Date(dn.donationTime).toLocaleDateString() === a)
-
-        setDonationCheck(r)
+        let newList = donation.filter(dn => new Date(dn.donationTime).getTime() >= clickedFromDate && new Date(dn.donationTime).getTime() <= clickedToDate)
+console.log(newList)
+        setDonationCheck(newList)
         setStatus(true)
     }
+
+    // console.log(donationCheck)
+
+    let totalDonation = 0;
+    for (let i = 0; i < donationCheck.length; i++) {
+        const element = parseFloat(donationCheck[i].Amount);
+        totalDonation = totalDonation + element;
+    }
+    console.log(totalDonation)
 
 
 
     return (
         <div>
             <Sidebar></Sidebar>
-            <div className="mt-3" style={{ marginLeft: '300px' }}>
+            <div className="mt-3" style={{ marginLeft: '230px' }}>
                 <h2 style={{ marginLeft: '30%' }} className="mt-3 mb-4">Report</h2>
 
                 <div>
@@ -57,12 +72,30 @@ const Report = () => {
                             style={{ marginLeft: '50%' }}
                             margin="normal"
                             id="date-picker-dialog"
-                            // label="Date picker dialog"
+                            label="From Date picker dialog"
                             format="MM/dd/yyyy"
                             minDate="2021-01-01"
-                            value={selectedDate}
+                            value={selectedFromDate}
                             // defaultValue={selectedDate}
-                            onChange={handleDateChange}
+                            onChange={handleFromDateChange}
+                            KeyboardButtonProps={{
+                                'aria-label': 'change date',
+                            }}
+                        />
+                    </MuiPickersUtilsProvider>
+
+
+                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                        <KeyboardDatePicker
+                            style={{ marginLeft: '50%' }}
+                            margin="normal"
+                            id="date-picker-dialog"
+                            label="TO Date picker dialog"
+                            format="MM/dd/yyyy"
+                            minDate="2021-01-01"
+                            value={selectedToDate}
+                            // defaultValue={selectedDate}
+                            onChange={handleToDateChange}
                             KeyboardButtonProps={{
                                 'aria-label': 'change date',
                             }}
@@ -70,47 +103,50 @@ const Report = () => {
                     </MuiPickersUtilsProvider>
                     <button onClick={handleDonations} className="btn btn-success ms-5 mt-2">Donations</button>
                 </div>
+
+
+
+
+                {status &&
+                    <div>
+                        {
+                            <table id="table" class="table text-center mb-5">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col" >Email</th>
+                                        <th scope="col">Amount</th>
+                                        <th scope="col">Donated For</th>
+                                        <th scope="col">Date</th>
+                                    </tr>
+                                </thead>
+                                {
+                                    donationCheck.map(donation =>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">{donation.name || donation.email || ''}</th>
+                                                <td>{donation.email}</td>
+                                                <td><strong>{donation.Amount} Tk</strong></td>
+                                                <td>{donation.DonationFor || 'General'}</td>
+                                                <td>
+                                                    {/* {new Date(donation.donationTime).toLocaleTimeString()}
+                                                <br /> */}
+
+                                                    {new Date(donation.donationTime).toLocaleDateString()}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    )
+                                }
+                            </table>
+                        }<hr />
+                        <div style={{ marginLeft: '80%' }}>
+                            <strong>Total: {totalDonation} Tk</strong>
+                        </div>
+                        <hr />
+                    </div>}
+
             </div>
-
-
-
-            {status &&
-                <div className="mt-3" style={{ marginLeft: '240px' }}>
-                    {
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col" >Email</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Donated For</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Status</th>
-                                </tr>
-                            </thead>
-                            {
-                                donationCheck.map(donation =>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">{donation.name || donation.email || ''}</th>
-                                            <td>{donation.email}</td>
-                                            <td><strong>{donation.Amount} Tk</strong></td>
-                                            <td>{donation.DonationFor || 'General'}</td>
-                                            <td>
-                                                {new Date(donation.donationTime).toLocaleTimeString()}
-                                                <br />
-
-                                                {new Date(donation.donationTime).toLocaleDateString()}
-                                            </td>
-                                            <td><strong>{donation.status || 'Pending'}</strong></td>
-                                        </tr>
-                                    </tbody>
-                                )
-                            }
-                        </table>
-                    }
-                </div>}
-
         </div>
     );
 };
