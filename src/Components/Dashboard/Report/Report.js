@@ -41,11 +41,12 @@ const Report = () => {
     var clickedFromDate = selectedFromDate.getDate()
     var clickedToDate = selectedToDate.getDate()
 
-    const handleDonations = () => {
+    const handleDonation = () => {
         let newList = donation.filter(dn => new Date(dn.donationTime).getDate() >= clickedFromDate && new Date(dn.donationTime).getDate() <= clickedToDate)
         console.log(newList)
         setDonationCheck(newList)
         setDonationStatus(true)
+        setWSStatus(false)
     }
 
 
@@ -57,7 +58,41 @@ const Report = () => {
     console.log(totalDonation)
 
 
-    
+
+
+    //Event show in Report
+
+    const [WSStatus, setWSStatus] = useState(false);
+    const [WSCheck, setWSCheck] = useState([]);
+    const [WS, setWS] = useState([]);
+
+
+    useEffect(() => {
+        fetch('http://localhost:9999/WSList')
+            .then(res => res.json())
+            .then(data => {
+                setWS(data)
+            })
+    }, [])
+
+
+    const handleWS = () => {
+        let newList = WS.filter(WS => new Date(WS.time).getDate() >= clickedFromDate && new Date(WS.time).getDate() <= clickedToDate)
+        console.log(newList)
+        setWSCheck(newList)
+        setWSStatus(true)
+        setDonationStatus(false)
+    }
+
+
+    let totalWSCost = 0;
+    for (let i = 0; i < WSCheck.length; i++) {
+        const element = parseFloat(WSCheck[i].amount);
+        totalWSCost = totalWSCost + element;
+    }
+    console.log(totalWSCost)
+
+
 
 
     const printDiv = (print) => {
@@ -78,17 +113,17 @@ const Report = () => {
         <div>
             <Sidebar></Sidebar>
             <div className="mt-3" style={{ marginLeft: '230px' }}>
-                <h2 style={{ marginLeft: '30%' }} className="mt-3 mb-4">Report</h2>
+                {/* <h2 style={{ marginLeft: '30%' }} className="mt-3 mb-4">Report</h2> */}
 
-                {/* <button style={{ marginLeft: '80%' }} className="btn btn-primary" onClick={() => printDiv('print')}>Print</button> */}
+                {/* <button style={{ marginLeft: '80%' }} className="btn btn-primary" onClick={() => printDiv('donate')}>Print</button> */}
 
                 <div >
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
                         <KeyboardDatePicker
-                            style={{ marginLeft: '50%' }}
+                            style={{ marginLeft: '15%' }}
                             margin="normal"
                             id="date-picker-dialog"
-                            label="From Date picker dialog"
+                            label="From"
                             format="MM/dd/yyyy"
                             minDate="2021-01-01"
                             value={selectedFromDate}
@@ -102,10 +137,10 @@ const Report = () => {
 
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
                         <KeyboardDatePicker
-                            style={{ marginLeft: '50%' }}
+                            style={{ marginRight: '30%', float: 'right' }}
                             margin="normal"
                             id="date-picker-dialog"
-                            label="TO Date picker dialog"
+                            label="TO"
                             format="MM/dd/yyyy"
                             minDate="2021-01-01"
                             value={selectedToDate}
@@ -115,14 +150,18 @@ const Report = () => {
                             }}
                         />
                     </MuiPickersUtilsProvider>
+                    
+                    <div style={{ float: 'right' }} className="mb-4 mt-3 mr-5">
+                        <button onClick={handleDonation} className="btn btn-success ms-5 mt-2">Donations</button>
 
-                    <button onClick={handleDonations} className="btn btn-success ms-5 mt-2">Donations</button>
+                        <button onClick={handleWS} className="btn btn-info ms-2 mt-2">Work Spends</button>
+                    </div>
                 </div>
 
 
 
-
-                {donationStatus && <div id="print">
+                {/* Donation Stats */}
+                {donationStatus && <div id="donate">
                     {
                         <table id="table" class="table text-center mb-5">
                             <thead>
@@ -156,6 +195,41 @@ const Report = () => {
                     }<hr />
                     <div style={{ marginLeft: '80%' }}>
                         <strong>Total: {totalDonation} Tk</strong>
+                    </div>
+                    <hr />
+                </div>}
+
+
+                {/* WS Stats */}
+                {WSStatus && <div id="event">
+                    {
+                        <table id="table" class="table text-center mb-5">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Spend For</th>
+                                    <th scope="col" >Details</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                            </thead>
+                            {
+                                WSCheck.map(WS =>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">{WS.spendFor}</th>
+                                            <th scope="row">{WS.details}</th>
+                                            <td><strong>{WS.amount} Tk</strong></td>
+                                            <td>
+                                                {new Date(WS.time).toLocaleDateString()}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                )
+                            }
+                        </table>
+                    }<hr />
+                    <div style={{ marginLeft: '80%' }}>
+                        <strong>Total: {totalWSCost} Tk</strong>
                     </div>
                     <hr />
                 </div>}

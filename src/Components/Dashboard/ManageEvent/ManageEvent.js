@@ -97,7 +97,8 @@ const ManageEvent = () => {
                             <th scope="col">Event Image</th>
                             <th scope="col">Event Start & End</th>
                             <th scope="col">Event Budget</th>
-                            <th scope="col" style={{ paddingLeft: '135px' }}>Action</th>
+                            <th scope="col">Event Created</th>
+                            <th scope="col" style={{ paddingLeft: '' }}>Action</th>
                         </tr>
                     </thead>
                     {
@@ -107,7 +108,7 @@ const ManageEvent = () => {
                                     <th scope="row">{event.name}</th>
                                     <td>{event.eventDetails}</td>
                                     <td>
-                                        <img className="" style={{ width: '75px', height: '75px' }} src={event.imageURL} alt="" />
+                                        <img className="" style={{ width: '50px', height: '50px' }} src={event.imageURL} alt="" />
                                     </td>
                                     <td>
                                         {new Date(event.eventStart).toLocaleDateString()}
@@ -115,7 +116,13 @@ const ManageEvent = () => {
 
                                         {new Date(event.eventEnd).toLocaleDateString()}
                                     </td>
+                                    
                                     <td>{event.eventBudget} Tk</td>
+
+                                    <td>
+                                        {new Date(event.time).toLocaleDateString()}
+                                    </td>
+
                                     <td>
                                         <button onClick={() => handleUpdate(event._id)} className="btn btn-success mt-3">Update</button>
 
