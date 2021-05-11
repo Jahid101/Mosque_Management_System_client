@@ -198,7 +198,7 @@ const AddEvent = () => {
                     <br />
 
                     <h5>Event Budget</h5>
-                    <input type="number" min="" max={totalFund} onBlur={handleBudgetCheck} class="form-control w-50" placeholder="Event Budget" name="eventBudget" aria-label="Last name" required />
+                    <input type="number" min="1" max={totalFund} onBlur={handleBudgetCheck} class="form-control w-50" placeholder="Event Budget" name="eventBudget" aria-label="Last name" required />
                     <br />
 
                     <h5>Event Start</h5>
