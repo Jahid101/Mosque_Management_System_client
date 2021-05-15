@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./FastingTime.css";
 
 
 const FastingTime = () => {
 
+    const [prayerTime, setPrayerTime] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/prayerTime')
+            .then(res => res.json())
+            .then(data => {
+                data.map(data => setPrayerTime(data))
+            })
+    }, [])
+
+
+    let f = prayerTime.FAJR + '';
+    let fhr = f.substring(0, 2);
+    let fmin = f.substring(3, 5);
+    let fpp = fhr >= 12 ? "PM" : "AM";
+    let ft = fhr > 12 ? fhr % 12 : fhr;
+
+    let m = prayerTime.MAGRIB + '';
+    let mhr = m.substring(0, 2);
+    let mmin = m.substring(3, 5);
+    let mpp = mhr >= 12 ? "PM" : "AM";
+    let mt = mhr > 12 ? mhr % 12 : mhr;
+
+
+
     return (
-        <div style={{color: 'purple'}}>
+        <div style={{ color: 'purple' }}>
             <div class="mt-3 mb-3 fastingTimeBg  m-2 p-5">
                 <h1 class="text-center"><strong>Fasting Time in Our City</strong></h1>
                 <table class="table mt-3">
@@ -18,7 +43,8 @@ const FastingTime = () => {
                     <tbody>
 
                         <tr>
-                            <td className="text-center" style={{ width: '45%' }}><strong>4.10 am</strong>
+                            <td className="text-center" style={{ width: '45%' }}>
+                                <strong>{ft}:{fmin} {fpp}</strong>
                                 <br />
                                 <br />
                                 <span className="m-5"><strong>وَبِصَوْمِ غَدٍ نَّوَيْتُ مِنْ شَهْرِ رَمَضَانَ</strong></span>
@@ -36,7 +62,8 @@ const FastingTime = () => {
                             </td>
 
 
-                            <td className="text-center" style={{ width: '45%' }}><strong>6.30 pm</strong>
+                            <td className="text-center" style={{ width: '45%' }}>
+                                <strong>{mt}:{mmin} {mpp}</strong>
                                 <br />
                                 <br />
                                 <span className="m-5"><strong>اللّٰهُمَّ اِنِّى لَكَ صُمْتُ وَبِكَ اٰمَنْتُ وَعَليْكَ تَوَكَّلتُ وَ عَلٰى رِزْقِكَ اَفْطَرْتُ</strong></span>
