@@ -6,10 +6,13 @@ import {
     KeyboardDatePicker,
 } from '@material-ui/pickers';
 import Sidebar from '../Sidebar/Sidebar';
+import './Report.css';
 
 
 
 const Report = () => {
+
+    const [printStatus, setPrintStatus] = useState(false);
 
     //Donation show in Report
     const [donationStatus, setDonationStatus] = useState(false);
@@ -47,6 +50,7 @@ const Report = () => {
         setDonationCheck(newList)
         setDonationStatus(true)
         setWSStatus(false)
+        setPrintStatus(true)
     }
 
 
@@ -82,6 +86,7 @@ const Report = () => {
         setWSCheck(newList)
         setWSStatus(true)
         setDonationStatus(false)
+        setPrintStatus(true)
     }
 
 
@@ -94,16 +99,16 @@ const Report = () => {
 
 
 
-
     const printDiv = (print) => {
 
-        var printContents = document.getElementById(print).innerHTML;
-        var originalContents = document.body.innerHTML;
+        const printContents = document.getElementById(print).innerHTML;
+        const originalContents = document.body.innerHTML;
 
         document.body.innerHTML = printContents;
 
         window.print();
 
+        // window.location.reload(false);
         document.body.innerHTML = originalContents;
     }
 
@@ -115,7 +120,9 @@ const Report = () => {
             <div className="mt-3" style={{ marginLeft: '230px' }}>
                 {/* <h2 style={{ marginLeft: '30%' }} className="mt-3 mb-4">Report</h2> */}
 
-                {/* <button style={{ marginLeft: '80%' }} className="btn btn-primary" onClick={() => printDiv('donate')}>Print</button> */}
+                {printStatus &&
+                    <button style={{ marginLeft: '80%' }} className="btn btn-primary" onClick={() => window.print()}>Print</button>
+                }
 
                 <div >
                     <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -150,7 +157,7 @@ const Report = () => {
                             }}
                         />
                     </MuiPickersUtilsProvider>
-                    
+
                     <div style={{ float: 'right' }} className="mb-4 mt-3 mr-5">
                         <button onClick={handleDonation} className="btn btn-success ms-5 mt-2">Donations</button>
 

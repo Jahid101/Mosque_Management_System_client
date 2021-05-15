@@ -1,0 +1,27 @@
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    #donate, #donate * {
+      visibility: visible;
+    }
+    #donate {
+      position: absolute;
+      left: 10%;
+      top: 5%;
+    }
+  }
+
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    #event, #event * {
+      visibility: visible;
+    }
+    #event {
+      position: absolute;
+      left: 10%;
+      top: 5%;
+    }
+  }
