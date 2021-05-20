@@ -11,21 +11,26 @@ const Sidebar = () => {
         <div className="sidebar col-md-3 abcd col-lg-2 pt-3 pb-3 rounded d-md-block m-1 collapse" style={{ height: "600px" }}>
             <ul className="list-unstyled">
 
-                    <li>
-                        <Link to="/donationList" className="text-white">
-                            <FontAwesomeIcon icon={faListAlt} /> <span>Donation list</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/otherAddition" className="text-white">
-                            <FontAwesomeIcon icon={faPlus} /> <span>Other Addition</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/addWS" className="text-white">
-                            <FontAwesomeIcon icon={faPlus} /> <span>Work Spending</span>
-                        </Link>
-                    </li>
+                {/* <li>
+                    <Link to="/addAdmin" className="text-white" >
+                        <FontAwesomeIcon icon={faListAlt} /> <span>Add Admin</span>
+                    </Link>
+                </li> */}
+                <li>
+                    <Link to="/donationList" className="text-white">
+                        <FontAwesomeIcon icon={faListAlt} /> <span>Donation list</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/otherAddition" className="text-white">
+                        <FontAwesomeIcon icon={faPlus} /> <span>Other Addition</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/addWS" className="text-white">
+                        <FontAwesomeIcon icon={faPlus} /> <span>Work Spending</span>
+                    </Link>
+                </li>
                 <li>
                     <Link to="/otherAdditionList" className="text-white">
                         <FontAwesomeIcon icon={faList} /> <span>Other Addition List</span>
