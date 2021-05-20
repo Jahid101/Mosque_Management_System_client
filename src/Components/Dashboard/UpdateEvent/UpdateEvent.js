@@ -14,6 +14,8 @@ const UpdateEvent = () => {
     const [name, setName] = useState('');
     const [eventDetails, setEventDetails] = useState('');
     const [eventBudget, setEventBudget] = useState('');
+    const [eventStart, setEventStart] = useState('');
+    const [eventEnd, setEventEnd] = useState('');
     const [eventImage, setEventImage] = useState('');
 
     const { id } = useParams();
@@ -137,7 +139,7 @@ const UpdateEvent = () => {
     const totalFund = ((totalDonation + totalOtherDonation) - (totalEventSpending + totalDeletedEventBudget + totalPaidSalary + totalWorkSpending))
 
 
-    
+
     // const handleServiceSubmit = () => {
 
     // }
@@ -164,16 +166,32 @@ const UpdateEvent = () => {
         }
     }
 
-    const handleEventImage = () => {
-        setEventImage(imageURL || event.imageURL);
+    const handleEventStart = (e) => {
+        setEventStart(e.target.value);
     }
 
-    console.log(name, eventDetails, eventBudget, eventImage);
+    const handleEventEnd = (e) => {
+        setEventEnd(e.target.value);
+    }
+
+    const handleEventImage = () => {
+        setEventImage(imageURL);
+    }
+
+    console.log(name || event.name, eventDetails || event.eventDetails, eventBudget || event.eventBudget, eventImage || event.imageURL);
 
 
     const handleEventUpdate = (id) => {
 
-        const updatedEvent = { id, name, eventDetails, eventBudget, eventImage };
+        const updatedEvent = {
+            id,
+            name: name || event.name,
+            eventDetails: eventDetails || event.eventDetails,
+            eventBudget: eventBudget || event.eventBudget,
+            eventStart: eventStart || event.eventStart,
+            eventEnd: eventEnd || event.eventEnd,
+            eventImage: eventImage || event.imageURL
+        };
 
         console.log(updatedEvent)
 
@@ -217,6 +235,16 @@ const UpdateEvent = () => {
     }
 
 
+
+    //Time
+    let year = new Date().getFullYear();
+    let month = new Date().getMonth() + 1;
+    let date = new Date().getDate();
+    let today = `${year}-0${month}-${date}`
+    console.log(today)
+
+
+
     return (
         <div>
             {/* <Dashboardpage></Dashboardpage> */}
@@ -235,7 +263,15 @@ const UpdateEvent = () => {
                 <br />
 
                 <h5>Event Budget</h5>
-                <input type="number" min="0" onBlur={handleEventBudget} class="form-control w-50" defaultValue={event.eventBudget} name="eventBudget" aria-label="Last name" />
+                <input type="number" min="1" onBlur={handleEventBudget} class="form-control w-50" defaultValue={event.eventBudget} name="eventBudget" aria-label="Last name" />
+                <br />
+
+                <h5>Event Start</h5>
+                <input type="date" onBlur={handleEventStart} min={today} max="2022-05-07" class="form-control w-50" placeholder="Event Budget" name="eventStart" defaultValue={event.eventStart} aria-label="Last name" required />
+                <br />
+
+                <h5>Event End</h5>
+                <input type="date" onBlur={handleEventEnd} min={today} max="2022-05-07" class="form-control w-50" placeholder="Event Budget" defaultValue={event.eventEnd} name="eventEnd" aria-label="Last name" required />
                 <br />
 
                 <h5>Event Image</h5>

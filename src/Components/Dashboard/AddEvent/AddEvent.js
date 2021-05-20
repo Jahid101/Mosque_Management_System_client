@@ -174,10 +174,18 @@ const AddEvent = () => {
 
     console.log(totalFund)
 
-    
+
     const handleBudgetCheck = (e) => {
         console.log(e.target.value)
     }
+
+
+    //Time
+    let year = new Date().getFullYear();
+    let month = new Date().getMonth() + 1;
+    let date = new Date().getDate();
+    let today = `${year}-0${month}-${date}`
+    console.log(today)
 
 
     return (
@@ -202,11 +210,11 @@ const AddEvent = () => {
                     <br />
 
                     <h5>Event Start</h5>
-                    <input type="date" min="2021-05-07" max="2022-05-07" class="form-control w-50" placeholder="Event Budget" name="eventStart" aria-label="Last name" required />
+                    <input type="date" min={today} max="2022-05-07" class="form-control w-50" placeholder="Event Budget" name="eventStart" aria-label="Last name" required />
                     <br />
 
                     <h5>Event End</h5>
-                    <input type="date" min="2021-05-07" max="2022-05-07" class="form-control w-50" placeholder="Event Budget" name="eventEnd" aria-label="Last name" required />
+                    <input type="date" min={today} max="2022-05-07" class="form-control w-50" placeholder="Event Budget" name="eventEnd" aria-label="Last name" required />
                     <br />
 
                     <h5>Event Image</h5>
