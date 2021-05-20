@@ -16,7 +16,7 @@ const Work = () => {
     return (
         <div className="mt-3 wsBg" id="WS">
             <div className="container">
-                <h1 className="text-center mb-3" style={{ color: 'white', fontSize: '50px' }}> <strong>Other Members</strong> </h1>
+                <h1 className="text-center mb-3" style={{ color: 'white', fontSize: '50px' }}> <strong>Works</strong> </h1>
                 <div className="row">
                     {
                         WS.map(WS => <WorkCard WS={WS} ></WorkCard>)

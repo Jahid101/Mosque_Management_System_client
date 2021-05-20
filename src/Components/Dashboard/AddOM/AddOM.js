@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import Dashboardpage from '../Dashboardpage/Dashboardpage';
+import Sidebar from '../Sidebar/Sidebar';
 
 const AddCM = () => {
 
@@ -67,7 +67,7 @@ const AddCM = () => {
 
     return (
         <div>
-            <Dashboardpage></Dashboardpage>
+            <Sidebar></Sidebar>
 
             <div style={{ marginLeft: '300px' }}>
                 <h2 className="mb-3">Add Member</h2>
