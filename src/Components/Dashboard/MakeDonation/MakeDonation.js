@@ -14,7 +14,7 @@ const MakeDonation = () => {
     const [donationFor, setDonationFor] = useState(null);
     const [isInfoGiven, setIsInfoGiven] = useState(false);
 
-    
+
 
     const handleDonationName = e => {
         setName(e.target.value);
@@ -30,6 +30,10 @@ const MakeDonation = () => {
 
     const handlePaymentAddress = e => {
         setPaymentAmount(e.target.value);
+    }
+
+    const handleD = e => {
+        console.log(e.target.value)
     }
 
 
@@ -57,7 +61,7 @@ const MakeDonation = () => {
             Amount: paymentAmount,
             phone: paymentPhone,
             paymentId,
-            status : 'Pending',
+            status: 'Pending',
             donationTime: new Date()
         };
 
@@ -98,12 +102,20 @@ const MakeDonation = () => {
                     <input type="text" onBlur={handleDonationFor} class="form-control w-50" name="donationFor" placeholder="Donation For" aria-label="Last name" />
                     <br />
 
+                    {/* <select onChange={handleD} name="donationFor" id="browsers" class="form-control w-50">
+                        <option value="saab">Saab</option>
+                        <option value="opel">Opel</option>
+                        <option value="audi">Audi</option>
+                        <option value="audi">Other</option>
+                    </select>
+                    <br /> */}
+
                     <h5>Amount</h5>
                     <input type="number" min="1" onBlur={handlePaymentAddress} class="form-control w-50" placeholder="Amount" name="description" aria-label="Last name" required />
                     <br />
 
                     <h5>Your Phone</h5>
-                    <input type="number" min="999999999" max="9999999999" onBlur={handlePaymentPhone} class="form-control w-50" placeholder="Your Phone" name="phone" aria-label="Last name"/>
+                    <input type="number" min="999999999" max="9999999999" onBlur={handlePaymentPhone} class="form-control w-50" placeholder="Your Phone" name="phone" aria-label="Last name" />
 
                     <br />
                     <input className="btn btn-info mb-3" type="submit" value="Go for Payment" />
