@@ -1,8 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../App';
-import Dashboardpage from '../Dashboardpage/Dashboardpage';
 import PaymentProcess from '../Payment/PaymentProcess';
-import Sidebar from '../Sidebar/Sidebar';
 import UserSidebar from '../UserSidebar/UserSidebar';
 
 const MakeDonation = () => {
@@ -99,7 +97,7 @@ const MakeDonation = () => {
                     <br />
 
                     <h5>Donate For</h5>
-                    <input type="text" onBlur={handleDonationFor} class="form-control w-50" name="donationFor" placeholder="Donation For" aria-label="Last name" />
+                    <input type="text" onBlur={handleDonationFor} class="form-control w-50" name="donationFor" placeholder="Donation For" aria-label="Last name" required/>
                     <br />
 
                     {/* <select onChange={handleD} name="donationFor" id="browsers" class="form-control w-50">
