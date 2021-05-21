@@ -55,7 +55,7 @@ const MakeDonation = () => {
     const handlePayment = paymentId => {
 
         const donationDetails = {
-            name: loggedInUser.displayName || name || '',
+            name: name || loggedInUser.displayName || '',
             email: loggedInUser.email,
             DonationFor: donationFor,
             Amount: paymentAmount,
