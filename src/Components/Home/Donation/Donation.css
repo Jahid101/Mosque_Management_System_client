@@ -5,7 +5,7 @@
 }
 
 .donation{
-    background-image: url('https://i0.wp.com/www.paktales.com/wp-content/uploads/2019/10/Charity-2.jpg?fit=1200%2C800&ssl=1');
+    background-image: url('../../../images/donateBg.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

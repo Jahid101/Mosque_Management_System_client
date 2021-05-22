@@ -2,6 +2,7 @@ import React from 'react';
 import "./Quran.css";
 
 const Quran = () => {
+    
     return (
         <div style={{ height: '750px', color: 'white', padding: '15px' }} className="row mt-3 mb-3 m-2 quran">
             <h1 className="text-center mt-5"><strong>Listen to holy Quran</strong></h1>
