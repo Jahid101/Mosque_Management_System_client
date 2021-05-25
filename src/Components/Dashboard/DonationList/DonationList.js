@@ -35,6 +35,29 @@ const DonationList = () => {
         setDonateForStatus(false);
     }
 
+    const [userInfo, setUserInfo] = useState('');
+
+    const sendEmail = () => {
+
+        const userMail = {
+            email: 'a@gmail.com'
+        }
+
+        const url1 = `http://localhost:9999/send`;
+        fetch(url1, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userMail)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('Mail send Successfully.')
+                }
+            })
+    }
 
     const handleReceivedBtn = (id) => {
 
@@ -54,8 +77,44 @@ const DonationList = () => {
                 if (data) {
                     alert('Status Updated');
                     statusUpdated();
+                    searchByName();
+                    searchByDonateType();
                 }
             })
+
+
+        // const [userInfo, setUserInfo] = useState('');
+
+        const emailById = (id) => {
+            fetch(`http://localhost:9999/donationList/${id}`)
+                .then(res => res.json())
+                .then(data => {
+                    if(data){
+                        setUserInfo(data)
+                        sendEmail();
+                    }
+                })
+        }
+        emailById(id);
+        console.log(userInfo.email)
+        // const userMail = {
+        //     email: userInfo.email
+        // }
+
+        // const url1 = `http://localhost:9999/send`;
+        // fetch(url1, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(userMail)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         if (data) {
+        //             alert('Mail send Successfully.')
+        //         }
+        //     })
     }
 
 
@@ -77,24 +136,26 @@ const DonationList = () => {
     }
 
 
+    const searchByName = () => {
+        fetch('http://localhost:9999/donationListName?name=' + nameSearch)
+            .then(res => res.json())
+            .then(data => {
+                if (data[0]) {
+                    setNameData(data)
+                    setAllDonationStatus(false);
+                    setNameStatus(true);
+                    setDonateForStatus(false);
+                }
+            })
+    }
+
+
     const handleNameClick = () => {
         if (nameSearch === '') {
             alert('Select a name First');
         }
         else {
-            fetch('http://localhost:9999/donationListName?name=' + nameSearch)
-                .then(res => res.json())
-                .then(data => {
-                    if (data[0]) {
-                        setNameData(data)
-                        setAllDonationStatus(false);
-                        setNameStatus(true);
-                        setDonateForStatus(false);
-                    }
-                    else {
-                        alert('Not Found')
-                    }
-                })
+            searchByName();
         }
     }
 
@@ -116,25 +177,27 @@ const DonationList = () => {
     }
 
 
+    const searchByDonateType = () => {
+        fetch('http://localhost:9999/donationListDonateFor?donateFor=' + donateForSearch)
+            .then(res => res.json())
+            .then(data => {
+                if (data[0]) {
+                    setDonateForData(data)
+                    console.log(data)
+                    setAllDonationStatus(false);
+                    setNameStatus(false);
+                    setDonateForStatus(true);
+                }
+            })
+    }
+
+
     const handleDonateForClick = () => {
         if (donateForSearch === '') {
             alert('Select a name First');
         }
         else {
-            fetch('http://localhost:9999/donationListDonateFor?donateFor=' + donateForSearch)
-                .then(res => res.json())
-                .then(data => {
-                    if (data[0]) {
-                        setDonateForData(data)
-                        console.log(data)
-                        setAllDonationStatus(false);
-                        setNameStatus(false);
-                        setDonateForStatus(true);
-                    }
-                    else {
-                        alert('Not Found')
-                    }
-                })
+            searchByDonateType();
         }
     }
 
