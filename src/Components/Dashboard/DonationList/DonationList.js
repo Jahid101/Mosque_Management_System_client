@@ -35,21 +35,23 @@ const DonationList = () => {
         setDonateForStatus(false);
     }
 
-    const [userInfo, setUserInfo] = useState('');
+    const [userInfo, setUserInfo] = useState({});
+    // console.log(userInfo)
 
-    const sendEmail = () => {
+    const sendEmail = (abc) => {
 
+        console.log(abc)
         const userMail = {
-            email: 'a@gmail.com'
+            email: userInfo.email && userInfo.email
         }
 
         const url1 = `http://localhost:9999/send`;
-        fetch(url1, {
+        abc && fetch(url1, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(userMail)
+            body: JSON.stringify({email: abc})
         })
             .then(res => res.json())
             .then(data => {
@@ -58,6 +60,7 @@ const DonationList = () => {
                 }
             })
     }
+
 
     const handleReceivedBtn = (id) => {
 
@@ -83,20 +86,17 @@ const DonationList = () => {
             })
 
 
-        // const [userInfo, setUserInfo] = useState('');
-
         const emailById = (id) => {
             fetch(`http://localhost:9999/donationList/${id}`)
                 .then(res => res.json())
                 .then(data => {
-                    if(data){
+                    if (data) {
                         setUserInfo(data)
-                        sendEmail();
+                        sendEmail(data.email);
                     }
                 })
         }
         emailById(id);
-        console.log(userInfo.email)
         // const userMail = {
         //     email: userInfo.email
         // }
