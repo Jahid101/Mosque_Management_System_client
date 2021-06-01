@@ -41,11 +41,19 @@ const Report = () => {
     };
 
 
-    var clickedFromDate = selectedFromDate.getDate()
-    var clickedToDate = selectedToDate.getDate()
+    var clickedFromDate = selectedFromDate.getTime()
+    var clickedToDate = selectedToDate.getTime()
+    // var clickedFromMonth = selectedFromDate.getMonth() + 1
+    // var clickedToMonth = selectedToDate.getMonth() + 1
+    console.log(selectedFromDate.getTime()-selectedToDate.getTime())
 
     const handleDonation = () => {
-        let newList = donation.filter(dn => new Date(dn.donationTime).getDate() >= clickedFromDate && new Date(dn.donationTime).getDate() <= clickedToDate)
+
+        // let newListy = donation.filter(dn => new Date(dn.donationTime).getMonth()+1 === clickedFromMonth && new Date(dn.donationTime).getMonth()+1 <= clickedToMonth)
+        // console.log(newListy)
+
+        let newList = donation.filter(dn => new Date(dn.donationTime).getTime() >= clickedFromDate && new Date(dn.donationTime).getTime() <= clickedToDate)
+
         console.log(newList)
         setDonationCheck(newList)
         setDonationStatus(true)
@@ -81,7 +89,8 @@ const Report = () => {
 
 
     const handleWS = () => {
-        let newList = WS.filter(WS => new Date(WS.time).getDate() >= clickedFromDate && new Date(WS.time).getDate() <= clickedToDate)
+        let newList = WS.filter(WS => new Date(WS.time).getTime() >= clickedFromDate && new Date(WS.time).getTime() <= clickedToDate)
+
         console.log(newList)
         setWSCheck(newList)
         setWSStatus(true)
