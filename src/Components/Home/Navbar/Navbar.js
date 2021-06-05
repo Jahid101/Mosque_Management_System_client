@@ -27,7 +27,7 @@ const Navbar = () => {
             });
     }
 
-console.log(loggedInUser.displayName);
+    console.log(loggedInUser.displayName);
 
     return (
         <nav class="navbar navbar-expand-lg navbarBg navbar-light m-1 p-2 rounded">
@@ -37,7 +37,7 @@ console.log(loggedInUser.displayName);
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav mx-auto">
                         {/* <li class="nav-item ">
                             <Link class="nav-link active text-light" aria-current="page" to="/home">Home</Link>
                         </li> */}
@@ -55,28 +55,29 @@ console.log(loggedInUser.displayName);
                             <Link class="nav-link active text-light" aria-current="page" to="/dashboard">Dashboard</Link>
                         </li>
                         <li class="nav-item ">
-                            <Link class="nav-link active text-light" aria-current="page" to="/committeeMember">Committee<br /><span className="ms-2">Members</span></Link>
+                            <Link class="nav-link active text-light" aria-current="page" to="/committeeMember">Committee</Link>
                         </li>
                         <li class="nav-item ">
                             <Link class="nav-link active text-light" aria-current="page" to="/work">Works</Link>
                         </li>
                         <li class="nav-item ">
-                            <Link class="nav-link active text-light" aria-current="page" to="/OM">Other<br /><span className="">Members</span></Link>
-                        </li>
-                        <li class="nav-item ">
-                            <Link class="nav-link active text-light" aria-current="page" to="/contact">Contact</Link>
+                            <Link class="nav-link active text-light" aria-current="page" to="/OM">Employees</Link>
                         </li>
                         <li class="nav-item">
+                            <Link class="nav-link active text-light" aria-current="page" to="/contact">Contact</Link>
+                        </li>
+
+                        <li class="nav-item ms-5">
                             <Link class="nav-link active text-light" to="/register">
-                                <button class="btn btn-info ">
+                                {loggedInUser.email ? '' : <button class="btn btn-info ">
                                     Register
-                            </button>
+                            </button>}
                             </Link>
                         </li>
                         {/* <li class="nav-item active">
                             <img className="w-50" src={loggedInUser.photoURL} alt="" />
                         </li> */}
-                        <li class="nav-item active">
+                        <li class="nav-item active m-auto">
                             <p>{loggedInUser.displayName || loggedInUser.email}</p>
                         </li>
                         <li class="nav-item active mr-2">
@@ -84,6 +85,7 @@ console.log(loggedInUser.displayName);
                                 <input type="submit" class="btn btn-success" onClick={handleSignOut} value={loggedInUser.email ? 'Log Out' : 'Log In'} />
                             </Link>
                         </li>
+
                     </ul>
                 </div>
             </div>
