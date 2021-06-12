@@ -38,7 +38,7 @@ const Sidebar = () => {
                 </li>
                 <li>
                     <Link to="/workingSpendList" className="text-white">
-                        <FontAwesomeIcon icon={faList} /> <span>Working spend List</span>
+                        <FontAwesomeIcon icon={faList} /> <span>Work spending List</span>
                     </Link>
                 </li>
                 <li>
