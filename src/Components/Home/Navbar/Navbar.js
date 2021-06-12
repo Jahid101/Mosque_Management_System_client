@@ -80,7 +80,7 @@ const Navbar = () => {
                         <li class="nav-item active m-auto">
                             <p>{loggedInUser.displayName || loggedInUser.email}</p>
                         </li>
-                        <li class="nav-item active mr-2">
+                        <li class="nav-item active">
                             <Link class="nav-link active text-light" to="/login" tabindex="-1" aria-disabled="true">
                                 <input type="submit" class="btn btn-success" onClick={handleSignOut} value={loggedInUser.email ? 'Log Out' : 'Log In'} />
                             </Link>
