@@ -63,7 +63,7 @@ const Sidebar = () => {
                 </li>
                 <li>
                     <Link to="/manageOM" className="text-white" >
-                        <FontAwesomeIcon icon={faTasks} /> <span>Other Members</span>
+                        <FontAwesomeIcon icon={faTasks} /> <span>Employee Members</span>
                     </Link>
                 </li>
                 <li>

@@ -230,7 +230,7 @@ const ManageOM = () => {
             <Sidebar></Sidebar>
 
             <div className="mt-3" style={{ marginLeft: '235px' }}>
-                <h3 className="ml-5 mb-2">Other Members: {OM.length}</h3>
+                <h3 className="ml-5 mb-2">Employee members: {OM.length}</h3>
                 <Link to="/addOM">
                     <button style={{ marginLeft: '' }} className="btn btn-info mb-3 mt-3">Add Member</button>
                 </Link>
