@@ -58,6 +58,7 @@ import CMCm from './Components/Dashboard/CMDashboardPage/CMCm';
 import CMFund from './Components/Dashboard/CMDashboardPage/CMFund';
 import CMDtnList from './Components/Dashboard/CMDashboardPage/CMDtnList';
 import CMOthrAdtnList from './Components/Dashboard/CMDashboardPage/CMOthrAdtnList';
+import CMWrkSpndList from './Components/Dashboard/CMDashboardPage/CMWrkSpndList';
 import Report from './Components/Dashboard/Report/Report';
 
 
@@ -219,7 +220,7 @@ function App() {
             <CMFund></CMFund>
           </PrivateRoute>
           <PrivateRoute path="/CMworkingSpendList">
-            <CMDtnList></CMDtnList>
+            <CMWrkSpndList></CMWrkSpndList>
           </PrivateRoute>
           <PrivateRoute path="/CMotherAdditionList">
             <CMOthrAdtnList></CMOthrAdtnList>
