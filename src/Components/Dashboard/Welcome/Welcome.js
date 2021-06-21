@@ -3,6 +3,7 @@ import { UserContext } from '../../../App';
 import CMDashboard from '../CMDashboard/CMDashboard';
 import Sidebar from '../Sidebar/Sidebar';
 import UserSidebar from '../UserSidebar/UserSidebar';
+import dashboardPic from '../../../images/welcome dashboard.jpg';
 
 
 const Welcome = () => {
@@ -51,8 +52,8 @@ const Welcome = () => {
             </div>
             }
 
-            <div className="mt-3" style={{ marginLeft: '220px' }}>
-                <img className="p-3 rounded" style={{ height: '100vh', width: '100%' }} src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="" />
+            <div className="mt-2" style={{ marginLeft: '220px' }}>
+                <img className="p-3 rounded" style={{ height: '100vh', width: '100%' }} src={dashboardPic} alt="" />
 
                 <div style={{ marginBottom: '140px', marginRight: '400px' }} class="carousel-caption d-none d-md-block">
                     <h5 style={{ fontSize: '50px' }}>Welcome to<br />Dashboard</h5>
