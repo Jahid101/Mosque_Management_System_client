@@ -22,9 +22,9 @@ const CMOm = () => {
 
             <div className="mt-3" style={{ marginLeft: '235px' }}>
                 <h3 className="ml-5 mb-2">Other Members: {OM.length}</h3>
-                <Link to="/OM">
+                {/* <Link to="/OM">
                     <button style={{ marginRight: '3%', float: 'right' }} className="btn btn-primary mb-3 mt-3">View all Members</button>
-                </Link>
+                </Link> */}
 
                 <table class="table text-center">
                     <thead>

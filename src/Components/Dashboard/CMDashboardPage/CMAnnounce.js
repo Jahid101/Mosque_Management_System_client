@@ -21,9 +21,9 @@ const CMAnnounce = () => {
 
             <div className="mt-3" style={{ marginLeft: '240px' }}>
                 <h3 className="ml-5 mb-4">Total Announcements: {announcement.length}</h3>
-                <Link to="/announcement">
+                {/* <Link to="/announcement">
                     <button style={{marginRight: '3%', float: 'right' }} className="btn btn-primary mb-3">View all Announcements</button>
-                </Link>
+                </Link> */}
                 <table class="table text-center">
                     <thead>
                         <tr>

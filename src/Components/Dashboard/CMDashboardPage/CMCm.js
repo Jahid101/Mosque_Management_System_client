@@ -20,9 +20,9 @@ const CMCm = () => {
 
             <div className="mt-3" style={{ marginLeft: '240px' }}>
                 <h3 className="ml-5 mb-2">Total Committee Members: {CM.length}</h3>
-                <Link to="/committeeMember">
+                {/* <Link to="/committeeMember">
                     <button style={{ marginRight: '3%', float: 'right' }} className="btn btn-primary mb-3 mt-3">View all Committee Members</button>
-                </Link>
+                </Link> */}
 
                 <table class="table">
                     <thead>

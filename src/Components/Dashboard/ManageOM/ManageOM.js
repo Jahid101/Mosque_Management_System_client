@@ -277,7 +277,7 @@ const ManageOM = () => {
                                     <td>
                                         <button onClick={() => handleUpdate(OM._id)} className="btn btn-success mt-3">Update</button>
 
-                                        <button onClick={() => handleSalaryPending(OM._id)} className="btn btn-primary ms-1 mt-3">Salary Pending</button>
+                                        {/* <button onClick={() => handleSalaryPending(OM._id)} className="btn btn-primary ms-1 mt-3">Salary Pending</button> */}
 
                                         <button onClick={() => handleSalaryPaid(OM._id, OM.salary)} className="btn btn-info ms-1 mt-3">Give Salary</button>
 
