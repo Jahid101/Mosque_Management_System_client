@@ -6,7 +6,7 @@ import ViewMap from '../ViewMap/ViewMap';
 
 const Contact = () => {
     return (
-        <div style={{ backgroundColor: '#2c003f' }} className="text-center p-5 text-light mt-5 mb-4 m-2 rounded row">
+        <div style={{ backgroundColor: '#2c003f' }} className="text-center p-5 text-light mt-2 mb-4 m-2 rounded row">
             <h1>Contact us</h1>
 
             <div className="col-md-6">
