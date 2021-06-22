@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList, faPlus, faTasks, faListAlt, faFunnelDollar, faUpload, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import { faList, faPlus, faTasks, faListAlt, faFunnelDollar, faUpload, faFileAlt, faHandHoldingUsd, faClipboard, faClipboardList, faFileInvoiceDollar, faMoneyCheckAlt, faClock, faUsers, faChalkboardTeacher, faMosque, faBullhorn } from '@fortawesome/free-solid-svg-icons';
 
 
 const Sidebar = () => {
@@ -18,62 +18,62 @@ const Sidebar = () => {
                 </li> */}
                 <li>
                     <Link to="/donationList" className="text-white">
-                        <FontAwesomeIcon icon={faListAlt} /> <span>Donation list</span>
+                        <FontAwesomeIcon icon={faHandHoldingUsd} /> <span className="ms-1">Donation list</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/otherAddition" className="text-white">
-                        <FontAwesomeIcon icon={faPlus} /> <span>Other Addition</span>
+                        <FontAwesomeIcon icon={faPlus} /> <span className="ms-1">Other Addition</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/addWS" className="text-white">
-                        <FontAwesomeIcon icon={faPlus} /> <span>Work Spending</span>
+                        <FontAwesomeIcon icon={faFileInvoiceDollar} /> <span className="ms-1">Work Spending</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/otherAdditionList" className="text-white">
-                        <FontAwesomeIcon icon={faList} /> <span>Other Addition List</span>
+                        <FontAwesomeIcon icon={faClipboardList} /> <span className="ms-1">Other Addition List</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/workingSpendList" className="text-white">
-                        <FontAwesomeIcon icon={faList} /> <span>Work spending List</span>
+                        <FontAwesomeIcon icon={faMoneyCheckAlt} /> <span className="ms-1">Work spending List</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/addPrayerTime" className="text-white" >
-                        <FontAwesomeIcon icon={faUpload} /> <span>Update Prayer Time</span>
+                        <FontAwesomeIcon icon={faClock} /> <span className="ms-1">Update Prayer Time</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/fund" className="text-white" >
-                        <FontAwesomeIcon icon={faFunnelDollar} /> <span>Fund</span>
+                        <FontAwesomeIcon icon={faFunnelDollar} /> <span className="ms-1">Fund</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/report" className="text-white" >
-                        <FontAwesomeIcon icon={faFileAlt} /> <span>Report</span>
+                        <FontAwesomeIcon icon={faFileAlt} /> <span className="ms-1">Report</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/manageCM" className="text-white" >
-                        <FontAwesomeIcon icon={faTasks} /> <span>Committee Members</span>
+                        <FontAwesomeIcon icon={faChalkboardTeacher} /> <span className="ms-1">Committee Members</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/manageOM" className="text-white" >
-                        <FontAwesomeIcon icon={faTasks} /> <span>Employee Members</span>
+                        <FontAwesomeIcon icon={faUsers} /> <span className="ms-1">Employee Members</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/manageEvent" className="text-white">
-                        <FontAwesomeIcon icon={faTasks} /> <span>Events</span>
+                        <FontAwesomeIcon icon={faMosque} /> <span className="ms-1">Events</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/manageAnnouncement" className="text-white">
-                        <FontAwesomeIcon icon={faTasks} /> <span>Announcements</span>
+                        <FontAwesomeIcon icon={faBullhorn} /> <span className="ms-1">Announcements</span>
                     </Link>
                 </li>
             </ul>
