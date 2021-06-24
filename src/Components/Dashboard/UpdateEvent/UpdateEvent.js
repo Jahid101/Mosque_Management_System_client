@@ -243,6 +243,9 @@ const UpdateEvent = () => {
     let today = `${year}-0${month}-${date}`
     console.log(today)
 
+    const handleServiceSubmit = e => {
+        e.preventDefault();
+    }
 
 
     return (
@@ -253,7 +256,7 @@ const UpdateEvent = () => {
             <div style={{ marginLeft: '300px' }}>
                 <h2 className="mb-4">Update Event</h2>
                 <br />
-                {/* <form onSubmit={handleServiceSubmit}> */}
+                <form onSubmit={handleServiceSubmit}>
                 <h5>Event Name</h5>
                 <input type="text" onBlur={handleEventName} class="form-control w-50" autoFocus name="name" defaultValue={event.name} aria-label="First name" />
                 <br />
@@ -283,6 +286,7 @@ const UpdateEvent = () => {
 
                 <br />
                 {checkFundBudget ?
+                // <input onClick={() => handleEventUpdate(event._id)} type="button" className="btn btn-success mb-3" value="Submit" />
                     <button onClick={() => handleEventUpdate(event._id)} className="btn btn-success mb-3">Submit</button>
                     :
                     <p style={{ color: 'red' }}>Event Budget more than your fund amount</p>
@@ -291,7 +295,7 @@ const UpdateEvent = () => {
                 {
                     <span style={{ color: 'green' }}> {dbStatus ? "Event updated successfully." : ""}</span>
                 }
-                {/* </form> */}
+                </form>
             </div>
         </div>
     );

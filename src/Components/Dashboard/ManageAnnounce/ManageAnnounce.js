@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import Dashboardpage from '../Dashboardpage/Dashboardpage';
 import Sidebar from '../Sidebar/Sidebar';
 
 const ManageAnnounce = () => {
@@ -46,7 +45,7 @@ const ManageAnnounce = () => {
             {/* <Dashboardpage></Dashboardpage> */}
             <Sidebar></Sidebar>
 
-            <div className="mt-3" style={{ marginLeft: '240px' }}>
+            <div className="mt-3" style={{ marginLeft: '230px' }}>
                 <h3 className="ml-5 mb-5">Total Announcements: {announcement.length}</h3>
                 <Link to="/addAnnouncement">
                     <button style={{ marginLeft: '' }} className="btn btn-info mb-3">Add Announcement</button>
@@ -58,10 +57,10 @@ const ManageAnnounce = () => {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Announcement Title</th>
-                            <th scope="col">Announcement Details</th>
-                            <th scope="col">Announcement Image</th>
-                            <th scope="col">Announcement Date & Time</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Details</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Date & Time</th>
                             <th scope="col" className="text-center">Action</th>
                         </tr>
                     </thead>

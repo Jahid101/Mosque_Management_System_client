@@ -40,6 +40,8 @@ const MakeDonation = () => {
             setIsInfoGiven(true);
         }
         e.preventDefault();
+        e.target.reset();
+        
     }
 
     // const handleClick = (e) => {
@@ -74,6 +76,7 @@ const MakeDonation = () => {
             .then(data => {
                 if (data) {
                     alert('Your Donation successfully received')
+                    setIsInfoGiven(false);
                 }
             })
     }

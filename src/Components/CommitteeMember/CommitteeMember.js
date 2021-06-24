@@ -40,7 +40,7 @@ const CommitteeMember = () => {
                         <img src={admin.imageURL} alt="" />
                         <div>
                             <h2 className="text-center mt-4 mb-4">{admin.name}</h2>
-                            <h4 className="text-center mt-4 mb-4">{admin.designation}</h4>
+                            <h4 className="text-center text-primary mt-4 mb-4">{admin.designation}</h4>
                             <button className="btn btn-info">See more</button>
                         </div>
                     </div>

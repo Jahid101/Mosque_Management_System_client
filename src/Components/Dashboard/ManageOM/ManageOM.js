@@ -229,7 +229,7 @@ const ManageOM = () => {
             {/* <Dashboardpage></Dashboardpage> */}
             <Sidebar></Sidebar>
 
-            <div className="mt-3" style={{ marginLeft: '235px' }}>
+            <div className="mt-3" style={{ marginLeft: '225px' }}>
                 <h3 className="ml-5 mb-2">Employee members: {OM.length}</h3>
                 <Link to="/addOM">
                     <button style={{ marginLeft: '' }} className="btn btn-info mb-3 mt-3">Add Member</button>
@@ -245,7 +245,7 @@ const ManageOM = () => {
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Designation</th>
-                            <th scope="col">Details</th>
+                            {/* <th scope="col">Details</th> */}
                             <th scope="col">Image</th>
                             <th scope="col">Phone</th>
                             <th scope="col">Salary</th>
@@ -261,9 +261,9 @@ const ManageOM = () => {
                                     <th scope="row">{OM.name}</th>
                                     <td>{OM.email}</td>
                                     <td>{OM.designation}</td>
-                                    <td>{OM.details || 'N/A'}</td>
+                                    {/* <td>{OM.details || 'N/A'}</td> */}
                                     <td>
-                                        <img className="" style={{ width: '50px', height: '50px' }} src={OM.imageURL} alt="" />
+                                        <img className="" style={{ width: '40px', height: '40px' }} src={OM.imageURL} alt="" />
                                     </td>
                                     <td>{OM.phone}</td>
                                     <td>{OM.salary} Tk</td>
@@ -275,13 +275,13 @@ const ManageOM = () => {
                                         {new Date(OM.time).toLocaleDateString()}
                                     </td> */}
                                     <td>
-                                        <button onClick={() => handleUpdate(OM._id)} className="btn btn-success mt-3">Update</button>
+                                        <button onClick={() => handleUpdate(OM._id)} className="btn-sm btn-success mt-1">Update</button>
 
                                         {/* <button onClick={() => handleSalaryPending(OM._id)} className="btn btn-primary ms-1 mt-3">Salary Pending</button> */}
 
-                                        <button onClick={() => handleSalaryPaid(OM._id, OM.salary)} className="btn btn-info ms-1 mt-3">Give Salary</button>
+                                        <button onClick={() => handleSalaryPaid(OM._id, OM.salary)} className="btn-sm btn-info ms-1 mt-1">Give Salary</button>
 
-                                        <button onClick={() => handleDelete(OM._id)} className="btn btn-danger ms-1 mt-3">Delete</button>
+                                        <button onClick={() => handleDelete(OM._id)} className="btn-sm btn-danger ms-1 mt-1">Delete</button>
                                     </td>
                                 </tr>
                             </tbody>

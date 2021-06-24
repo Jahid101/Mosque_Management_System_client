@@ -92,12 +92,12 @@ const ManageEvent = () => {
                 <table class="table text-center">
                     <thead>
                         <tr>
-                            <th scope="col">Event Name</th>
-                            <th scope="col">Event Details</th>
-                            <th scope="col">Event Image</th>
-                            <th scope="col">Event Start & End</th>
-                            <th scope="col">Event Budget</th>
-                            <th scope="col">Event Created</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Details</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Start & End</th>
+                            <th scope="col">Budget</th>
+                            <th scope="col">Created</th>
                             <th scope="col" style={{ paddingLeft: '' }}>Action</th>
                         </tr>
                     </thead>
@@ -124,9 +124,9 @@ const ManageEvent = () => {
                                     </td>
 
                                     <td>
-                                        <button onClick={() => handleUpdate(event._id)} className="btn btn-success mt-3">Update</button>
+                                        <button onClick={() => handleUpdate(event._id)} className="btn-sm btn-success mt-1">Update</button>
 
-                                        <button onClick={() => handleDelete(event._id)} className="btn btn-primary ms-1 mt-3">Refund and Remove</button>
+                                        <button onClick={() => handleDelete(event._id)} className="btn-sm btn-primary ms-1 mt-1">Refund and Remove</button>
 
                                         <button
                                             onClick={() => handleRemove
@@ -140,7 +140,7 @@ const ManageEvent = () => {
                                                     event.eventStart,
                                                     event.eventEnd
                                                 )
-                                            } className="btn btn-danger ms-1 mt-3">Delete</button>
+                                            } className="btn-sm btn-danger ms-1 mt-1">Delete</button>
                                     </td>
                                 </tr>
                             </tbody>

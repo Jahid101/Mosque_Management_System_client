@@ -82,7 +82,7 @@ const AddCM = () => {
                     <br />
 
                     <h5>Designation</h5>
-                    <input type="text" class="form-control w-50" placeholder="Designation" name="designation" aria-label="Last name" />
+                    <input type="text" class="form-control w-50" placeholder="Designation" name="designation" aria-label="Last name" required/>
                     <br />
 
                     <h5>Details</h5>
@@ -90,11 +90,11 @@ const AddCM = () => {
                     <br />
 
                     <h5>Phone</h5>
-                    <input type="number" min="999999999" max="9999999999" class="form-control w-50" placeholder="Phone" name="phone" aria-label="Last name" />
+                    <input type="number" min="999999999" max="9999999999" class="form-control w-50" placeholder="Phone" name="phone" aria-label="Last name" required/>
                     <br />
 
                     <h5>Salary</h5>
-                    <input type="number" min="1" class="form-control w-50" placeholder="Salary" name="salary" aria-label="Last name" />
+                    <input type="number" min="1" class="form-control w-50" placeholder="Salary" name="salary" aria-label="Last name" required/>
                     <br />
 
                     <h5>Image</h5>

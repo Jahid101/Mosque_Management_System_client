@@ -106,9 +106,9 @@ const UpdateCM = () => {
             });
     }
 
-    // const handleCMSubmit = () => {
-
-    // }
+    const handleCMSubmit = e => {
+        // e.preventDefault();
+    }
 
 
     return (
