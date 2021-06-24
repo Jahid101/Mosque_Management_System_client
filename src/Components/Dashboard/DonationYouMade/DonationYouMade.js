@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
-import Dashboardpage from '../Dashboardpage/Dashboardpage';
-import Sidebar from '../Sidebar/Sidebar';
 import UserSidebar from '../UserSidebar/UserSidebar';
 
 

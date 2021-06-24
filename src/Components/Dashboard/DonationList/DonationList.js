@@ -51,7 +51,7 @@ const DonationList = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({email: abc})
+            body: JSON.stringify({ email: abc })
         })
             .then(res => res.json())
             .then(data => {
@@ -79,9 +79,8 @@ const DonationList = () => {
             .then(data => {
                 if (data) {
                     alert('Status Updated');
+                    handleAllDonationClick();
                     statusUpdated();
-                    searchByName();
-                    searchByDonateType();
                 }
             })
 
@@ -96,25 +95,15 @@ const DonationList = () => {
                     }
                 })
         }
-        emailById(id);
-        // const userMail = {
-        //     email: userInfo.email
+
+        // if (userInfo.status === 'Received') {
+        //     alert('Status already updated')
+        // }
+        // else {
+            emailById(id);
+            // sendEmail(userInfo.email);
         // }
 
-        // const url1 = `http://localhost:9999/send`;
-        // fetch(url1, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(userMail)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data) {
-        //             alert('Mail send Successfully.')
-        //         }
-        //     })
     }
 
 

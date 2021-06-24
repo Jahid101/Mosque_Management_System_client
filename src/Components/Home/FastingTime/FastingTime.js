@@ -56,7 +56,7 @@ const FastingTime = () => {
                                 <span><strong>I intend to keep the fast for tomorrow in the month of Ramadan</strong></span>
                                 <br />
                                 <br />
-                                <a href="https://alormela.org/general/118-ramadan-calendar" target="_blank" rel="noopener noreferrer">
+                                <a href="https://alormela.org/attachments/article/118/Ramadan_Calendar_Sheheri-Ifter_Time_Table.jpg" target="_blank" rel="noopener noreferrer">
                                     <button class="btn btn-success btn-lg">Ramadan Calendar 2021</button>
                                 </a>
                             </td>
