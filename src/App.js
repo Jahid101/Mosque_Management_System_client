@@ -11,11 +11,8 @@ import { createContext, useState } from 'react';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Homepage from './Components/Home/Homepage/Homepage';
 import Navbar from './Components/Home/Navbar/Navbar';
-import ServiceBooking from './Components/Dashboard/ServiceBooking/ServiceBooking';
-import ServiceList from './Components/Dashboard/ServiceList/ServiceList';
 import Feedback from './Components/Dashboard/Feedback/Feedback';
 import AddAdmin from './Components/Dashboard/AddAdmin/AddAdmin';
-import OrderList from './Components/Dashboard/OrderList/OrderList';
 import AddEvent from './Components/Dashboard/AddEvent/AddEvent';
 import AddAnnounce from './Components/Dashboard/AddAnnounce/AddAnnounce';
 import ManageEvent from './Components/Dashboard/ManageEvent/ManageEvent';
@@ -62,7 +59,6 @@ import CMWrkSpndList from './Components/Dashboard/CMDashboardPage/CMWrkSpndList'
 import Report from './Components/Dashboard/Report/Report';
 
 
-
 export const UserContext = createContext();
 
 
@@ -92,9 +88,6 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/donate">
             <MakeDonation></MakeDonation>
-          </PrivateRoute>
-          <PrivateRoute path="/serviceList">
-            <ServiceList></ServiceList>
           </PrivateRoute>
           <PrivateRoute path="/feedback">
             <Feedback></Feedback>
@@ -129,9 +122,6 @@ function App() {
           <Route path="/committeeMember">
             <CommitteeMember></CommitteeMember>
           </Route>
-          <PrivateRoute path="/orderList">
-            <OrderList></OrderList>
-          </PrivateRoute>
           <PrivateRoute path="/addCM">
             <AddCM></AddCM>
           </PrivateRoute>
@@ -227,12 +217,6 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/CMdonationList">
             <CMDtnList></CMDtnList>
-          </PrivateRoute>
-          <PrivateRoute path="/serviceBooking/:id">
-            <ServiceBooking></ServiceBooking>
-          </PrivateRoute>
-          <PrivateRoute path="/serviceBooking">
-            <ServiceBooking></ServiceBooking>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>
