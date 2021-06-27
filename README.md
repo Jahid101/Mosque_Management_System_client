@@ -8,7 +8,7 @@ Live: https://mosque-management-system-88bbe.web.app
 
 => Created three different Dashboards for three different users (Admin, Committee Member, User)
 
-=> Added a payment gatemway(Stripe) for donations.
+=> Added a payment gateway(Stripe) for donations.
 
 => Added feature for admin to manage almost all kind of activities that also included generating reports as well
 
