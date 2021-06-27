@@ -4,7 +4,7 @@
 Live: https://mosque-management-system-88bbe.web.app
 
 
-=> Bulid a website about mosque management and mosque committee
+=> Build a website about mosque management and mosque committee
 
 => Created three different Dashboards for three different users (Admin, Committee Member, User)
 
