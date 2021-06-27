@@ -7,14 +7,14 @@ const ManageAnnounce = () => {
     const [announcement, setAnnouncement] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/announcement')
+        fetch('https://mysterious-sands-88815.herokuapp.com/announcement')
             .then(res => res.json())
             .then(data => setAnnouncement(data))
     }, [])
 
 
     const deleted = () => {
-        fetch('http://localhost:9999/announcement')
+        fetch('https://mysterious-sands-88815.herokuapp.com/announcement')
             .then(res => res.json())
             .then(data => setAnnouncement(data))
     }
@@ -27,7 +27,7 @@ const ManageAnnounce = () => {
 
     const handleDelete = (id) => {
 
-        fetch(`http://localhost:9999/deleteAnnouncement/${id}`, {
+        fetch(`https://mysterious-sands-88815.herokuapp.com/deleteAnnouncement/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

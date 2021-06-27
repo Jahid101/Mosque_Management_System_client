@@ -23,7 +23,7 @@ const UpdateOM = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:9999/updateOM/${id}`)
+        fetch(`https://mysterious-sands-88815.herokuapp.com/updateOM/${id}`)
             .then(res => res.json())
             .then(data => {
                 setOM(data)
@@ -85,7 +85,7 @@ const UpdateOM = () => {
 
         console.log(updatedOM)
 
-        const url = `http://localhost:9999/updateOtherMember/${id}`;
+        const url = `https://mysterious-sands-88815.herokuapp.com/updateOtherMember/${id}`;
         fetch(url, {
             method: 'PATCH',
             headers: {

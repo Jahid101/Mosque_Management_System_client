@@ -7,7 +7,7 @@ const Announcement = () => {
     const [announcement, setAnnouncement] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/announcement')
+        fetch('https://mysterious-sands-88815.herokuapp.com/announcement')
             .then(res => res.json())
             .then(data => setAnnouncement(data))
     }, [])

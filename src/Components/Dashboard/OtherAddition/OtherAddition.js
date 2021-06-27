@@ -35,7 +35,7 @@ const OtherAddition = () => {
             time: new Date()
         };
 
-        fetch('http://localhost:9999/otherAddition', {
+        fetch('https://mysterious-sands-88815.herokuapp.com/otherAddition', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

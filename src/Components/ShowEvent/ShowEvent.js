@@ -10,7 +10,7 @@ const ShowEvent = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:9999/showEvent/${id}`)
+        fetch(`https://mysterious-sands-88815.herokuapp.com/showEvent/${id}`)
             .then(res => res.json())
             .then(data => setEvent(data))
     }, [id])

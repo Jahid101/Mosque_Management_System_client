@@ -7,7 +7,7 @@ const CMDtnList = () => {
     const [donation, setDonation] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/donationList')
+        fetch('https://mysterious-sands-88815.herokuapp.com/donationList')
             .then(res => res.json())
             .then(data => setDonation(data))
     }, [])

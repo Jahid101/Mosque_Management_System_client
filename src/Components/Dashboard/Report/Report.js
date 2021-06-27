@@ -24,7 +24,7 @@ const Report = () => {
 
     const received = 'Received';
     useEffect(() => {
-        fetch('http://localhost:9999/receivedDonation?status=' + received)
+        fetch('https://mysterious-sands-88815.herokuapp.com/receivedDonation?status=' + received)
             .then(res => res.json())
             .then(data => {
                 setDonation(data)
@@ -80,7 +80,7 @@ const Report = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:9999/WSList')
+        fetch('https://mysterious-sands-88815.herokuapp.com/WSList')
             .then(res => res.json())
             .then(data => {
                 setWS(data)

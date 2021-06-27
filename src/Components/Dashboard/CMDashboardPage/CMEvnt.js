@@ -7,7 +7,7 @@ const CMEvnt = () => {
     const [event, setEvent] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/event')
+        fetch('https://mysterious-sands-88815.herokuapp.com/event')
             .then(res => res.json())
             .then(data => setEvent(data))
     }, [])

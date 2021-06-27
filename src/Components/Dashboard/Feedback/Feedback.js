@@ -21,7 +21,7 @@ const Feedback = () => {
 
         console.log(feedbackInfo);
 
-        const url = `http://localhost:9999/addFeedback`;
+        const url = `https://mysterious-sands-88815.herokuapp.com/addFeedback`;
         fetch(url, {
             method: 'POST',
             headers: {

@@ -7,7 +7,7 @@ const CMWrkSpndList = () => {
     const [WS, setWS] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/WSList')
+        fetch('https://mysterious-sands-88815.herokuapp.com/WSList')
             .then(res => res.json())
             .then(data => setWS(data))
     }, [])

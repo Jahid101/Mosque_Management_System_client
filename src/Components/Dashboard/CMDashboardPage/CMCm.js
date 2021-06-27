@@ -7,7 +7,7 @@ const CMCm = () => {
     const [CM, setCM] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/CM')
+        fetch('https://mysterious-sands-88815.herokuapp.com/CM')
             .then(res => res.json())
             .then(data => setCM(data))
     }, [])

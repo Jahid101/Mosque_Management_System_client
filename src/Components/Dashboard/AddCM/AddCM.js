@@ -21,7 +21,7 @@ const AddCM = () => {
             imageURL: imageURL
         };
 
-        const url = `http://localhost:9999/addCM`;
+        const url = `https://mysterious-sands-88815.herokuapp.com/addCM`;
         fetch(url, {
             method: 'POST',
             headers: {

@@ -8,7 +8,7 @@ const CMOthrAdtnList = () => {
     const [otherAddition, setOtherAddition] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/otherAdditionList')
+        fetch('https://mysterious-sands-88815.herokuapp.com/otherAdditionList')
             .then(res => res.json())
             .then(data => setOtherAddition(data))
     }, [])

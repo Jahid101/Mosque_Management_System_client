@@ -21,7 +21,7 @@ const UpdateCM = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:9999/updateCM/${id}`)
+        fetch(`https://mysterious-sands-88815.herokuapp.com/updateCM/${id}`)
             .then(res => res.json())
             .then(data => setCM(data))
     }, [id])
@@ -68,7 +68,7 @@ const UpdateCM = () => {
 
         console.log(updatedCM)
 
-        const url = `http://localhost:9999/updateCommitteeMember/${id}`;
+        const url = `https://mysterious-sands-88815.herokuapp.com/updateCommitteeMember/${id}`;
         fetch(url, {
             method: 'PATCH',
             headers: {

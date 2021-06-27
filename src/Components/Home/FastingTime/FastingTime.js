@@ -7,7 +7,7 @@ const FastingTime = () => {
     const [prayerTime, setPrayerTime] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/prayerTime')
+        fetch('https://mysterious-sands-88815.herokuapp.com/prayerTime')
             .then(res => res.json())
             .then(data => {
                 data.map(data => setPrayerTime(data))

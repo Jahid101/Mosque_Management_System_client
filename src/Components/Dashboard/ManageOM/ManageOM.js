@@ -8,14 +8,14 @@ const ManageOM = () => {
     const [OM, setOM] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/OM')
+        fetch('https://mysterious-sands-88815.herokuapp.com/OM')
             .then(res => res.json())
             .then(data => setOM(data))
     }, [])
 
 
     const deleted = () => {
-        fetch('http://localhost:9999/OM')
+        fetch('https://mysterious-sands-88815.herokuapp.com/OM')
             .then(res => res.json())
             .then(data => setOM(data))
     }
@@ -30,7 +30,7 @@ const ManageOM = () => {
 
     const handleDelete = (id) => {
 
-        fetch(`http://localhost:9999/deleteOM/${id}`, {
+        fetch(`https://mysterious-sands-88815.herokuapp.com/deleteOM/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
@@ -50,7 +50,7 @@ const ManageOM = () => {
     const received = 'Received';
 
     useEffect(() => {
-        fetch('http://localhost:9999/receivedDonation?status=' + received)
+        fetch('https://mysterious-sands-88815.herokuapp.com/receivedDonation?status=' + received)
             .then(res => res.json())
             .then(data => setReceivedDonation(data))
     }, [received])
@@ -70,7 +70,7 @@ const ManageOM = () => {
     const salaryStatus = 'Paid';
 
     useEffect(() => {
-        fetch('http://localhost:9999/paidSalary?salaryStatus=' + salaryStatus)
+        fetch('https://mysterious-sands-88815.herokuapp.com/paidSalary?salaryStatus=' + salaryStatus)
             .then(res => res.json())
             .then(data => setPaidSalary(data))
     }, [salaryStatus])
@@ -88,7 +88,7 @@ const ManageOM = () => {
     const [otherAddition, setOtherAddition] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/otherAdditionList')
+        fetch('https://mysterious-sands-88815.herokuapp.com/otherAdditionList')
             .then(res => res.json())
             .then(data => setOtherAddition(data))
     }, [])
@@ -105,7 +105,7 @@ const ManageOM = () => {
     const [eventSpend, setEventSpend] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/event')
+        fetch('https://mysterious-sands-88815.herokuapp.com/event')
             .then(res => res.json())
             .then(data => setEventSpend(data))
     }, [])
@@ -124,7 +124,7 @@ const ManageOM = () => {
     const [workSpend, setWorkSpend] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/WSList')
+        fetch('https://mysterious-sands-88815.herokuapp.com/WSList')
             .then(res => res.json())
             .then(data => setWorkSpend(data))
     }, [])
@@ -143,7 +143,7 @@ const ManageOM = () => {
     const [deletedEvent, setDeletedEvent] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/deletedEvent')
+        fetch('https://mysterious-sands-88815.herokuapp.com/deletedEvent')
             .then(res => res.json())
             .then(data => setDeletedEvent(data))
     }, [])
@@ -173,7 +173,7 @@ const ManageOM = () => {
 
         console.log(updatedOMSalary)
 
-        const url = `http://localhost:9999/paySalary/${id}`;
+        const url = `https://mysterious-sands-88815.herokuapp.com/paySalary/${id}`;
         fetch(url, {
             method: 'PATCH',
             headers: {
@@ -205,7 +205,7 @@ const ManageOM = () => {
 
             console.log(updatedOMSalary)
 
-            const url = `http://localhost:9999/paySalary/${id}`;
+            const url = `https://mysterious-sands-88815.herokuapp.com/paySalary/${id}`;
             fetch(url, {
                 method: 'PATCH',
                 headers: {

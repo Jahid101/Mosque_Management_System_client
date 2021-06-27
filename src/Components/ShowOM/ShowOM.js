@@ -9,7 +9,7 @@ const ShowOM = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:9999/showOM/${id}`)
+        fetch(`https://mysterious-sands-88815.herokuapp.com/showOM/${id}`)
             .then(res => res.json())
             .then(data => setOM(data))
     }, [id])

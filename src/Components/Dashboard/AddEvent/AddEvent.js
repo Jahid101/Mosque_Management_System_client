@@ -20,7 +20,7 @@ const AddEvent = () => {
             imageURL: imageURL
         };
 
-        const url = `http://localhost:9999/addEvent`;
+        const url = `https://mysterious-sands-88815.herokuapp.com/addEvent`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -70,7 +70,7 @@ const AddEvent = () => {
 
     //Total Donation Amount
     useEffect(() => {
-        fetch('http://localhost:9999/receivedDonation?status=' + received)
+        fetch('https://mysterious-sands-88815.herokuapp.com/receivedDonation?status=' + received)
             .then(res => res.json())
             .then(data => setReceivedDonation(data))
     }, [received])
@@ -86,7 +86,7 @@ const AddEvent = () => {
     const [otherAddition, setOtherAddition] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/otherAdditionList')
+        fetch('https://mysterious-sands-88815.herokuapp.com/otherAdditionList')
             .then(res => res.json())
             .then(data => setOtherAddition(data))
     }, [])
@@ -102,7 +102,7 @@ const AddEvent = () => {
     const [eventSpend, setEventSpend] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/event')
+        fetch('https://mysterious-sands-88815.herokuapp.com/event')
             .then(res => res.json())
             .then(data => setEventSpend(data))
     }, [])
@@ -119,7 +119,7 @@ const AddEvent = () => {
     const [workSpend, setWorkSpend] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/WSList')
+        fetch('https://mysterious-sands-88815.herokuapp.com/WSList')
             .then(res => res.json())
             .then(data => setWorkSpend(data))
     }, [])
@@ -140,7 +140,7 @@ const AddEvent = () => {
     const salaryStatus = 'Paid';
 
     useEffect(() => {
-        fetch('http://localhost:9999/paidSalary?salaryStatus=' + salaryStatus)
+        fetch('https://mysterious-sands-88815.herokuapp.com/paidSalary?salaryStatus=' + salaryStatus)
             .then(res => res.json())
             .then(data => setPaidSalary(data))
     }, [salaryStatus])
@@ -158,7 +158,7 @@ const AddEvent = () => {
     const [deletedEvent, setDeletedEvent] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/deletedEvent')
+        fetch('https://mysterious-sands-88815.herokuapp.com/deletedEvent')
             .then(res => res.json())
             .then(data => setDeletedEvent(data))
     }, [])

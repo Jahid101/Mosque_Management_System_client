@@ -10,7 +10,7 @@ const ShowAnnouncement = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:9999/showAnnouncement/${id}`)
+        fetch(`https://mysterious-sands-88815.herokuapp.com/showAnnouncement/${id}`)
             .then(res => res.json())
             .then(data => setAnnouncement(data))
     }, [id])

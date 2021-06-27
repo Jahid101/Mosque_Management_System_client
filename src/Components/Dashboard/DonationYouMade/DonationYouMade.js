@@ -10,7 +10,7 @@ const DonationYouMade = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch('http://localhost:9999/donationYouMade?email=' + loggedInUser.email)
+        fetch('https://mysterious-sands-88815.herokuapp.com/donationYouMade?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setDonation(data))
     }, [loggedInUser.email])

@@ -12,7 +12,7 @@ const Welcome = () => {
     const [checkAdmin, setCheckAdmin] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:9999/checkAdmin', {
+        fetch('https://mysterious-sands-88815.herokuapp.com/checkAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -26,7 +26,7 @@ const Welcome = () => {
     const [checkCM, setCheckCM] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:9999/checkCM', {
+        fetch('https://mysterious-sands-88815.herokuapp.com/checkCM', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })

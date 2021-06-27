@@ -65,7 +65,7 @@ const MakeDonation = () => {
             donationTime: new Date()
         };
 
-        fetch('http://localhost:9999/makeDonation', {
+        fetch('https://mysterious-sands-88815.herokuapp.com/makeDonation', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

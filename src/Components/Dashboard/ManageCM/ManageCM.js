@@ -8,14 +8,14 @@ const ManageCM = () => {
     const [CM, setCM] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/CM')
+        fetch('https://mysterious-sands-88815.herokuapp.com/CM')
             .then(res => res.json())
             .then(data => setCM(data))
     }, [])
 
 
     const deleted = () => {
-        fetch('http://localhost:9999/CM')
+        fetch('https://mysterious-sands-88815.herokuapp.com/CM')
             .then(res => res.json())
             .then(data => setCM(data))
     }
@@ -30,7 +30,7 @@ const ManageCM = () => {
 
     const handleDelete = (id) => {
 
-        fetch(`http://localhost:9999/deleteCM/${id}`, {
+        fetch(`https://mysterious-sands-88815.herokuapp.com/deleteCM/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

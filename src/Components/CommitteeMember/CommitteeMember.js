@@ -7,7 +7,7 @@ const CommitteeMember = () => {
     const [CM, setCM] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/CM')
+        fetch('https://mysterious-sands-88815.herokuapp.com/CM')
             .then(res => res.json())
             .then(data => setCM(data))
     }, [])
@@ -17,7 +17,7 @@ const CommitteeMember = () => {
     const email = 'jahidhasananik.official@gmail.com'
 
     useEffect(() => {
-        fetch('http://localhost:9999/CMAdmin?email=' + email)
+        fetch('https://mysterious-sands-88815.herokuapp.com/CMAdmin?email=' + email)
             .then(res => res.json())
             .then(data => setAdmin(data))
     }, [email])

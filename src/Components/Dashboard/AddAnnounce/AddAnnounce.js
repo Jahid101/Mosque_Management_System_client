@@ -19,7 +19,7 @@ const AddAnnounce = () => {
             imageURL: imageURL
         };
 
-        const url = `http://localhost:9999/addAnnouncement`;
+        const url = `https://mysterious-sands-88815.herokuapp.com/addAnnouncement`;
         fetch(url, {
             method: 'POST',
             headers: {

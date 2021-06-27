@@ -18,7 +18,7 @@ const UpdateAnnounce = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:9999/updateAnnouncement/${id}`)
+        fetch(`https://mysterious-sands-88815.herokuapp.com/updateAnnouncement/${id}`)
             .then(res => res.json())
             .then(data => setAnnouncement(data))
     }, [id])
@@ -50,7 +50,7 @@ const UpdateAnnounce = () => {
 
         console.log(updatedAnnouncement)
 
-        const url = `http://localhost:9999/updateAnnouncement/${id}`;
+        const url = `https://mysterious-sands-88815.herokuapp.com/updateAnnouncement/${id}`;
         fetch(url, {
             method: 'PATCH',
             headers: {

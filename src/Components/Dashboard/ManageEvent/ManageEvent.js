@@ -8,14 +8,14 @@ const ManageEvent = () => {
     const [event, setEvent] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/event')
+        fetch('https://mysterious-sands-88815.herokuapp.com/event')
             .then(res => res.json())
             .then(data => setEvent(data))
     }, [])
 
 
     const deleted = () => {
-        fetch('http://localhost:9999/event')
+        fetch('https://mysterious-sands-88815.herokuapp.com/event')
             .then(res => res.json())
             .then(data => setEvent(data))
     }
@@ -36,7 +36,7 @@ const ManageEvent = () => {
 
         console.log(deletedEventInfo)
 
-        fetch('http://localhost:9999/deletedEvent', {
+        fetch('https://mysterious-sands-88815.herokuapp.com/deletedEvent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -62,7 +62,7 @@ const ManageEvent = () => {
 
     const handleDelete = (id) => {
 
-        fetch(`http://localhost:9999/deleteEvent/${id}`, {
+        fetch(`https://mysterious-sands-88815.herokuapp.com/deleteEvent/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

@@ -8,7 +8,7 @@ const ShowCM = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:9999/showCM/${id}`)
+        fetch(`https://mysterious-sands-88815.herokuapp.com/showCM/${id}`)
             .then(res => res.json())
             .then(data => setCM(data))
     }, [id])

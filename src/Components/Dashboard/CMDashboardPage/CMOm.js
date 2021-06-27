@@ -8,7 +8,7 @@ const CMOm = () => {
     const [OM, setOM] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:9999/OM')
+        fetch('https://mysterious-sands-88815.herokuapp.com/OM')
             .then(res => res.json())
             .then(data => setOM(data))
     }, [])

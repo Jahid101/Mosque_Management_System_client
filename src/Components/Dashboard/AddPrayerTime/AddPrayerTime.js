@@ -15,7 +15,7 @@ const AddPrayerTime = () => {
     const [JUMAH, setJUMAH] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:9999/prayerTime')
+        fetch('https://mysterious-sands-88815.herokuapp.com/prayerTime')
             .then(res => res.json())
             .then(data => {
                 data.map(data => setPrayerTime(data))
@@ -52,7 +52,7 @@ const AddPrayerTime = () => {
 
 
     const newPrayerTime = () => {
-        fetch('http://localhost:9999/prayerTime')
+        fetch('https://mysterious-sands-88815.herokuapp.com/prayerTime')
             .then(res => res.json())
             .then(data => {
                 data.map(data => setPrayerTime(data))
@@ -73,7 +73,7 @@ const AddPrayerTime = () => {
 
         console.log(updatedPrayerTime)
 
-        const url = `http://localhost:9999/updatePrayerTime/${id}`;
+        const url = `https://mysterious-sands-88815.herokuapp.com/updatePrayerTime/${id}`;
         fetch(url, {
             method: 'PATCH',
             headers: {

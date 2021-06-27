@@ -9,7 +9,7 @@ const ShowWork = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:9999/showWork/${id}`)
+        fetch(`https://mysterious-sands-88815.herokuapp.com/showWork/${id}`)
             .then(res => res.json())
             .then(data => setWS(data))
     }, [id])
